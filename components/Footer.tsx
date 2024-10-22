@@ -62,10 +62,10 @@ function Footer() {
                 <p className="text-white font-bold">Số giấy chứng nhận đăng ký kinh doanh</p>
                 <p className="text-white">0110015834</p>
               </div> */}
-              <div className="flex gap-4 mb-4">
+              {/* <div className="flex gap-4 mb-4">
                 <Image src="/footer-image/bct.png" alt="Bộ công thương" width={130} height={40} />
                 <Image src="/footer-image/dmca.png" alt="DMCA" width={130} height={40} />
-              </div>
+              </div> */}
             </div>
             <div className="md:w-1/2">
               <h4 className="text-white font-bold">Đây là một website ứng dụng</h4>
@@ -73,7 +73,7 @@ function Footer() {
               <div className="text-white">
                 <p>Thương nhân nhập khẩu, phân phối và chịu trách nhiệm về sản phẩm</p>
                 <p>CÔNG TY TNHH THƯƠNG MẠI 7WEALTH</p> 
-                <p>Địa chỉ: Lô 01A-B1 Tòa R2 Royal City, số 71A Nguyễn Trãi, phường Thượng Đình, quận Thanh Xuân, thành phố Hà Nội, Việt Nam.</p>
+                <p>Địa chỉ: Lô 01A-B1 Tòa R2 Royal City, số 72A Nguyễn Trãi, phường Thượng Đình, quận Thanh Xuân, thành phố Hà Nội, Việt Nam.</p>
               </div>
             </div>
           </div>

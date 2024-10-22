@@ -15,7 +15,7 @@ export default async function Home() {
       <section className="mb-8 mt-4 bg-cover md:h-[660px]">
         <div className="max-w-6xl m-auto px-6 flex items-center h-full relative">
           <p className="bg-text text-base md:text-5xl max-w-[200px] md:max-w-[600px] font-bold">
-            WOWTOP PREMIUM NUTRITIONAL GROWTH MILK FORMULA FOR 1+ YEAR OLD
+            WOWTOP PREMIUM NUTRITIONAL GROWTH MILK FORMULA FOR 1+ YEARS OLD
           </p>
           <Image src="/lon-gau@2x-8.png" alt="" width={544} height={802} className="w-1/2 h-full md:w-full" />
         </div>
