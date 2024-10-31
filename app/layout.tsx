@@ -8,6 +8,7 @@ import "react-datepicker/dist/react-datepicker.css";
 import 'react-toastify/dist/ReactToastify.css';
 import Header from '@/components/Header'
 import Footer from '@/components/Footer';
+import Link from 'next/link';
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -45,9 +46,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <Header />
+        {/* <Header />
         {children}
-        <Footer />
+        <Footer /> */}
       </body>
     </html>
   )
