@@ -11,7 +11,7 @@ import Experience from '@/components/HomePage/Experience';
 export default async function Home() {
   return (
     <main>
-      {/* <section className="mb-8 mt-4 bg-cover md:h-[660px]">
+      <section className="mb-8 mt-4 bg-cover md:h-[660px]">
         <div className="max-w-6xl m-auto px-6 flex items-center h-full relative">
           <p className="bg-text text-base md:text-5xl max-w-[200px] md:max-w-[600px] font-bold">
             WOWTOP PREMIUM NUTRITIONAL GROWTH MILK FORMULA FOR 1+ YEARS OLD
@@ -27,7 +27,7 @@ export default async function Home() {
           </div>
         </div>
       </section>
-      <FormOrder /> */}
+      <FormOrder />
     </main>
   )
 }
