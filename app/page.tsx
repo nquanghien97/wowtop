@@ -93,16 +93,116 @@ export default async function Home() {
           </div>
         </div>
       </section>
-      <section className="mb-8 h-[450px] md:h-[1050px] bg-[length:100%_100%] pt-16 relative">
-        <Image src="/nha-may@2x-100.jpg" width={2400} height={1800} alt='nhà máy' className="absolute inset-0 h-full w-full" />
-        <div className="px-4 relative z-10">
-          <div className="bg-[url('/asset_10.png')] bg-[length:100%_100%] text-center py-4">
-            <h2 className="uppercase text-4xl text-[#84571B] font-bold">Nhà máy sản xuất WOWTOP tại NewZealand</h2>
+      <section className="bg-[url('/dong-co.png')] bg-[length:100%_100%] bg-center h-[1062px] relative max-lg:hidden z-[30]">
+        <div className="max-w-6xl m-auto px-4">
+          <div className="flex justify-center py-4">
+            <div className="bg-text2 flex px-12 py-4 text-4xl rounded-full">
+              <h3 className="text-[#84571B] font-bold">Đăng kí dùng thử</h3>
+            </div>
+          </div>
+          <div className="mb-8">
+            <h2 className="text-xl md:text-5xl text-[#002A9E] uppercase text-center !leading-tight">Nguồn sữa từ những chú bò <br /><span><strong>hạnh phúc nhất thế giới</strong></span></h2>
+          </div>
+          <div className="flex flex-col">
+            <div className="flex justify-between w-full mb-8">
+              <div className="m-auto w-2/3 flex justify-center">
+                <div className="flex justify-between w-full mb-4">
+                  <div className="flex flex-col items-center justify-center">
+                    <div className="flex items-center flex-1">
+                      <Image src="/conbo_img_1.png" alt="conbo_img_1" width={100} height={45} className='' />
+                    </div>
+                    <div className="flex items-center flex-1">
+                      <p className="text-white font-bold text-2xl text-center">NON-GMO</p>
+                    </div>
+                  </div>
+                  <div className="flex flex-col items-center justify-center">
+                    <div className="flex items-center flex-1">
+                      <Image src="/conbo_img_2.png" alt="conbo_img_2" width={100} height={45} className='' />
+                    </div>
+                    <div className="flex items-center flex-1">
+                      <p className="text-white font-bold text-2xl text-center">NATURAL <br />INGREDIENTS</p>
+                    </div>
+                  </div>
+                  <div className="flex flex-col items-center justify-center">
+                    <div className="flex items-center flex-1">
+                      <Image src="/conbo_img_3.png" alt="conbo_img_3" width={100} height={45} className='' />
+                    </div>
+                    <div className="flex items-center flex-1">
+                      <p className="text-white font-bold text-2xl text-center">GRASS FED</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="flex justify-between items-center relative mb-24">
+              <div className="relative w-1/2 flex justify-center items-center">
+                <Image src="/chung-nhan-bg.webp" alt="chung-nhan-bg" width={543} height={357} className="absolute w-full" />
+                <div className="flex flex-col items-center relative z-20 p-8">
+                  <div className="flex justify-center items-center gap-2">
+                    <Image src="/chung-nhan-1.webp" alt='chung-nhan-1' width={276} height={276} className="w-1/6" />
+                    <p className="text-[#002A9E] font-bold text-xl">Non-GMO: Chứng nhận nguồn nguyên liệu không biến đổi Gen</p>
+                  </div>
+                  <div className="flex justify-center items-center gap-2">
+                    <Image src="/chung-nhan-2.webp" alt='chung-nhan-2' width={276} height={276} className="w-1/6" />
+                    <p className="text-[#002A9E] font-bold text-xl">GRASS FED: Chứng nhận 100% Bò ăn cỏ tự nhiên</p>
+                  </div>
+                  <div className="flex justify-center items-center gap-2">
+                    <Image src="/chung-nhan-3.webp" alt='chung-nhan-3' width={276} height={276} className="w-1/6" />
+                    <p className="text-[#002A9E] font-bold text-xl">NATURAL INGREDIENTS: Sử dụng nguồn nguyên liệu từ thiên nhiên</p>
+                  </div>
+                </div>
+              </div>
+              <div className="absolute top-0 right-0">
+                <Image src="/dong-co-d-2.webp" alt="dong-co-d-2" width={467} height={382} />
+              </div>
+            </div>
           </div>
         </div>
       </section>
-      <FormOrder />
-      <Experience />
+      <section className="bg-[url('/bg-co-m.png')] bg-center bg-[length:100%_100%] relative lg:hidden py-8 z-[30]">
+        <div className="mb-8">
+          <h2 className="text-[5vw] text-[#002A9E] uppercase text-center !leading-tight">Nguồn sữa từ những chú bò <br /><span><strong>hạnh phúc nhất thế giới</strong></span></h2>
+        </div>
+        <div className="flex justify-center w-full flex-col">
+          <div className="mx-auto w-2/3">
+            <div className="flex justify-between mb-4 w-full">
+              <Image src="/conbo_img_1.png" alt="conbo_img_1" width={120} height={90} className="w-1/4" />
+              <Image src="/conbo_img_2.png" alt="conbo_img_2" width={120} height={90} className="w-1/4" />
+              <Image src="/conbo_img_3.png" alt="conbo_img_3" width={120} height={90} className="w-1/4" />
+            </div>
+          </div>
+          <div className="flex flex-col items-center relative z-20 w-2/3 m-auto">
+            <div className="flex justify-center items-center gap-2 w-full">
+              <Image src="/chung-nhan-1.png" alt='chung-nhan-1' width={150} height={150} className="w-1/4" />
+              <p className="text-[#002A9E] text-3xl font-bold flex-1">NON-GMO</p>
+            </div>
+            <div className="flex justify-center items-center gap-2 w-full">
+              <Image src="/chung-nhan-2.png" alt='chung-nhan-2' width={150} height={150} className="w-1/4" />
+              <p className="text-[#002A9E] text-3xl font-bold flex-1">GRASS FED</p>
+            </div>
+            <div className="flex justify-center items-center gap-2 w-full">
+              <Image src="/chung-nhan-3.png" alt='chung-nhan-3' width={150} height={150} className="w-1/4" />
+              <p className="text-[#002A9E] text-3xl font-bold flex-1">NATURAL INGREDIENTS</p>
+            </div>
+          </div>
+          <div className="flex justify-center w-2/3 m-auto mb-9">
+            <Image src="/dong-co-d-2.webp" alt="dong-co-d-2" width={500} height={400} className="w-full" />
+          </div>
+        </div>
+      </section>
+      <section className="lg:pb-[40%] pb-[80%] bg-[length:100%_100%] pt-[120px] lg:pt-40 relative z-20 top-[-150px] mb-8">
+        <Image src="/nha-may.webp" width={2400} height={1800} alt='nhà máy' className="absolute inset-0 h-full w-full" />
+        <div className="px-4 relative z-10">
+          <div className="bg-[url('/asset_10.png')] bg-[length:100%_100%] text-center py-4">
+            <h2 className="uppercase md:text-4xl text-[#002A9E] font-bold pb-1">Nhà máy sản xuất WOWTOP tại NewZealand</h2>
+            <p className="md:text-4xl text-[#002A9E] uppercase">Dẫn đầu về công nghệ sản xuất sữa</p>
+          </div>
+        </div>
+      </section>
+      <div className="mt-[-120px]">
+        <FormOrder />
+        <Experience />
+      </div>
     </main>
   )
 }

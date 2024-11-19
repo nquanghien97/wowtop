@@ -276,8 +276,10 @@ function Product() {
           </div>
           <div className="max-md:px-4">
             <div className="flex max-md:flex-col">
-              <Image src="/be.webp" alt="be" width={305} height={468} />
-              <ul>
+              <div className="md:w-1/2">
+                <Image src="/be.webp" alt="be" width={305} height={468} className="w-full" />
+              </div>
+              <ul className="md:w-1/2">
                 <li className="flex gap-2">
                   <div className="flex w-[120px] relative">
                     <div className="">
