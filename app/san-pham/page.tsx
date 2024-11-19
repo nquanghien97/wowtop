@@ -270,16 +270,16 @@ function Product() {
         </div>
       </section>
       <section className="mb-8">
-        <div className="max-w-4xl m-auto">
+        <div className="max-w-6xl m-auto">
           <div className="font-semibold text-center py-4 bg-[url('/hdgh.png')] bg-[length:100%_100%] w-full md:w-2/3 m-auto">
             <p className="text-[calc(1.5rem+1vw)] md:text-4xl font-bold uppercase py-4 bg-text">Hướng dẫn sử dụng</p>
           </div>
           <div className="max-md:px-4">
             <div className="flex max-md:flex-col">
-              <div className="md:w-1/2">
+              <div className="w-2/5 m-auto">
                 <Image src="/be.webp" alt="be" width={305} height={468} className="w-full" />
               </div>
-              <ul className="md:w-1/2">
+              <ul className="md:w-3/5 px-4">
                 <li className="flex gap-2">
                   <div className="flex w-[120px] relative">
                     <div className="">
