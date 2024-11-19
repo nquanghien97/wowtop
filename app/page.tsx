@@ -11,12 +11,21 @@ import Experience from '@/components/HomePage/Experience';
 export default async function Home() {
   return (
     <main>
-      <section className="mb-8 mt-4 bg-cover md:h-[660px]">
-        <div className="max-w-6xl m-auto px-6 flex items-center h-full relative">
-          <p className="bg-text text-base md:text-5xl max-w-[200px] md:max-w-[600px] font-bold">
-            WOWTOP PREMIUM NUTRITIONAL GROWTH MILK FORMULA FOR 1+ YEARS OLD
-          </p>
-          <Image src="/lon-gau@2x-8.png" alt="" width={544} height={802} className="w-1/2 h-full md:w-full" />
+      <section className="bg-[#fafafa]">
+        <div className="px-[10%] m-auto">
+          <div className=" flex justify-between items-center">
+            <div className="w-1/2">
+              <p className="bg-text-blue uppercase font-bold text-xs md:text-5xl lg:mb-4 py-2 lg:!leading-[64px]">
+                Giúp tăng chiều cao từ cấp độ nguyên bào
+              </p>
+              <Link href="/" className="header-bg px-6 py-2 text-xs md:text-2xl rounded-full uppercase text-white">
+                Tìm hiểu thêm
+              </Link>
+            </div>
+            <div className="w-1/2">
+              <Image src="/banner.webp" alt='' width={1000} height={1000} className="w-full" />
+            </div>
+          </div>
         </div>
       </section>
       <section className="lg:mb-16">
