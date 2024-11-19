@@ -3,19 +3,19 @@ import Form from './Form';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://kidscareplus.vn'),
+  metadataBase: new URL('https://wowtop.com.vn'),
   title: 'Phác đồ dự đoán chiều cao tương lai',
   description: '',
-  keywords: 'Oz Farm Kid\'s Care Plus',
+  keywords: 'Oz Farm Wowtop',
   robots: {
     follow: true,
     index: true,
   },
   openGraph: {
     locale: 'vi_VN',
-    title: 'Kids Care Plus',
-    url: 'https://kidscareplus.vn/du-doan-chieu-cao',
-    siteName: 'KidsCarePlus',
+    title: 'Wowtop',
+    url: 'https://wowtop.com.vn/du-doan-chieu-cao',
+    siteName: 'Wowtop',
     type: 'website'
   }
 }
@@ -28,7 +28,7 @@ function DuDoanChieuCao() {
             <h1 className="text-4xl font-bold text-center my-4 uppercase">Phác đồ dự đoán chiều cao tương lai</h1>
             <p className="text-center">Phát triển chiều cao luôn là mong muốn không chỉ của các phụ huynh mà còn của chính các con. Chiều
               cao không chỉ phụ thuộc vào gen mà còn phụ thuộc nhiều vào chế độ dinh dưỡng, sinh hoạt và tập luyện.</p>
-            <p className="text-center"><strong>Hãy cùng KID&apos;S CARE PLUS lập nên phác đồ dự đoán chiều cao tương lai để có thể xác định được giai đoạn
+            <p className="text-center"><strong>Hãy cùng WOWTOP lập nên phác đồ dự đoán chiều cao tương lai để có thể xác định được giai đoạn
               vàng phù hợp</strong> cho lộ trình phát triển chiều cao tối đa của trẻ nhé</p>
           </div>
         </div>

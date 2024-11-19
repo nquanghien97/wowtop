@@ -15,10 +15,10 @@ export async function postInformations(data: InformationEntity) {
   return res.json();
 }
 
-export async function getInformations({ page = 1, pageSize = 10, code, fullName, phoneNumber, parentName }: { page?: number, pageSize?: number, code?: string, fullName?: string, phoneNumber?: string, parentName?: string }) {
+export async function getInformations({ page = 1, page_size = 10, code, fullName, phoneNumber, parentName }: { page?: number, page_size?: number, code?: string, fullName?: string, phoneNumber?: string, parentName?: string }) {
   const params = new URLSearchParams();
   if (page) params.append('page', page.toString());
-  if (pageSize) params.append('pageSize', pageSize.toString());
+  if (page_size) params.append('page_size', page_size.toString());
   if (code) params.append('code', code.toString());
   if (fullName) params.append('fullName', fullName.toString());
   if (phoneNumber) params.append('phoneNumber', phoneNumber.toString());

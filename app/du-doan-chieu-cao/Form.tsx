@@ -14,7 +14,7 @@ import { toast, ToastContainer } from 'react-toastify';
 import { useForm, Controller } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
-import { getDistricts, getProvinces, getWards } from '@/services/provinces';
+import data from '@/app/data.json'
 
 interface FormValues {
   parentName: string;
@@ -116,9 +116,9 @@ function Form() {
   const [loading, setLoading] = useState(false);
   const [suggestHeight, setSuggestHeight] = useState<number>();
   const [suggestWeight, setSuggestWeight] = useState<number>();
-  const [listProvinces, setListProvinces] = useState<{ name: string, id: string }[]>([]);
+  const [optionProvinces, setOptionProvinces] = useState<{ label: string, value: string }[]>([]);
   const [optionsDistricts, setOptionsDistricts] = useState<{ label: string, value: string }[]>([]);
-  const [optionsWards, setOptionsWards] = useState<{ label: string, value: string}[]>([]);
+  const [optionsWards, setOptionsWards] = useState<{ label: string, value: string }[]>([]);
 
   const router = useRouter();
   const suggestValue = (value: number) => {
@@ -128,25 +128,21 @@ function Form() {
   const currentHeight = watch('currentHeight')
   const currentWeight = watch('currentWeight')
   useEffect(() => {
-    if(suggestHeight) {
+    if (suggestHeight) {
       setValue('currentHeight', suggestHeight)
     }
   }, [setValue, suggestHeight])
 
   useEffect(() => {
-    if(suggestWeight) {
+    if (suggestWeight) {
       setValue('currentWeight', suggestWeight)
     }
   }, [setValue, suggestWeight])
 
   //get provinces
   useEffect(() => {
-    (async () => {
-      const res = await getProvinces()
-      setListProvinces(res.data)
-    })()
+    setOptionProvinces(data.map(item => ({ label: item.FullName, value: item.Code })))
   }, [])
-  const optionsProvinces = listProvinces.map(item => ({ label: item.name, value: item.id }) )  
 
   const onSubmit = async (data: FormValues) => {
     setLoading(true);
@@ -186,7 +182,7 @@ function Form() {
   const id = useId()
   return (
     <div className="max-w-6xl m-auto">
-      <div className="bg-[url('/dk12.webp')] bg-[length:100%_100%] rounded-2xl p-8">
+      <div className="backgound-form rounded-2xl p-8">
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="mb-4">
             <h2 className="text-center text-3xl mb-4 uppercase font-bold">Thông tin phụ huynh</h2>
@@ -195,7 +191,7 @@ function Form() {
                 <div className="w-full">
                   <input
                     placeholder="Họ và tên phụ huynh *"
-                    className="w-full rounded-full px-4 py-3 outline-none"
+                    className="w-full rounded-full px-4 py-3 outline-none placeholder-[#002A9E] placeholder:italic placeholder:font-semibold"
                     {...register("parentName", { required: true })}
                   />
                   {errors.parentName && <span className="text-[red] text-xs p-2">{errors.parentName.message}</span>}
@@ -203,7 +199,7 @@ function Form() {
                 <div className="w-full">
                   <input
                     placeholder="Số điện thoại phụ huynh *"
-                    className="w-full rounded-full px-4 py-3 outline-none"
+                    className="w-full rounded-full px-4 py-3 outline-none placeholder-[#002A9E] placeholder:italic placeholder:font-semibold"
                     {...register("phoneNumber", { required: true })}
                   />
                   {errors.phoneNumber && <span className="text-[red] text-xs p-2">{errors.phoneNumber.message}</span>}
@@ -213,7 +209,7 @@ function Form() {
                 <div className="w-full">
                   <input
                     placeholder="Chiều cao hiện tại của bố (cm) *"
-                    className="w-full rounded-full px-4 py-3 outline-none"
+                    className="w-full rounded-full px-4 py-3 outline-none placeholder-[#002A9E] placeholder:italic placeholder:font-semibold"
                     {...register("fatherHeight", { required: true })}
                   />
                   {errors.fatherHeight && <span className="text-[red] text-xs p-2">{errors.fatherHeight.message}</span>}
@@ -221,7 +217,7 @@ function Form() {
                 <div className="w-full">
                   <input
                     placeholder="Chiều cao hiện tại của mẹ (cm) *"
-                    className="w-full rounded-full px-4 py-3 outline-none"
+                    className="w-full rounded-full px-4 py-3 outline-none placeholder-[#002A9E] placeholder:italic placeholder:font-semibold"
                     {...register("motherHeight", { required: true, valueAsNumber: true })}
                   />
                   {errors.motherHeight && <span className="text-[red] text-xs p-2">Vui lòng nhập chiều cao hiện tại của mẹ</span>}
@@ -235,24 +231,23 @@ function Form() {
                     render={({ field }) => (
                       <Select
                         {...field}
-                        options={optionsProvinces}
+                        options={optionProvinces}
                         instanceId={id}
                         placeholder="Tỉnh/Thành phố*"
                         className="w-full"
                         getOptionLabel={(option: Option) => option.label}
                         getOptionValue={(option: Option) => option.value}
-                        value={optionsProvinces.find((opt) => opt.value === field.value)} // Set the value correctly
+                        value={optionProvinces.find((opt) => opt.value === field.value)} // Set the value correctly
                         onChange={async (selectedOption: SingleValue<Option>) => {
-                            field.onChange(selectedOption ? selectedOption.value : "")
-                            const provinceId = selectedOption?.value;
-                            selectDistrictRef.current?.clearValue();
-                            selectWardRef.current?.clearValue();
-                            setValue('provinceLabel', selectedOption ? selectedOption.label : "")
-                            if (provinceId) {
-                              const res = await getDistricts(provinceId);
-                              setOptionsDistricts(res.data?.map((item: {name: string, id: string }) => ({ label: item.name, value: item.id }) ));
-                            }
+                          field.onChange(selectedOption ? selectedOption.value : "")
+                          const provinceId = selectedOption?.value;
+                          selectDistrictRef.current?.clearValue();
+                          selectWardRef.current?.clearValue();
+                          setValue('provinceLabel', selectedOption ? selectedOption.label : "")
+                          if (provinceId) {
+                            setOptionsDistricts(data.flatMap(item => item.District.filter(item1 => item1.ProvinceCode === provinceId)).map(item3 => ({ label: item3.FullName, value: item3.Code })));
                           }
+                        }
                         }
                       />
                     )}
@@ -279,10 +274,9 @@ function Form() {
                           setValue('districtLabel', selectedOption ? selectedOption.label : "")
                           const districtId = selectedOption?.value;
                           selectWardRef.current?.clearValue();
-                            if (districtId) {
-                              const res = await getWards(districtId);
-                              setOptionsWards(res.data?.map((item: {name: string, id: string }) => ({ label: item.name, value: item.id }) ));
-                            }
+                          if (districtId) {
+                            setOptionsWards(data.flatMap(item => item.District.flatMap(item1 => item1.Ward?.filter(item2 => item2.DistrictCode === districtId))).filter(item4 => item4 !== undefined).flatMap(item3 => ({ label: item3.FullName, value: item3.Code })));
+                          }
                         }
                         }
                       />
@@ -318,7 +312,7 @@ function Form() {
                 <div className="md:w-1/2">
                   <input
                     placeholder="Địa chỉ (Số nhà, tên đường)*"
-                    className="w-full rounded-full px-4 py-3 outline-none"
+                    className="w-full rounded-full px-4 py-3 outline-none placeholder-[#002A9E] placeholder:italic placeholder:font-semibold"
                     {...register("address", { required: true })}
                   />
                   {errors.address && <span className="text-[red] text-xs p-2">{errors.address.message}</span>}
@@ -333,7 +327,7 @@ function Form() {
                 <div className="md:w-1/2">
                   <input
                     placeholder="Họ và tên con *"
-                    className="w-full rounded-full px-4 py-3 outline-none"
+                    className="w-full rounded-full px-4 py-3 outline-none placeholder-[#002A9E] placeholder:italic placeholder:font-semibold"
                     {...register("fullName", { required: true })}
                   />
                   {errors.fullName && <span className="text-[red] text-xs p-2">Vui lòng nhập họ tên con</span>}
@@ -372,7 +366,7 @@ function Form() {
                       <DatePicker
                         {...field}
                         locale={vi}
-                        className="w-full rounded-full px-4 py-3 outline-none"
+                        className="w-full rounded-full px-4 py-3 outline-none placeholder-[#002A9E] placeholder:italic placeholder:font-semibold"
                         selected={field.value ? new Date(field.value) : null}
                         onChange={(date: Date | null) => field.onChange(date)}
                         dateFormat="dd/MM/yyyy"
@@ -384,7 +378,7 @@ function Form() {
                 <div className="w-full">
                   <input
                     placeholder="Nhập chiều cao hiện tại của con (50-200cm) *"
-                    className="w-full rounded-full px-4 py-3 outline-none"
+                    className="w-full rounded-full px-4 py-3 outline-none placeholder-[#002A9E] placeholder:italic placeholder:font-semibold"
                     {...register("currentHeight", { required: true })}
                   />
                   <div className="flex max-md:justify-center">
@@ -409,7 +403,7 @@ function Form() {
                 <div className="md:w-1/2">
                   <input
                     placeholder="Nhập cân nặng hiện tại của con (1-150kg) *"
-                    className="w-full rounded-full px-4 py-3 outline-none"
+                    className="w-full rounded-full px-4 py-3 outline-none placeholder-[#002A9E] placeholder:italic placeholder:font-semibold"
                     {...register("currentWeight", { required: true, valueAsNumber: true })}
                   />
                   <div className="flex max-md:justify-center">
@@ -502,7 +496,7 @@ function Form() {
             </div>
           </div>
           <div className="flex justify-center">
-            <div className="flex justify-center items-center bg-[#065691] rounded-full px-4 py-3">
+            <div className="flex justify-center items-center header-bg rounded-full px-4 py-3 font-bold">
               <button disabled={loading} className={`${loading ? 'text-[#ccc]' : 'text-white'} text-xl mr-2`} type="submit">Nhận phác đồ chiều cao</button>
               {loading && <LoadingIcon size="small" />}
             </div>

@@ -29,10 +29,10 @@ export async function POST(req: Request) {
 export async function GET(req: Request) {
   const url = new URL(req.url);
   const page = parseInt(url.searchParams.get('page') ?? '1', 10);
-  const pageSize = parseInt(url.searchParams.get('pageSize') ?? '10', 10);
+  const page_size = parseInt(url.searchParams.get('page_size') ?? '10', 10);
 
-  const skip = (page - 1) * pageSize;
-  const take = pageSize;
+  const skip = (page - 1) * page_size;
+  const take = page_size;
   try {
     const order = await prisma.order.findMany({
       skip,
@@ -47,7 +47,7 @@ export async function GET(req: Request) {
         data: order,
         paging: {
           page,
-          pageSize,
+          page_size,
           total
         }
       },

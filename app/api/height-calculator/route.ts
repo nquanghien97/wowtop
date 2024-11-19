@@ -56,14 +56,14 @@ export async function POST(req: Request) {
 export async function GET(req: Request) {
   const url = new URL(req.url);
   const page = url.searchParams.get('page');
-  const pageSize = url.searchParams.get('pageSize');
+  const page_size = url.searchParams.get('page_size');
   const code = url.searchParams.get('code');
   const phoneNumber = url.searchParams.get('phoneNumber');
   const fullName = url.searchParams.get('fullName');
   const parentName = url.searchParams.get('parentName');
 
-  const skip = page && pageSize ? (parseInt(page, 10) - 1) * parseInt(pageSize, 10) : undefined;
-  const take = pageSize ? parseInt(pageSize, 10) : undefined;
+  const skip = page && page_size ? (parseInt(page, 10) - 1) * parseInt(page_size, 10) : undefined;
+  const take = page_size ? parseInt(page_size, 10) : undefined;
   try {
     const data = await prisma.heightCalculator.findMany({
       orderBy: {
@@ -84,7 +84,7 @@ export async function GET(req: Request) {
         data,
         paging: {
           page,
-          pageSize,
+          page_size,
           total
         }
       },

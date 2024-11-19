@@ -27,7 +27,7 @@ export const metadata: Metadata = {
 }
 
 async function News() {
-  const { data } = await getNews({ page: 1, pageSize: 9 }) as { data: NewsEntity[] }
+  const { data } = await getNews({ page: 1, page_size: 9 }) as { data: NewsEntity[] }
   return (
     <div className="my-8">
       <div className="max-w-6xl m-auto">

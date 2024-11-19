@@ -2,7 +2,6 @@
 
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
-import { getDistricts, getProvinces, getWards } from '@/services/provinces';
 import { Controller, useForm } from 'react-hook-form';
 import Select, { SelectInstance, SingleValue } from 'react-select';
 import { useEffect, useId, useRef, useState } from 'react';
@@ -11,6 +10,8 @@ import { createOrder } from '@/services/orderServices';
 import { toast, ToastContainer } from 'react-toastify';
 import LoadingIcon from '@/assets/icons/LoadingIcon';
 import Image from 'next/image'
+import data from '@/app/data.json'
+
 interface FormValues extends OrderEntity {
   provinceLabel?: string;
   districtLabel?: string;
@@ -49,7 +50,8 @@ interface Option {
   value: string;
 }
 
-function FormOrder() {
+function FormOrder(props: { isProductTest?: boolean }) {
+  const { isProductTest = false } = props;
   const { register, handleSubmit, control, setValue, formState: { errors } } = useForm({
     resolver: yupResolver(schema),
   });
@@ -64,10 +66,7 @@ function FormOrder() {
   const selectWardRef = useRef<SelectInstance<Option, false>>(null);
 
   useEffect(() => {
-    (async () => {
-      const res = await getProvinces()
-      setOptionProvinces(res.data.map((item: { name: string, id: number }) => ({ label: item.name, value: item.id })))
-    })()
+    setOptionProvinces(data.map(item => ({ label: item.FullName, value: item.Code })))
   }, [])
 
   const onSubmit = async (data: FormValues) => {
@@ -96,9 +95,9 @@ function FormOrder() {
 
   return (
     <section className="mb-8 bg-[bg-[#69dbe1]">
-      <div className="px-4 py-8 max-w-6xl m-auto bg-[url('/dki3.webp')] bg-[length:100%_100%]  bg-center rounded-[50px]">
+      <div className="px-4 py-8 max-w-6xl m-auto bg-[url('/dki3.webp')] md:bg-[length:100%_100%]  bg-center rounded-[50px]">
         <div className="mb-8">
-          <h2 className="text-[#065691] text-4xl uppercase text-center font-bold">Đăng ký mua hàng</h2>
+          <h2 className="text-[#002A9E] text-4xl uppercase text-center font-bold">Đăng ký mua hàng</h2>
         </div>
         <div className="flex">
           <div className="w-full px-4">
@@ -106,7 +105,7 @@ function FormOrder() {
               <div className="w-full flex gap-4 max-md:flex-col">
                 <div className="md:w-1/2">
                   <input
-                    className="w-full p-4 rounded-full outline-none"
+                    className="w-full p-4 rounded-full outline-none placeholder-[#002A9E] placeholder:italic placeholder:font-semibold"
                     placeholder='Họ và tên*'
                     {...register('fullName')}
                   />
@@ -114,7 +113,7 @@ function FormOrder() {
                 </div>
                 <div className="md:w-1/2">
                   <input
-                    className="w-full p-4 rounded-full outline-none"
+                    className="w-full p-4 rounded-full outline-none placeholder-[#002A9E] placeholder:italic placeholder:font-semibold"
                     placeholder='Số điện thoại*'
                     {...register('phoneNumber')}
                   />
@@ -124,7 +123,7 @@ function FormOrder() {
               <div className="w-full flex gap-4 max-md:flex-col">
                 <div className="md:w-1/2">
                   <input
-                    className="w-full p-4 rounded-full outline-none"
+                    className="w-full p-4 rounded-full outline-none placeholder-[#002A9E] placeholder:italic placeholder:font-semibold"
                     placeholder='Sản phẩm đăng ký mua*'
                     {...register('productName')}
                   />
@@ -133,7 +132,7 @@ function FormOrder() {
                 <div className="md:w-1/2">
                   <input
                     type='number'
-                    className="w-full p-4 rounded-full outline-none"
+                    className="w-full p-4 rounded-full outline-none placeholder-[#002A9E] placeholder:italic placeholder:font-semibold"
                     placeholder='Số lượng'
                     {...register('quantity')}
                   />
@@ -163,8 +162,7 @@ function FormOrder() {
                             selectWardRef.current?.clearValue();
                             setValue('provinceLabel', selectedOption ? selectedOption.label : "")
                             if (provinceId) {
-                              const res = await getDistricts(provinceId);
-                              setOptionsDistricts(res.data?.map((item: { name: string, id: string }) => ({ label: item.name, value: item.id })));
+                              setOptionsDistricts(data.flatMap(item => item.District.filter(item1 => item1.ProvinceCode === provinceId)).map(item3 => ({ label: item3.FullName, value: item3.Code })));
                             }
                           }
                           }
@@ -194,8 +192,7 @@ function FormOrder() {
                             const districtId = selectedOption?.value;
                             selectWardRef.current?.clearValue();
                             if (districtId) {
-                              const res = await getWards(districtId);
-                              setOptionsWards(res.data?.map((item: { name: string, id: string }) => ({ label: item.name, value: item.id })));
+                              setOptionsWards(data.flatMap(item => item.District.flatMap(item1 => item1.Ward?.filter(item2 => item2.DistrictCode === districtId))).filter(item4 => item4 !== undefined).flatMap(item3 => ({ label: item3.FullName, value: item3.Code })));
                             }
                           }
                           }
@@ -234,7 +231,7 @@ function FormOrder() {
                   <div className="md:w-1/2">
                     <input
                       placeholder="Địa chỉ (Số nhà, tên đường)*"
-                      className="w-full rounded-full px-4 py-3 outline-none"
+                      className="w-full rounded-full px-4 py-3 outline-none placeholder-[#002A9E] placeholder:italic placeholder:font-semibold"
                       {...register("address", { required: true })}
                     />
                     {errors.address && <span className="text-[red] text-xs p-2">{errors.address.message}</span>}
@@ -242,13 +239,13 @@ function FormOrder() {
                 </div>
               </div>
               <div className="flex items-center text-white italic">
-                <input id="checkbox" type="checkbox" {...register('term')} className="w-5 h-5 rounded-full outline-none cursor-pointer border-none" />
-                <label htmlFor="checkbox">Bố mẹ đã đọc và đồng ý <strong>Điều khoản đăng ký</strong></label>
+                <input id="checkbox" type="checkbox" {...register('term')} className="w-5 h-5 rounded-full outline-none placeholder-[#002A9E] placeholder:italic placeholder:font-semibold cursor-pointer border-none" />
+                <label htmlFor="checkbox" className="text-[#002A9E] ml-2">Bố mẹ đã đọc và đồng ý <strong>Điều khoản đăng ký</strong></label>
                 {errors.term && <span className="text-[red] text-xs p-2">{errors.term.message}</span>}
               </div>
-              {/* <p className="text-white italic">Hãy liên hệ chuyên gia dinh dưỡng theo số <strong>028 555 555 555</strong> để được tư vấn thêm</p> */}
+              <p className="text-[#002A9E] italic">Hãy liên hệ chuyên gia dinh dưỡng theo số <strong>028 555 555 555</strong> để được tư vấn thêm</p>
               <div className="flex justify-center">
-                <div className="flex justify-center items-center bg-[#065691] rounded-full px-8 py-2">
+                <div className="flex justify-center items-center bg-[#002A9E] rounded-full px-16 py-4">
                   <button type='submit' className="text-white italic uppercase hover:opacity-85 duration-300 mr-2">Xác nhận</button>
                   {loading && <LoadingIcon size="small" />}
                 </div>
@@ -256,7 +253,7 @@ function FormOrder() {
             </form>
           </div>
           <div className="mt-[-40px] max-md:hidden">
-            <Image src="/lon-gau@2x-8.png" alt="giot2" width={300} height={400} />
+            <Image src="/hop.webp" alt="giot2" width={400} height={600} />
           </div>
         </div>
       </div>

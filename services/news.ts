@@ -1,9 +1,9 @@
 import { NewsEntity } from "@/entities/news";
 
-export async function getNews({ page, pageSize }: { page?: number, pageSize?: number }) {
+export async function getNews({ page, page_size }: { page?: number, page_size?: number }) {
   const params = new URLSearchParams();
   if (page) params.append('page', page.toString());
-  if (pageSize) params.append('pageSize', pageSize.toString());
+  if (page_size) params.append('page_size', page_size.toString());
   const res = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/news?${params.toString()}`)
   return res.json()
 }

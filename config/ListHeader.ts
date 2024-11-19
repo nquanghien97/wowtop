@@ -16,11 +16,11 @@ export const ListHeader: ListHeaderType[] = [
   //   title: 'Giới thiệu',
   //   path: '#',
   // },
-  // {
-  //   id: 3,
-  //   title: 'Sản phẩm',
-  //   path: '/san-pham'
-  // },
+  {
+    id: 3,
+    title: 'Sản phẩm',
+    path: '/san-pham'
+  },
   // {
   //   id: 4,
   //   title: 'Bản tin',
@@ -43,11 +43,11 @@ export const ListHeader: ListHeaderType[] = [
   //     }
   //   ]
   // },
-  // {
-  //   id: 5,
-  //   title: 'Dự đoán chiều cao của con',
-  //   path: '/du-doan-chieu-cao'
-  // },
+  {
+    id: 5,
+    title: 'Dự đoán chiều cao của con',
+    path: '/du-doan-chieu-cao'
+  },
   // {
   //   id: 6,
   //   title: 'Đại lý',
