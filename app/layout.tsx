@@ -15,7 +15,7 @@ const inter = Inter({ subsets: ['latin'] })
 export const metadata: Metadata = {
   metadataBase: new URL('https://wowtop.vn'),
   title: 'Wowtop',
-  description: 'WOWTOP vừa bổ sung Canxi, Phospho, D3, K2 làm nguyên liệu cho quá trình tạo xương, vừa chứa thành phần CBP kích thích nguyên bào xương phát triển, nhờ ...',
+  // description: 'KIDS CARE PLUS vừa bổ sung Canxi, Phospho, D3, K2 làm nguyên liệu cho quá trình tạo xương, vừa chứa thành phần CBP kích thích nguyên bào xương phát triển, nhờ ...',
   keywords: 'Wowtop',
   robots: {
     follow: true,
@@ -46,9 +46,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <Header />
+        {/* <Header />
         {children}
-        <Footer />
+        <Footer /> */}
       </body>
     </html>
   )
