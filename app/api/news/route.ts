@@ -47,6 +47,7 @@ export async function GET(req: Request) {
   const url = new URL(req.url);
   const pageParam = url.searchParams.get('page');
   const page_sizeParam = url.searchParams.get('page_size')
+  const title = url.searchParams.get('title') || '';
 
   const page = pageParam ? parseInt(pageParam, 10) : null;
   const page_size = page_sizeParam ? parseInt(page_sizeParam, 10) : null;
@@ -58,10 +59,17 @@ export async function GET(req: Request) {
     skip = (page - 1) * page_size;
     take = page_size;
   }
+  const whereCondition = {
+    ...(title && { title: { contains: title } }),
+  };
   try {
     const news = await prisma.news.findMany({
       skip,
-      take
+      take,
+      orderBy: {
+        createdAt: 'desc'
+      },
+      where: whereCondition
     })
     const total = await prisma.news.count()
     return NextResponse.json(
