@@ -63,6 +63,14 @@ export default function RootLayout({
             gtag('config', 'AW-16773984613');
           `}
         </Script>
+        <Script id="google-ads-init" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-CGBMSFBQYF');
+          `}
+        </Script>
       </head>
       <body className={montserrat.className}>
         <Header />
