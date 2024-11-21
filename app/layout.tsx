@@ -8,9 +8,12 @@ import "react-datepicker/dist/react-datepicker.css";
 import 'react-toastify/dist/ReactToastify.css';
 import Header from '@/components/Header'
 import Footer from '@/components/Footer';
-import Link from 'next/link';
+import { Montserrat } from 'next/font/google';
 
-const inter = Inter({ subsets: ['latin'] })
+const montserrat = Montserrat({
+  weight: '500',
+  subsets: ['latin']
+})
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://wowtop.vn'),
@@ -45,7 +48,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={montserrat.className}>
         <Header />
         {children}
         <Footer />

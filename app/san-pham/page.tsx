@@ -1,5 +1,6 @@
 import Feedback from "@/components/HomePage/Feedback"
 import FormOrder from "@/components/HomePage/FormOrder"
+import { data } from "@/config/dataThanhPhan"
 import { Metadata } from "next"
 import dynamic from "next/dynamic"
 import Image from "next/image"
@@ -222,51 +223,32 @@ function Product() {
         </div>
       </section>
       <section className="mb-8">
-        <div className="max-w-4xl m-auto">
-          <div className="px-4">
-            <div className="bg-[url('/gfh_1.png')] bg-[length:100%_100%] h-[100px] flex justify-center items-center">
-              <span className="text-white font-bold text-lg md:text-4xl py-2 uppercase">
-                Hướng dẫn truy xuất nguồn gốc
-              </span>
-            </div>
-            <div className="bg-[url('/artboard_27.png')] bg-[length:100%_100%] h-[800px] max-md:hidden relative">
-              <div className="flex items-center gap-4 absolute top-20 left-[-4%]">
-                <Image src="/anh_b1.webp" alt="anh_b1" width={160} height={160} className="border-[#065691] border-[1px] rounded-full" />
-                <p className="text-[#065691] font-semibold mt-[12%]">Lật lon sữa sẽ có 1 mã QR đặc biệt in dưới đáy lon</p>
-              </div>
-              <div className="flex items-center gap-4 absolute top-[40%] right-[-6%]">
-                <p className="text-[#065691] font-semibold mt-[22%]">Lật lon sữa sẽ có 1 mã QR đặc biệt in dưới đáy lon</p>
-                <Image src="/anh_b2.webp" alt="anh_b2" width={160} height={160} className="border-[#065691] border-[1px] rounded-full" />
-              </div>
-              <div className="flex items-center gap-4 absolute bottom-[4%] left-[-4%]">
-                <Image src="/anh_b3.webp" alt="anh_b3" width={160} height={160} className="border-[#065691] border-[1px] rounded-full" />
-                <p className="text-[#065691] font-semibold mt-[20%]">Lật lon sữa sẽ có 1 mã QR đặc biệt in dưới đáy lon</p>
-              </div>
-            </div>
-            <div className="md:hidden flex flex-col gap-4 mt-8">
-              <div className="flex gap-4">
-                <Image src="/anh_b1.webp" alt="anh_b1" width={75} height={75} className="border-[#065691] border-[1px] rounded-full" />
-                <div className="flex flex-col">
-                  <Image src="/b1.png" alt="buoc-1" width={100} height={45} />
-                  <p className="text-[#065691] font-semibold">Lật lon sữa sẽ có 1 mã QR đặc biệt in dưới đáy lon</p>
-                </div>
-              </div>
-              <div className="flex gap-4">
-                <Image src="/anh_b2.webp" alt="anh_b2" width={75} height={75} className="border-[#065691] border-[1px] rounded-full" />
-                <div className="flex flex-col">
-                  <Image src="/b2.png" alt="buoc-2" width={100} height={45} />
-                  <p className="text-[#065691] font-semibold">Lật lon sữa sẽ có 1 mã QR đặc biệt in dưới đáy lon</p>
-                </div>
-              </div>
-              <div className="flex gap-4">
-                <Image src="/anh_b3.webp" alt="anh_b3" width={75} height={75} className="border-[#065691] border-[1px] rounded-full" />
-                <div className="flex flex-col">
-                  <Image src="/b3.png" alt="buoc-3" width={100} height={45} />
-                  <p className="text-[#065691] font-semibold">Lật lon sữa sẽ có 1 mã QR đặc biệt in dưới đáy lon</p>
-                </div>
-              </div>
-            </div>
+        <div className="max-w-6xl m-auto rounded-2xl p-1 shadow-2xl">
+          <div className="bg-[#fefaee] rounded-t-2xl">
+            <div className="bg-[#fefaee] text-center bg-text text-[calc(1.5rem+1vw)] py-8 md:text-5xl font-bold rounded-t-2xl uppercase">Thông tin dinh dưỡng</div>
           </div>
+          <table className="w-full text-center rounded-b-2xl">
+            <thead className="block">
+              <tr className="bg-[#f4ddb1] w-full block">
+                <th className="text-lg text-[#84571B] p-3 inline-block w-[30%]">Mục</th>
+                <th className="text-lg text-[#84571B] p-3 inline-block w-[10%]">Đơn vị</th>
+                <th className="text-lg text-[#84571B] p-3 inline-block w-1/5">TB trên mỗi khẩu phần</th>
+                <th className="text-lg text-[#84571B] p-3 inline-block w-1/5">TB trên 100g</th>
+                <th className="text-lg text-[#84571B] p-3 inline-block w-1/5">TB trên 100kJ</th>
+              </tr>
+            </thead>
+            <tbody className="block w-full h-[400px] overflow-auto">
+              {data.map(item => (
+                <tr className={`text-[#065691] my-[1px] cursor-pointer ${item.is_bold ? 'bg-[#f7ecd0]' : 'hover:bg-[#f7ecd0]'} duration-300 h-[40px] w-full block`} key={item.id}>
+                  <td className="text-[#84571B] py-2 w-[30%] inline-block">{item.muc}</td>
+                  <td className="text-[#84571B] py-2 w-[10%] inline-block">{item.don_vi}</td>
+                  <td className="text-[#84571B] py-2 w-1/5 inline-block">{item.moi_khau_phan}</td>
+                  <td className="text-[#84571B] py-2 w-1/5 inline-block">{item.tren_100g}</td>
+                  <td className="text-[#84571B] py-2 w-1/5 inline-block">{item.tren_100kJ}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
         </div>
       </section>
       <section className="mb-8">
