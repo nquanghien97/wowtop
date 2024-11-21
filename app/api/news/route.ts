@@ -45,11 +45,19 @@ export async function POST(req: Request) {
 
 export async function GET(req: Request) {
   const url = new URL(req.url);
-  const page = parseInt(url.searchParams.get('page') ?? '1', 10);
-  const page_size = parseInt(url.searchParams.get('page_size') ?? '10', 10);
+  const pageParam = url.searchParams.get('page');
+  const page_sizeParam = url.searchParams.get('page_size')
 
-  const skip = (page - 1) * page_size;
-  const take = page_size;
+  const page = pageParam ? parseInt(pageParam, 10) : null;
+  const page_size = page_sizeParam ? parseInt(page_sizeParam, 10) : null;
+
+  let skip: number | undefined;
+  let take: number | undefined;
+
+  if (page !== null && page_size !== null) {
+    skip = (page - 1) * page_size;
+    take = page_size;
+  }
   try {
     const news = await prisma.news.findMany({
       skip,
