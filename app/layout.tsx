@@ -49,7 +49,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        {/* Google Ads Conversion Script */}
+        {/* Google Ads Conversion Tracking */}
         <Script
           id="google-ads-script"
           strategy="afterInteractive"
@@ -63,7 +63,14 @@ export default function RootLayout({
             gtag('config', 'AW-16773984613');
           `}
         </Script>
-        <Script id="google-ads-init" strategy="afterInteractive">
+
+        {/* Google Analytics 4 */}
+        <Script
+          id="google-analytics-script"
+          strategy="afterInteractive"
+          src="https://www.googletagmanager.com/gtag/js?id=G-CGBMSFBQYF"
+        />
+        <Script id="google-analytics-init" strategy="afterInteractive">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
