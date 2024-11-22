@@ -901,35 +901,48 @@ function Product() {
           </div>
         </div>
       </section>
-      {/* <section className="mb-16">
-        <div className="bg-white rounded-xl max-w-4xl m-auto">
+      <section className="mb-16">
+        <div className="bg-white rounded-xl max-w-5xl m-auto">
           <div className="relative p-8">
-            <div className="w-[20%] absolute bottom-[-8%] left-[-10%]">
+            <div className="w-[20%] absolute z-10 bottom-[-8%] left-[-10%]">
               <Image src="/pt1.webp" alt="pt1" width={200} height={200} className="" />
             </div>
-            <div className="absolute top-[4%] right-[16%] w-[10%]">
+            <div className="absolute z-10 top-[4%] right-[16%] w-[10%]">
               <Image src="/pt2.webp" alt="pt2" width={120} height={120} className="" />
             </div>
-            <div className="w-[20%] absolute top-[0%] right-[4%] rotate-[-45deg]">
+            <div className="w-[20%] absolute z-10 top-[0%] right-[4%] rotate-[-45deg]">
               <Image src="/pt2.webp" alt="pt2" width={200} height={200} className="" />
             </div>
             <h2 className="text-center bg-text text-2xl md:text-4xl uppercase font-bold mb-4">Hộp sản phẩm WOWTOP</h2>
-            <div className="w-full h-[400px] bg-[#ccc] rounded-xl mb-4">
-
+            <div className="w-full mb-4 flex relative">
+              <p className="absolute top-1/2 -translate-y-1/2 right-0 px-2 text-[#CC8200] font-bold md:text-3xl w-1/2">Công nghệ đóng gói tiên tiến và khóa thông minh</p>
+              <Image src="/sp5.jpg" alt="sp5" width={960} height={659} className="rounded-xl" />
             </div>
             <div>
-              <div className="flex gap-4 mb-4">
-                <div className="h-[200px] w-full bg-[#ccc] rounded-xl"></div>
-                <div className="h-[200px] w-full bg-[#ccc] rounded-xl"></div>
+              <div className="flex gap-4 mb-2">
+                <div className="w-full rounded-xl">
+                  <Image src="/sp2.jpg" alt="sp2" width={400} height={274} className="rounded-xl w-full" />
+                  <p className="text-[#CC8200] font-bold md:text-3xl text-center py-2">Nắp đậy kín sáng tạo</p>
+                </div>
+                <div className="w-full rounded-xl">
+                  <Image src="/sp3.jpg" alt="sp3" width={400} height={274} className="rounded-xl w-full" />
+                  <p className="text-[#CC8200] font-bold md:text-3xl text-center py-2">Thìa cải nắp độc đáo</p>
+                </div>
               </div>
               <div className="flex gap-4">
-                <div className="h-[200px] w-full bg-[#ccc] rounded-xl"></div>
-                <div className="h-[200px] w-full bg-[#ccc] rounded-xl"></div>
+                <div className="w-full rounded-xl">
+                  <Image src="/sp4.jpg" alt="sp4" width={400} height={274} className="rounded-xl w-full" />
+                  <p className="text-[#CC8200] font-bold md:text-3xl text-center py-2">Thìa đo chính xác</p>
+                </div>
+                <div className="w-full rounded-xl">
+                  <Image src="/sp1.jpg" alt="sp1" width={400} height={274} className="rounded-xl w-full" />
+                  <p className="text-[#CC8200] font-bold md:text-3xl text-center py-2">Thuận tiện và an toàn</p>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </section> */}
+      </section>
       <Question />
       <Feedback />
       <FormOrder />
