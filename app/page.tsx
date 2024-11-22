@@ -14,8 +14,8 @@ export default async function Home() {
   return (
     <main>
       {/* <Banner /> */}
-      <section className="bg-[#fafafa]">
-        <div className="px-[10%] m-auto">
+      <section className="relative">
+        <div className="px-[10%] m-auto absolute top-1/2 -translate-y-1/2">
           <div className=" flex justify-between items-center">
             <div className="w-1/2">
               <p className="bg-text-blue uppercase font-bold text-xs md:text-5xl lg:mb-4 py-2 lg:!leading-[64px]">
@@ -25,11 +25,9 @@ export default async function Home() {
                 Tìm hiểu thêm
               </Link>
             </div>
-            <div className="w-1/2">
-              <Image src="/banner.png" alt='' width={1000} height={1000} className="w-full" />
-            </div>
           </div>
         </div>
+        <Image src="/bg-banner.png" alt="bg-banner" width={1920} height={1080} className="w-full" />
       </section>
       <CongThuc />
       <section className="mb-20 bg-[url('/pt-bg-yellow.webp')] bg-[length:100%_100%]">

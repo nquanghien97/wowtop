@@ -787,7 +787,7 @@ function Product() {
           </table>
         </div>
       </section>
-      <section className="mb-8">
+      {/* <section className="mb-8">
         <div className="max-w-4xl m-auto">
           <div className="px-4">
             <div className="bg-[url('/gfh_1.png')] bg-[length:100%_100%] h-[70px] flex justify-center items-center">
@@ -834,7 +834,7 @@ function Product() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
       <section className="mb-8">
         <div className="max-w-6xl m-auto">
           <div className="font-semibold text-center py-4 bg-[url('/hdgh.png')] bg-[length:100%_100%] w-full md:w-2/3 m-auto">
