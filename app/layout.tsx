@@ -16,9 +16,9 @@ const montserrat = Montserrat({
 })
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://wowtop.vn'),
+  metadataBase: new URL('https://wowtop.com.vn'),
   title: 'Wowtop',
-  description: 'WOWTOP vừa bổ sung Canxi, Phospho, D3, K2 làm nguyên liệu cho quá trình tạo xương, vừa chứa thành phần CBP kích thích nguyên bào xương phát triển, nhờ ...',
+  description: 'WOWTOP là thực phẩm dinh dưỡng công thức dành cho trẻ em từ 1 tuổi trở lên',
   keywords: 'Oz Farm Wowtop',
   robots: {
     follow: true,
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
   openGraph: {
     locale: 'vi_VN',
     title: 'Wowtop',
-    url: 'https://wowtop.vn/',
+    url: 'https://wowtop.com.vn/',
     siteName: 'Wowtop',
     type: 'website'
   },
