@@ -3,9 +3,9 @@ import Form from './Form';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://wowtop.com.vn'),
+  metadataBase: new URL('https://wowtop.vn'),
   title: 'Phác đồ dự đoán chiều cao tương lai',
-  description: '',
+  description: 'Phác đồ dự đoán chiều cao tương lai',
   keywords: 'Oz Farm Wowtop',
   robots: {
     follow: true,
@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   openGraph: {
     locale: 'vi_VN',
     title: 'Wowtop',
-    url: 'https://wowtop.com.vn/du-doan-chieu-cao',
+    url: 'https://wowtop.vn/du-doan-chieu-cao',
     siteName: 'Wowtop',
     type: 'website'
   }

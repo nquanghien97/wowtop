@@ -1,32 +1,25 @@
-import Banner from '@/components/HomePage/Banner'
-import Certificate from '@/components/HomePage/Certificate'
-import Feedback from '@/components/HomePage/Feedback';
 import FormOrder from '@/components/HomePage/FormOrder';
-import { getNews } from '@/services/news';
 import Image from 'next/image'
 import Link from 'next/link';
-import { NewsEntity } from '@/entities/news';
 import Experience from '@/components/HomePage/Experience';
 
 export default async function Home() {
   return (
     <main>
-      <section className="bg-[#fafafa]">
-        <div className="px-[10%] m-auto">
+      <section className="relative">
+        <div className="px-[10%] m-auto absolute top-1/2 -translate-y-1/2">
           <div className=" flex justify-between items-center">
             <div className="w-1/2">
-              <p className="bg-text-blue uppercase font-bold text-xs md:text-5xl lg:mb-4 py-2 lg:!leading-[64px]">
-                Giúp tăng chiều cao từ cấp độ nguyên bào
+              <p className="bg-text-blue uppercase font-bold text-xs lg:text-5xl lg:mb-4 py-2 lg:!leading-[64px]">
+                SẢN PHẨM DINH DƯỠNG CÔNG THỨC VỚI MỤC ĐÍCH ĂN BỔ SUNG CHO TRẺ TRÊN 1 TUỔI
               </p>
-              <Link href="/" className="header-bg px-6 py-2 text-xs md:text-2xl rounded-full uppercase text-white">
+              <Link href="/" className="header-bg px-6 py-2 text-xs lg:text-2xl rounded-full uppercase text-white">
                 Tìm hiểu thêm
               </Link>
             </div>
-            <div className="w-1/2">
-              <Image src="/banner.webp" alt='' width={1000} height={1000} className="w-full" />
-            </div>
           </div>
         </div>
+        <Image src="/bg-banner.webp" alt="bg-banner" width={1920} height={1080} className="w-full" />
       </section>
       <section className="lg:mb-16">
         <div className="max-w-6xl m-auto md:px-4">
