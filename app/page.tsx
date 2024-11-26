@@ -11,7 +11,7 @@ export default async function Home() {
           <div className=" flex justify-between items-center">
             <div className="w-1/2">
               <p className="bg-text-blue uppercase font-bold text-xs lg:text-5xl lg:mb-4 py-2 lg:!leading-[64px]">
-                SẢN PHẨM DINH DƯỠNG CÔNG THỨC VỚI MỤC ĐÍCH ĂN BỔ SUNG CHO TRẺ TRÊN 1 TUỔI
+                NHẬP KHẨU NGUYÊN LON TỪ NEWZEALAND
               </p>
               <Link href="/" className="header-bg px-6 py-2 text-xs lg:text-2xl rounded-full uppercase text-white">
                 Tìm hiểu thêm
