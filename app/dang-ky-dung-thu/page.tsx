@@ -73,8 +73,8 @@ function page() {
           </div>
         </div>
       </section>
-      <CongThuc />
-      <section className="bg-[url('/dong-co.png')] bg-[length:100%_100%] bg-center h-[1062px] relative max-lg:hidden z-[30]">
+      {/* <CongThuc /> */}
+      {/* <section className="bg-[url('/dong-co.png')] bg-[length:100%_100%] bg-center h-[1062px] relative max-lg:hidden z-[30]">
         <div className="max-w-6xl m-auto px-4">
           <div className="py-8">
             <h2 className="text-xl md:text-4xl text-[#002A9E] uppercase text-center !leading-tight"><strong>Nông trại bò sữa chuẩn quốc tế</strong><br />Cung cấp nguồn sữa<br />Từ những chú bò hạnh phúc nhất thế giới</h2>
@@ -174,8 +174,8 @@ function page() {
             <p className="md:text-4xl text-[#002A9E] uppercase">Dẫn đầu về công nghệ sản xuất sữa</p>
           </div>
         </div>
-      </section>
-      <section className="mt-[-150px] mb-8">
+      </section> */}
+      <section className="mb-8">
         <div className="max-w-5xl m-auto">
           <h2 className="text-[28px] text-[#84571B] text-center uppercase mb-16">{'>'}{'>'} Tìm hiểu thêm về sản phẩm</h2>
           <div className="flex max-md:flex-col gap-4 mb-8">
