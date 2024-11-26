@@ -430,9 +430,9 @@ function Product() {
             <div className="md:w-3/5">
               <div className="md:h-[565px] md:overflow-y-scroll md:px-8 py-8">
                 <Image src="/logo-ngang.png" alt="logo2" width={500} height={132} />
-                <div className="mb-4">
+                {/* <div className="mb-4">
                   <h2 className="text-[#002A9E] font-bold text-3xl">CAO TỪ CẤP NGUYÊN BÀO XƯƠNG</h2>
-                </div>
+                </div> */}
                 <p className="text-[#845618] text-xl mb-4">Sữa bột 700G</p>
                 <p className="text-justify">WOWTOP là thực phẩm dinh dưỡng công thức dành cho trẻ em từ 1 tuổi trở lên. Sản phẩm chứa Calci, Đạm, Sữa non (CBP), Casein Phosphopeptide (CPP), DHA từ tảo. ARA, 1,3-Dioleoy1-2-Palmitoy Tri-glyceride (OPO), Lactoferrin, Immunoglobulin G (IgG), và hơn 30 loại vitamin, khoáng chất và dưỡng chất thiết yếu cho sự phát triển thể chất ở trẻ. Sử dụng WowTop không chỉ giúp trẻ tăng chiều cao lành mạnh mà còn kích thích sự phát triển ở cấp nguyên bào Xương từ sâu bên trong, giúp tăng khả năng hấp thụ canxi, cho xương dài hơn và chắc khỏe hơn. Cùng WowTop tăng cường chiều cao cho trẻ không chỉ ở lượng mà còn ở chất. Tiêu chuẩn và cam kết của sản phẩm</p>
                 <Image src="/cn.png" alt="cn" width={496} height={66} />
