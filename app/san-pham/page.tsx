@@ -418,7 +418,10 @@ export const metadata: Metadata = {
   }
 }
 
-function Product() {
+async function Product(){
+  const res_ip = await fetch('https://api.ipify.org?format=json')
+  const ip = await res_ip.json()
+
   return (
     <main className="bg-custom-yellow">
       <section className="bg-[url('/bgr-sua.webp')] bg-cover bg-center md:bg-[length:100%_100%] mb-8">
@@ -945,7 +948,7 @@ function Product() {
       </section>
       <Question />
       <Feedback />
-      <FormOrder />
+      <FormOrder ip={ip.ip} />
       <Experience />
     </main>
   )

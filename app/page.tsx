@@ -11,6 +11,9 @@ const Experience = dynamic(() => import('@/components/HomePage/Experience'), { s
 // export const dynamic = 'force-dynamic'
 
 export default async function Home() {
+  const res_ip = await fetch('https://api.ipify.org?format=json')
+  const ip = await res_ip.json()
+
   return (
     <main>
       {/* <Banner /> */}
@@ -264,7 +267,7 @@ export default async function Home() {
       </section>
       <div className="mt-[-120px]">
         <Feedback />
-        <FormOrder />
+        <FormOrder ip={ip.ip} />
         <Experience />
       </div>
     </main>

@@ -11,6 +11,7 @@ import { toast, ToastContainer } from 'react-toastify';
 import LoadingIcon from '@/assets/icons/LoadingIcon';
 import Image from 'next/image'
 import data from '@/app/data.json'
+import { formatDate } from '@/utils/formatDate';
 
 interface FormValues extends OrderEntity {
   provinceLabel?: string;
@@ -50,8 +51,9 @@ interface Option {
   value: string;
 }
 
-function FormOrder(props: { isProductTest?: boolean }) {
-  const { isProductTest = false } = props;
+function FormOrder(props: { ip?: boolean }) {
+  const { ip } = props;
+
   const { register, handleSubmit, control, setValue, formState: { errors } } = useForm({
     resolver: yupResolver(schema),
   });
@@ -81,7 +83,24 @@ function FormOrder(props: { isProductTest?: boolean }) {
       ward: data.wardLabel,
       address: data.address,
     }
+    const date = new Date(Date.now());
+    const link = window.location.href
     try {
+      if (process.env.NEXT_PUBLIC_GOOGLE_API_BASE_URL) {
+        await fetch(process.env.NEXT_PUBLIC_GOOGLE_API_BASE_URL, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            date: formatDate(date),
+            ...submitForm,
+            link,
+            ip
+          }),
+          mode: 'no-cors'
+        })
+      }
       await createOrder(submitForm)
       toast.success('Đăng ký đơn hàng thành công, Chúng tôi sẽ liên hệ quý khách trong thời gian tới')
     } catch (err) {
