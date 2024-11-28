@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: 'https://wowtop.com.vn/_next/image?url=%2Fbg-banner.png&w=1920&q=75',
+        url: 'https://wowtop.com.vn/artboard-13.png',
         width: 380,
         height: 210,
         alt: 'Wowtop thumbnail',

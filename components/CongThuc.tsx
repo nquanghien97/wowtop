@@ -49,7 +49,7 @@ function CongThuc() {
         </div>
         <div className="lg:hidden text-xs">
           <div className="flex flex-col justify-center items-center mt-2 ">
-            <Image src="/Artboard 13.png" alt="bg-hop-sua" width={300} height={290} />
+            <Image src="/artboard-13.png" alt="bg-hop-sua" width={300} height={290} />
             <div className="flex flex-col px-2 mt-[-80px]">
               <div className="flex">
                 <div className="md:w-1/4 w-1/3 relative flex justify-center items-center">

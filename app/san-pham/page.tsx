@@ -398,8 +398,6 @@ const data = [
   },
 ];
 
-
-
 export const metadata: Metadata = {
   metadataBase: new URL('https://wowtop.com.vn'),
   title: 'Oz Farm Wowtop 800g',
@@ -414,11 +412,19 @@ export const metadata: Metadata = {
     title: 'Wowtop',
     url: 'https://wowtop.com.vn/san-pham',
     siteName: 'Wowtop',
-    type: 'website'
+    type: 'website',
+    images: [
+      {
+        url: 'https://wowtop.com.vn/artboard-13.png',
+        width: 380,
+        height: 210,
+        alt: 'Wowtop thumbnail',
+      },
+    ],
   }
 }
 
-async function Product(){
+async function Product() {
   const res_ip = await fetch('https://api.ipify.org?format=json')
   const ip = await res_ip.json()
 
@@ -428,7 +434,7 @@ async function Product(){
         <div className="max-w-6xl m-auto px-4">
           <div className="flex pb-[100px] flex-col md:flex-row">
             <div className="md:w-2/5 flex items-center">
-              <Image src="/Artboard 13.png" alt="banner-hop-sua" width={600} height={800} />
+              <Image src="/artboard-13.png" alt="banner-hop-sua" width={600} height={800} />
             </div>
             <div className="md:w-3/5">
               <div className="md:h-[565px] md:overflow-y-scroll md:px-8 py-8">
