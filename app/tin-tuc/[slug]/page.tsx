@@ -9,7 +9,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   const { data } = await getNewsBySlug(params.slug) as unknown as { data: NewsEntity };
 
   return {
-    metadataBase: new URL('https://wowtop.com.vn'),
+    metadataBase: new URL('https://wowtopmilk.com.vn'),
     title: data.title || 'Tin tức',
     description: data.title || 'Wowtop',
     keywords: 'Oz Farm Wowtop',
@@ -20,7 +20,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
     openGraph: {
       locale: 'vi_VN',
       title: data.title || 'Wowtop',
-      url: `https://wowtop.com.vn/tin-tuc/${params.slug}`,
+      url: `https://wowtopmilk.com.vn/tin-tuc/${params.slug}`,
       siteName: 'Wowtop',
       type: 'article',
     },

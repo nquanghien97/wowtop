@@ -16,7 +16,7 @@ const montserrat = Montserrat({
 })
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://wowtop.com.vn'),
+  metadataBase: new URL('https://wowtopmilk.com.vn'),
   title: 'Wowtop',
   description: 'WOWTOP là thực phẩm dinh dưỡng công thức dành cho trẻ em từ 1 tuổi trở lên',
   keywords: 'Oz Farm Wowtop',
@@ -27,12 +27,12 @@ export const metadata: Metadata = {
   openGraph: {
     locale: 'vi_VN',
     title: 'Wowtop',
-    url: 'https://wowtop.com.vn/',
+    url: 'https://wowtopmilk.com.vn/',
     siteName: 'Wowtop',
     type: 'website',
     images: [
       {
-        url: 'https://wowtop.com.vn/artboard-13.png',
+        url: 'https://wowtopmilk.com.vn/artboard-13.png',
         width: 380,
         height: 210,
         alt: 'Wowtop thumbnail',

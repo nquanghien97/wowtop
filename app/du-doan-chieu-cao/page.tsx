@@ -3,7 +3,7 @@ import Form from './Form';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://wowtop.com.vn'),
+  metadataBase: new URL('https://wowtopmilk.com.vn'),
   title: 'Phác đồ dự đoán chiều cao tương lai',
   description: '',
   keywords: 'Oz Farm Wowtop',
@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   openGraph: {
     locale: 'vi_VN',
     title: 'Wowtop',
-    url: 'https://wowtop.com.vn/du-doan-chieu-cao',
+    url: 'https://wowtopmilk.com.vn/du-doan-chieu-cao',
     siteName: 'Wowtop',
     type: 'website'
   }
