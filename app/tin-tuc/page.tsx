@@ -9,7 +9,7 @@ import Link from 'next/link';
 export const dynamic = 'force-dynamic'
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://wowtop.vn'),
+  metadataBase: new URL('https://wowtopmilk.com.vn'),
   title: 'Tin tức',
   description: '',
   keywords: 'Oz Farm Wowtop',
@@ -20,9 +20,17 @@ export const metadata: Metadata = {
   openGraph: {
     locale: 'vi_VN',
     title: 'Wowtop',
-    url: 'https://wowtop.vn/tin-tuc',
+    url: 'https://wowtopmilk.com.vn/tin-tuc',
     siteName: 'wowtop',
-    type: 'website'
+    type: 'website',
+    images: [
+      {
+        url: 'https://wowtopmilk.com.vn/artboard-13.png',
+        width: 380,
+        height: 210,
+        alt: 'Wowtop thumbnail',
+      },
+    ],
   }
 }
 

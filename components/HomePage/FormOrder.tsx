@@ -27,15 +27,6 @@ const schema = yup.object().shape({
     .string()
     .matches(phoneRegExp, 'Vui lòng nhập số điện thoại hợp lệ')
     .required('Vui lòng nhập số điện thoại'),
-  productName: yup.string().required('Vui lòng nhập tên sản phẩm'),
-  quantity: yup
-    .number()
-    .typeError('Vui lòng chọn số lượng')
-    .required('Vui lòng chọn số lượng')
-    .test('quantity', 'Số lượng sản phẩm phải lớn hơn 0', (value: number) => {
-      if (!value) return false;
-      return value > 0
-    }),
   province: yup.string().required('Vui lòng chọn tỉnh/thành phố'),
   district: yup.string().required('Vui lòng chọn quận/huyện'),
   ward: yup.string().required('Vui lòng chọn phường/xã'),
@@ -51,7 +42,7 @@ interface Option {
   value: string;
 }
 
-function FormOrder(props: { ip?: boolean }) {
+function FormOrder(props: { ip?: string }) {
   const { ip } = props;
 
   const { register, handleSubmit, control, setValue, formState: { errors } } = useForm({
@@ -76,8 +67,6 @@ function FormOrder(props: { ip?: boolean }) {
     const submitForm = {
       fullName: data.fullName,
       phoneNumber: data.phoneNumber,
-      productName: data.productName,
-      quantity: data.quantity,
       province: data.provinceLabel,
       district: data.districtLabel,
       ward: data.wardLabel,
@@ -137,25 +126,6 @@ function FormOrder(props: { ip?: boolean }) {
                     {...register('phoneNumber')}
                   />
                   {errors.phoneNumber && <span className="text-[red] text-xs p-2">{errors.phoneNumber.message}</span>}
-                </div>
-              </div>
-              <div className="w-full flex gap-4 max-md:flex-col">
-                <div className="md:w-1/2">
-                  <input
-                    className="w-full p-4 rounded-full outline-none placeholder-[#002A9E] placeholder:italic placeholder:font-semibold"
-                    placeholder='Sản phẩm đăng ký mua*'
-                    {...register('productName')}
-                  />
-                  {errors.productName && <span className="text-[red] text-xs p-2">{errors.productName.message}</span>}
-                </div>
-                <div className="md:w-1/2">
-                  <input
-                    type='number'
-                    className="w-full p-4 rounded-full outline-none placeholder-[#002A9E] placeholder:italic placeholder:font-semibold"
-                    placeholder='Số lượng'
-                    {...register('quantity')}
-                  />
-                  {errors.quantity && <span className="text-[red] text-xs p-2">{errors.quantity.message}</span>}
                 </div>
               </div>
               <div className="w-full flex gap-4 flex-col">
@@ -264,10 +234,10 @@ function FormOrder(props: { ip?: boolean }) {
               </div>
               <p className="text-[#002A9E] italic">Hãy liên hệ chuyên gia dinh dưỡng theo số <strong>028 555 555 555</strong> để được tư vấn thêm</p>
               <div className="flex justify-center">
-                <div className="flex justify-center items-center bg-[#002A9E] rounded-full px-16 py-4">
-                  <button type='submit' className="text-white italic uppercase hover:opacity-85 duration-300 mr-2">Xác nhận</button>
+                <button type='submit' className="text-white italic uppercase hover:opacity-85 duration-300 mr-2 flex justify-center items-center bg-[#002A9E] rounded-full px-16 py-4">
+                  Xác nhận
                   {loading && <LoadingIcon size="small" />}
-                </div>
+                </button>
               </div>
             </form>
           </div>

@@ -28,15 +28,6 @@ const schema = yup.object().shape({
     .string()
     .matches(phoneRegExp, 'Vui lòng nhập số điện thoại hợp lệ')
     .required('Vui lòng nhập số điện thoại'),
-  productName: yup.string().required('Vui lòng nhập tên sản phẩm'),
-  quantity: yup
-    .number()
-    .typeError('Vui lòng chọn số lượng')
-    .required('Vui lòng chọn số lượng')
-    .test('quantity', 'Số lượng sản phẩm phải lớn hơn 0', (value: number) => {
-      if (!value) return false;
-      return value > 0
-    }),
   province: yup.string().required('Vui lòng chọn tỉnh/thành phố'),
   district: yup.string().required('Vui lòng chọn quận/huyện'),
   ward: yup.string().required('Vui lòng chọn phường/xã'),
@@ -77,8 +68,6 @@ function FormOrder(props: { ip: string }) {
     const submitForm = {
       fullName: data.fullName,
       phoneNumber: data.phoneNumber,
-      productName: data.productName,
-      quantity: data.quantity,
       province: data.provinceLabel,
       district: data.districtLabel,
       ward: data.wardLabel,
@@ -87,22 +76,22 @@ function FormOrder(props: { ip: string }) {
     const date = new Date(Date.now());
     const link = window.location.href
     try {
-      if (process.env.NEXT_PUBLIC_GOOGLE_API_BASE_URL) {
-        await fetch(process.env.NEXT_PUBLIC_GOOGLE_API_BASE_URL, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({
-            date: formatDate(date),
-            ...submitForm,
-            link,
-            ip
-          }),
-          mode: 'no-cors'
-        })
-      }
-      await createOrder(submitForm)
+      // if (process.env.NEXT_PUBLIC_GOOGLE_API_BASE_URL) {
+      //   await fetch(process.env.NEXT_PUBLIC_GOOGLE_API_BASE_URL, {
+      //     method: 'POST',
+      //     headers: {
+      //       'Content-Type': 'application/json',
+      //     },
+      //     body: JSON.stringify({
+      //       date: formatDate(date),
+      //       ...submitForm,
+      //       link,
+      //       ip
+      //     }),
+      //     mode: 'no-cors'
+      //   })
+      // }
+      // await createOrder(submitForm)
       toast.success('Đăng ký đơn hàng thành công, Chúng tôi sẽ liên hệ quý khách trong thời gian tới')
     } catch (err) {
       if (err instanceof Error) {
@@ -146,25 +135,6 @@ function FormOrder(props: { ip: string }) {
                       {...register('phoneNumber')}
                     />
                     {errors.phoneNumber && <span className="text-[red] text-xs p-2">{errors.phoneNumber.message}</span>}
-                  </div>
-                </div>
-                <div className="w-full flex gap-4 max-md:flex-col">
-                  <div className="md:w-1/2">
-                    <input
-                      className="w-full p-4 rounded-full outline-none placeholder-[#002A9E] placeholder:italic placeholder:font-semibold"
-                      placeholder='Sản phẩm đăng ký mua*'
-                      {...register('productName')}
-                    />
-                    {errors.productName && <span className="text-[red] text-xs p-2">{errors.productName.message}</span>}
-                  </div>
-                  <div className="md:w-1/2">
-                    <input
-                      type='number'
-                      className="w-full p-4 rounded-full outline-none placeholder-[#002A9E] placeholder:italic placeholder:font-semibold"
-                      placeholder='Số lượng'
-                      {...register('quantity')}
-                    />
-                    {errors.quantity && <span className="text-[red] text-xs p-2">{errors.quantity.message}</span>}
                   </div>
                 </div>
                 <div className="w-full flex gap-4 flex-col">
