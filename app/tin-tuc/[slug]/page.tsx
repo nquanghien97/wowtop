@@ -2,7 +2,6 @@ import { NewsEntity } from "@/entities/news"
 import { getNewsBySlug } from "@/services/news"
 import { formatDate } from "@/utils/formatDate"
 import { Metadata } from "next"
-import Form from "./Form"
 
 export const dynamic = 'force-dynamic'
 
@@ -42,8 +41,7 @@ async function NewsDetail({ params }: { params: { slug: string } }) {
     <p>Tin tức không tồn tại</p>
   );
   const { data } = await getNewsBySlug(params.slug) as unknown as { data: NewsEntity }
-  const res_ip = await fetch('https://api.ipify.org?format=json')
-  const ip = await res_ip.json()
+  
   return (
     <>
       <div className="my-4">
@@ -56,8 +54,10 @@ async function NewsDetail({ params }: { params: { slug: string } }) {
             <div className="my-10 text-justify !text-lg content" dangerouslySetInnerHTML={{ __html: data.content }} />
           </div>
         </div>
+        {/* <div className="max-w-6xl m-auto shadow-xl my-4">
+          <h2>Cần tư vấn chiều cao cho con, liên hệ ngay với chúng tôi</h2>
+        </div> */}
       </div>
-      <Form ip={ip.ip} />
     </>
   )
 }

@@ -1,14 +1,14 @@
 'use client'
 
-import FormOrder from '@/components/HomePage/FormOrder';
 import { useOutsideClick } from '@/hooks/useOutsideClick';
-import { FormEvent, useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
+import FormSearch from './FormSearch';
 
 function Form(props: { ip: string }) {
   const { ip } = props;
 
   const [showForm, setShowForm] = useState(false);
-  const [scrollTriggered, setScrollTriggered] = useState(false)
+  const [scrollTriggered, setScrollTriggered] = useState(false);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -24,7 +24,7 @@ function Form(props: { ip: string }) {
       const scrollPosition = window.scrollY + window.innerHeight;
       const pageHeight = document.documentElement.scrollHeight;
 
-      if (scrollPosition >= pageHeight - 200 && !scrollTriggered) {
+      if (scrollPosition >= pageHeight - 800 && !scrollTriggered) {
         setShowForm(true);
         setScrollTriggered(true);
       }
@@ -45,10 +45,10 @@ function Form(props: { ip: string }) {
       {showForm && (
         <div className="fixed inset-0 bg-gray-800 bg-opacity-50 flex justify-center items-center z-50">
           <div ref={closeFormRef} className="relative">
-            <div className="absolute top-4 right-8 p-2 hover:bg-[#ebeaea] duration-300 rounded-full w-8 h-8 flex justify-center items-center cursor-pointer" onClick={() => setShowForm(false)}>
+            <div className="absolute top-4 right-12 lg:right-16 p-2 hover:bg-[#ebeaea] duration-300 rounded-full w-8 h-8 flex justify-center items-center cursor-pointer" onClick={() => setShowForm(false)}>
               <span className="font-bold text-xl">x</span>
             </div>
-            <FormOrder ip={ip} />
+            <FormSearch ip={ip} />
           </div>
         </div>
       )}

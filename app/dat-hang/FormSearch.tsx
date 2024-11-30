@@ -34,7 +34,6 @@ const schema = yup.object().shape({
   provinceLabel: yup.string(),
   districtLabel: yup.string(),
   wardLabel: yup.string(),
-  term: yup.bool().oneOf([true], 'Bố mẹ phải đồng ý với điều khoản đăng ký')
 });
 
 interface Option {
@@ -42,7 +41,7 @@ interface Option {
   value: string;
 }
 
-function FormOrder(props: { ip?: string }) {
+function FormSearch(props: { ip?: string }) {
   const { ip } = props;
 
   const { register, handleSubmit, control, setValue, formState: { errors } } = useForm({
@@ -91,7 +90,7 @@ function FormOrder(props: { ip?: string }) {
         })
       }
       await createOrder(submitForm)
-      toast.success('Đăng ký đơn hàng thành công, Chúng tôi sẽ liên hệ quý khách trong thời gian tới')
+      // toast.success('Đăng ký đơn hàng thành công, Chúng tôi sẽ liên hệ quý khách trong thời gian tới')
     } catch (err) {
       if (err instanceof Error) {
         toast.error(err.message)
@@ -103,12 +102,12 @@ function FormOrder(props: { ip?: string }) {
 
   return (
     <section className="mb-8 bg-[bg-[#69dbe1]">
-      <div className="px-4 py-8 max-w-6xl m-auto bg-[url('/dki3.webp')] md:bg-[length:100%_100%]  bg-center rounded-[50px]">
+      <div className="px-4 mx-8 py-8 max-w-6xl m-auto bg-[url('/dki3.webp')] md:bg-[length:100%_100%]  bg-center rounded-[50px]">
         <div className="mb-8">
-          <h2 className="text-[#002A9E] text-4xl uppercase text-center font-bold">Đăng ký mua hàng</h2>
+          <h2 className="text-[#002A9E] text-4xl uppercase text-center font-bold">Tìm điểm bán gần bạn nhất</h2>
         </div>
         <div className="flex">
-          <div className="w-full px-4">
+          <div className="w-full">
             <form className="flex flex-col gap-4" onSubmit={handleSubmit(onSubmit)}>
               <div className="w-full flex gap-4 max-md:flex-col">
                 <div className="md:w-1/2">
@@ -227,15 +226,10 @@ function FormOrder(props: { ip?: string }) {
                   </div>
                 </div>
               </div>
-              <div className="flex items-center text-white italic">
-                <input id="checkbox" type="checkbox" {...register('term')} className="w-5 h-5 rounded-full outline-none placeholder-[#002A9E] placeholder:italic placeholder:font-semibold cursor-pointer border-none" />
-                <label htmlFor="checkbox" className="text-[#002A9E] ml-2">Bố mẹ đã đọc và đồng ý <strong>Điều khoản đăng ký</strong></label>
-                {errors.term && <span className="text-[red] text-xs p-2">{errors.term.message}</span>}
-              </div>
               <p className="text-[#002A9E] italic">Hãy liên hệ chuyên gia dinh dưỡng theo số <strong>0978488123</strong> để được tư vấn thêm</p>
               <div className="flex justify-center">
                 <button type='submit' className="text-white italic uppercase hover:opacity-85 duration-300 mr-2 flex justify-center items-center bg-[#002A9E] rounded-full px-16 py-4">
-                  Xác nhận
+                  Bắt đầu tìm kiếm
                   {loading && <LoadingIcon size="small" />}
                 </button>
               </div>
@@ -251,4 +245,4 @@ function FormOrder(props: { ip?: string }) {
   )
 }
 
-export default FormOrder
+export default FormSearch
