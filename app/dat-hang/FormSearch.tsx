@@ -236,7 +236,7 @@ function FormSearch(props: { ip?: string }) {
             </form>
           </div>
           <div className="mt-[-40px] max-md:hidden">
-            <Image src="/hop.png" alt="giot2" width={400} height={600} />
+            <Image src="/map.png" alt="map" width={260} height={400} />
           </div>
         </div>
       </div>
