@@ -9,9 +9,9 @@ const Experience = dynamic(() => import('@/components/HomePage/Experience'), { s
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://wowtop.com.vn'),
-  title: 'Oz Farm Wowtop 800g',
-  description: 'Nếu được chăm sóc tốt, trẻ có thể cao lên đến 8-12cm mỗi năm. OZ FARM WOWTOP chứa hệ dưỡng chất giàu thành phần quý hiếm với hàm lượng cao như CBP ...',
-  keywords: 'Oz Farm Wowtop',
+  title: 'Wowtop 700g',
+  description: 'Nếu được chăm sóc tốt, trẻ có thể cao lên đến 8-12cm mỗi năm. WOWTOP chứa hệ dưỡng chất giàu thành phần quý hiếm với hàm lượng cao như CBP ...',
+  keywords: 'Wowtop',
   robots: {
     follow: true,
     index: true,

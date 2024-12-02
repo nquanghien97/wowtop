@@ -9,19 +9,19 @@ import Link from 'next/link';
 export const dynamic = 'force-dynamic'
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://kidscareplus.vn'),
+  metadataBase: new URL('https://wowtop.vn'),
   title: 'Tin tức',
   description: '',
-  keywords: 'Oz Farm Kid\'s Care Plus',
+  keywords: 'Wowtop',
   robots: {
     follow: true,
     index: true,
   },
   openGraph: {
     locale: 'vi_VN',
-    title: 'Kids Care Plus',
-    url: 'https://kidscareplus.vn/tin-tuc',
-    siteName: 'KidsCarePlus',
+    title: 'Wowtop',
+    url: 'https://wowtop.vn/tin-tuc',
+    siteName: 'Wowtop',
     type: 'website'
   }
 }

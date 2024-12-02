@@ -19,14 +19,14 @@ const ListFeedbacks = [
     src: '/feedbacks/f3.jpg',
     path: 'https://www.tiktok.com/@ngathuduong204/video/7385551513113906450?_r=1&_t=8nZxWoUVKZU',
     title: 'Chị Nga Thu Dương',
-    content: 'Abbey nhà mình dùng sữa Oz Farm được vài tháng thì thấy chiều cao tăng đáng kể luôn, ít bệnh vặt, ăn ngon, ngủ ngoan ..  nên phải chia sẻ cho các ba mẹ liềnnnn'
+    content: 'Abbey nhà mình dùng sữa Wowtop được vài tháng thì thấy chiều cao tăng đáng kể luôn, ít bệnh vặt, ăn ngon, ngủ ngoan ..  nên phải chia sẻ cho các ba mẹ liềnnnn'
   },
   {
     id: 3,
     src: '/feedbacks/f4.jpg',
     path: '#',
     title: 'Chị Nguyễn Thị Phượng',
-    content: 'Con gái chị đã cao thêm 4cm sau 6 tháng uống đều đặn mỗi ngày 2 ly Oz Farm Kid+, ưng lắm'
+    content: 'Con gái chị đã cao thêm 4cm sau 6 tháng uống đều đặn mỗi ngày 2 ly Wowtop, ưng lắm'
   }
 ]
 function Feedback() {

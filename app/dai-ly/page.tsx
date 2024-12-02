@@ -4,19 +4,19 @@ import Image from 'next/image'
 import React from 'react'
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://kidscareplus.vn'),
+  metadataBase: new URL('https://wowtop.vn'),
   title: 'Đại lý',
   description: '',
-  keywords: 'Oz Farm Kid\'s Care Plus',
+  keywords: 'Wowtop',
   robots: {
     follow: true,
     index: true,
   },
   openGraph: {
     locale: 'vi_VN',
-    title: 'Kids Care Plus',
-    url: 'https://kidscareplus.vn/dai-ly',
-    siteName: 'KidsCarePlus',
+    title: 'Wowtop',
+    url: 'https://wowtop.vn/dai-ly',
+    siteName: 'Wowtop',
     type: 'website'
   }
 }
@@ -38,7 +38,7 @@ function Store() {
         <div className="mb-8">
           <div className="relative mt-4">
             <Image src="/asset_2.png" alt="asset_2.png" width={890} height={110} />
-            <div className="uppercase absolute top-[30%] left-[10%] right-0 text-2xl md:text-[40px] text-center font-bold text-[#065691]">OZ FARM ĐỒNG HÀNH</div>
+            <div className="uppercase absolute top-[30%] left-[10%] right-0 text-2xl md:text-[40px] text-center font-bold text-[#065691]">WOWTOP ĐỒNG HÀNH</div>
           </div>
           <h2 className="uppercase text-center text-2xl md:text-[40px] font-bold text-[#065691]">Cùng đại lý & nhà phân phối</h2>
           <p className="text-[#42D3CC] font-semibold text-center mt-4">Các quyền lợi dành riêng cho đại lý & nhà phân phối</p>
@@ -76,7 +76,7 @@ function Store() {
             <div className="md:w-1/2 flex flex-col justify-center px-4">
               <h3 className="text-[#FFB000] font-semibold text-xl mb-4">Đào tạo chuyên sâu và liên tục</h3>
               <p className="text-[#06568D] text-justify">Tham gia các khóa đào tạo về kiến thức sản phẩm, kỹ năng bán hàng và chăm sóc khách hàng từ các chuyên gia dinh dưỡng đầu ngành với hơn 10 năm kinh nghiệm như Ths. Bs. An Thị Dung và Bs. Từ Quang.</p>
-              <p className="text-[#06568D] text-justify">Được hỗ trợ trực tiếp từ đội ngũ chuyên gia của Oz Farm trong quá trình kinh doanh.</p>
+              <p className="text-[#06568D] text-justify">Được hỗ trợ trực tiếp từ đội ngũ chuyên gia của WOWTOP trong quá trình kinh doanh.</p>
             </div>
             <div className="md:hidden px-4">
               <Image src="/c3.webp" alt="c3.webp" width={469} height={312} />
@@ -128,7 +128,7 @@ function Store() {
             </div>
           </div>
           <div className="mt-8 px-4">
-            <p className="text-[#06568D] text-center">Với những quyền lợi hấp dẫn trên, Oz Farm tin rằng việc trở thành đại lý hoặc nhà phân phối của chúng tôi sẽ mang lại nhiều cơ hội phát triển và thành công. Hãy liên hệ ngay với chúng tôi để biết thêm chi tiết và bắt đầu hành trình hợp tác vững mạnh!</p>
+            <p className="text-[#06568D] text-center">Với những quyền lợi hấp dẫn trên, WOWTOP tin rằng việc trở thành đại lý hoặc nhà phân phối của chúng tôi sẽ mang lại nhiều cơ hội phát triển và thành công. Hãy liên hệ ngay với chúng tôi để biết thêm chi tiết và bắt đầu hành trình hợp tác vững mạnh!</p>
           </div>
         </div>
         <div>
