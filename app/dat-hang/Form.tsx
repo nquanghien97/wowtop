@@ -45,7 +45,7 @@ function Form(props: { ip: string }) {
       {showForm && (
         <div className="fixed inset-0 bg-gray-800 bg-opacity-50 flex justify-center items-center z-50">
           <div ref={closeFormRef} className="relative">
-            <div className="absolute top-4 right-12 lg:right-16 p-2 hover:bg-[#ebeaea] duration-300 rounded-full w-8 h-8 flex justify-center items-center cursor-pointer" onClick={() => setShowForm(false)}>
+            <div className="absolute top-12 right-12 lg:right-16 p-2 hover:bg-[#ebeaea] duration-300 rounded-full w-8 h-8 flex justify-center items-center cursor-pointer" onClick={() => setShowForm(false)}>
               <span className="font-bold text-xl">x</span>
             </div>
             <FormSearch ip={ip} />

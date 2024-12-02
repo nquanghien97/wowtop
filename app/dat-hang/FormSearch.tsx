@@ -55,7 +55,7 @@ function FormSearch(props: { ip?: string }) {
           window.location.href = url;
         }
       };
-  
+
       (window as any).gtag('event', 'conversion', {
         send_to: 'AW-16773984613/DwVPCLeeoegZEOXiur4-',
         value: 1.0,
@@ -63,7 +63,7 @@ function FormSearch(props: { ip?: string }) {
         transaction_id: '',
         event_callback: callback,
       });
-  
+
       return false;
     }
   };
@@ -122,13 +122,16 @@ function FormSearch(props: { ip?: string }) {
   }
 
   return (
-    <section className="mb-8 bg-[bg-[#69dbe1]">
-      <div className="px-4 mx-8 py-8 max-w-6xl m-auto bg-[url('/dki3.webp')] md:bg-[length:100%_100%]  bg-center rounded-[50px]">
-        <div className="mb-8">
-          <h2 className="text-[#002A9E] text-4xl uppercase text-center font-bold">Tìm điểm bán gần bạn nhất</h2>
+    <section className="my-8 bg-[bg-[#69dbe1]">
+      <div className="px-4 mx-8 py-4 md:py-8 max-w-6xl m-auto bg-[url('/dki3.webp')] md:bg-[length:100%_100%]  bg-center rounded-[50px]">
+        <div className="md:mb-8 flex items-center">
+          <h2 className="text-[#002A9E] text-4xl uppercase text-center font-bold w-2/3">Tìm điểm bán gần bạn nhất</h2>
+          <div className="md:hidden flex justify-center w-1/3">
+            <Image src="/map.png" alt="map" width={100} height={400} />
+          </div>
         </div>
         <div className="flex">
-          <div className="w-full overflow-auto max-h-[600px]">
+          <div className="w-full">
             <form className="flex flex-col gap-4" onSubmit={handleSubmit(onSubmit)}>
               <div className="w-full flex gap-4 max-md:flex-col">
                 <div className="md:w-1/2">
@@ -246,9 +249,6 @@ function FormSearch(props: { ip?: string }) {
                     {errors.address && <span className="text-[red] text-xs p-2">{errors.address.message}</span>}
                   </div>
                 </div>
-              </div>
-              <div className="md:hidden flex justify-center">
-                <Image src="/map.png" alt="map" width={150} height={400} />
               </div>
               <p className="text-[#002A9E] italic">Hãy liên hệ chuyên gia dinh dưỡng theo số <strong>0978488123</strong> để được tư vấn thêm</p>
               <div className="flex justify-center">
