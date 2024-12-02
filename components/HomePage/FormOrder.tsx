@@ -48,6 +48,26 @@ function FormOrder(props: { ip?: string }) {
   const { register, handleSubmit, control, setValue, formState: { errors } } = useForm({
     resolver: yupResolver(schema),
   });
+  
+  const gtagReportConversion = (url?: string) => {
+    if (typeof window !== 'undefined' && typeof (window as any).gtag === 'function') {
+      const callback = () => {
+        if (url) {
+          window.location.href = url;
+        }
+      };
+  
+      (window as any).gtag('event', 'conversion', {
+        send_to: 'AW-16773984613/DwVPCLeeoegZEOXiur4-',
+        value: 1.0,
+        currency: 'VND',
+        transaction_id: '',
+        event_callback: callback,
+      });
+  
+      return false;
+    }
+  };
 
   const id = useId()
   const [optionProvinces, setOptionProvinces] = useState<{ label: string, value: string }[]>([]);
@@ -90,6 +110,7 @@ function FormOrder(props: { ip?: string }) {
           mode: 'no-cors'
         })
       }
+      gtagReportConversion()
       await createOrder(submitForm)
       toast.success('Đăng ký đơn hàng thành công, Chúng tôi sẽ liên hệ quý khách trong thời gian tới')
     } catch (err) {

@@ -48,6 +48,26 @@ function FormSearch(props: { ip?: string }) {
     resolver: yupResolver(schema),
   });
 
+  const gtagReportConversion = (url?: string) => {
+    if (typeof window !== 'undefined' && typeof (window as any).gtag === 'function') {
+      const callback = () => {
+        if (url) {
+          window.location.href = url;
+        }
+      };
+  
+      (window as any).gtag('event', 'conversion', {
+        send_to: 'AW-16773984613/DwVPCLeeoegZEOXiur4-',
+        value: 1.0,
+        currency: 'VND',
+        transaction_id: '',
+        event_callback: callback,
+      });
+  
+      return false;
+    }
+  };
+
   const id = useId()
   const [optionProvinces, setOptionProvinces] = useState<{ label: string, value: string }[]>([]);
   const [optionsDistricts, setOptionsDistricts] = useState<{ label: string, value: string }[]>([]);
@@ -89,6 +109,7 @@ function FormSearch(props: { ip?: string }) {
           mode: 'no-cors'
         })
       }
+      gtagReportConversion()
       await createOrder(submitForm)
       // toast.success('Đăng ký đơn hàng thành công, Chúng tôi sẽ liên hệ quý khách trong thời gian tới')
     } catch (err) {
@@ -107,7 +128,7 @@ function FormSearch(props: { ip?: string }) {
           <h2 className="text-[#002A9E] text-4xl uppercase text-center font-bold">Tìm điểm bán gần bạn nhất</h2>
         </div>
         <div className="flex">
-          <div className="w-full">
+          <div className="w-full overflow-auto max-h-[600px]">
             <form className="flex flex-col gap-4" onSubmit={handleSubmit(onSubmit)}>
               <div className="w-full flex gap-4 max-md:flex-col">
                 <div className="md:w-1/2">
@@ -216,7 +237,7 @@ function FormSearch(props: { ip?: string }) {
                     />
                     {errors.ward && <span className="text-[red] text-xs p-2">{errors.ward.message}</span>}
                   </div>
-                  <div className="md:w-1/2">
+                  <div className="md:w-1/2 mb-4">
                     <input
                       placeholder="Địa chỉ (Số nhà, tên đường)*"
                       className="w-full rounded-full px-4 py-3 outline-none placeholder-[#002A9E] placeholder:italic placeholder:font-semibold"
@@ -225,6 +246,9 @@ function FormSearch(props: { ip?: string }) {
                     {errors.address && <span className="text-[red] text-xs p-2">{errors.address.message}</span>}
                   </div>
                 </div>
+              </div>
+              <div className="md:hidden flex justify-center">
+                <Image src="/map.png" alt="map" width={150} height={400} />
               </div>
               <p className="text-[#002A9E] italic">Hãy liên hệ chuyên gia dinh dưỡng theo số <strong>0978488123</strong> để được tư vấn thêm</p>
               <div className="flex justify-center">
