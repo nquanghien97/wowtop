@@ -12,7 +12,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
     metadataBase: new URL('https://wowtopmilk.com.vn'),
     title: data.title || 'Tin tức',
     description: data.title || 'Wowtop',
-    keywords: 'Oz Farm Wowtop',
+    keywords: 'Wowtop',
     robots: {
       follow: true,
       index: true,

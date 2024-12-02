@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://wowtopmilk.com.vn'),
   title: 'Tin tức',
   description: '',
-  keywords: 'Oz Farm Wowtop',
+  keywords: 'Wowtop',
   robots: {
     follow: true,
     index: true,

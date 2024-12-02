@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://wowtopmilk.com.vn'),
   title: 'Phác đồ dự đoán chiều cao tương lai',
   description: '',
-  keywords: 'Oz Farm Wowtop',
+  keywords: 'Wowtop',
   robots: {
     follow: true,
     index: true,
