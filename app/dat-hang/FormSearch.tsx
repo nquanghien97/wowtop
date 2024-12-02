@@ -125,9 +125,9 @@ function FormSearch(props: { ip?: string }) {
     <section className="my-8 bg-[bg-[#69dbe1]">
       <div className="px-4 mx-8 py-4 md:py-8 max-w-6xl m-auto bg-[url('/dki3.webp')] md:bg-[length:100%_100%]  bg-center rounded-[50px]">
         <div className="md:mb-8 flex items-center">
-          <h2 className="text-[#002A9E] text-2xl md:text-4xl uppercase text-center font-bold w-2/3">Tìm điểm bán gần bạn nhất</h2>
+          <h2 className="text-[#002A9E] text-3xl md:text-4xl uppercase text-center font-bold w-2/3">Tìm điểm bán gần bạn nhất</h2>
           <div className="md:hidden flex justify-center w-1/3">
-            <Image src="/map.png" alt="map" width={100} height={400} />
+            <Image src="/map.png" alt="map" width={80} height={400} />
           </div>
         </div>
         <div className="flex">
