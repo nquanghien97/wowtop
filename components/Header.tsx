@@ -8,11 +8,13 @@ import React, { useEffect, useState } from 'react'
 import AppSidebar from './Sidebar';
 import MenuDropdown from './common/MenuDropdown';
 import { usePathname } from 'next/navigation';
+import ModalRegister from './ModalRegister';
 
 function Header() {
   const pathname = usePathname();
   const [isOpenSidebar, setIsOpenSidebar] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isOpenRegister, setIsOpenRegister] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -36,7 +38,7 @@ function Header() {
           </ul>
         </div>
         <header className="lg:h-[80px] header-bg-1 h-[60px] shadow-sm shadow-black/20 header-bottom">
-          <div className="h-full flex lg:justify-center justify-between max-w-6xl m-auto lg:relative z-[99]">
+          <div className="h-full flex lg:justify-center justify-between max-w-screen-2xl m-auto lg:relative z-[99]">
             <Link href="/" className={`flex justify-start lg:justify-center items-center max-lg:w-full max-lg:hidden ${isScrolled ? 'mt-4' : 'mt-6'}`}>
               <Image src="/logo.png" alt="logo" width={280} height={280} className={`max-lg:hidden duration-300 ${isScrolled ? 'scale-50' : ''}`} />
             </Link>
@@ -74,8 +76,11 @@ function Header() {
                 )
                 )}
               </ul>
-              <div className="cursor-pointer">
+              <div className="cursor-pointer mr-2">
                 <Link href="/dang-ky-dung-thu" className="dk-dung-thu font-bold hover:opacity-80 duration-300">Đăng ký dùng thử</Link>
+              </div>
+              <div className="cursor-pointer" onClick={() => setIsOpenRegister(true)}>
+                <button className="bg-[#002A9E] p-2 rounded-full font-bold hover:opacity-80 duration-300">Đăng nhập</button>
               </div>
             </div>
             <div className="flex items-center mr-8 lg:hidden">
@@ -120,12 +125,15 @@ function Header() {
               ))}
             </ul>
             <div className="cursor-pointer flex justify-center">
-                <Link href="/dang-ky-dung-thu" className="dk-dung-thu font-bold hover:opacity-80 duration-300">Đăng ký dùng thử</Link>
-              </div>
+              <Link href="/dang-ky-dung-thu" className="dk-dung-thu font-bold hover:opacity-80 duration-300">Đăng ký dùng thử</Link>
+            </div>
+            <div className="cursor-pointer flex justify-center">
+              <Link href="/dang-ky-dung-thu" className="dk-dung-thu font-bold hover:opacity-80 duration-300">Đăng nhập</Link>
+            </div>
           </div>
         </AppSidebar>
-        {/* <div className="lg:h-[80px] h-[60px]" /> */}
       </div>
+      <ModalRegister open={isOpenRegister} onClose={() => setIsOpenRegister(false)} />
     </>
   )
 }

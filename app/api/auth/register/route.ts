@@ -4,9 +4,9 @@ import bcrypt from 'bcrypt';
 import { NextRequest, NextResponse } from 'next/server';
 
 export async function POST(req: NextRequest) {
-  const { username, password, full_name, location, phone_number } = await req.json();
+  const { password, full_name, province, district, ward, address, phone_number, mother_dob, child_dob } = await req.json();
 
-  if (!username || !password || !full_name || !location || !phone_number) {
+  if (!password || !full_name || !province || !phone_number || !mother_dob || !child_dob || !district || !ward || !address) {
     return NextResponse.json({
       success: false,
       message: "Vui lòng nhập đầy đủ thông tin"
@@ -15,7 +15,7 @@ export async function POST(req: NextRequest) {
 
   try {
     const user_exist = await prisma.user.findUnique({
-      where: { username }
+      where: { phone_number }
     });
 
     if (user_exist) {
@@ -28,10 +28,14 @@ export async function POST(req: NextRequest) {
     const hashPassword = await bcrypt.hash(password, 12)
     const user = await prisma.user.create({
       data: {
-        username,
         password: hashPassword,
         full_name,
-        location,
+        province,
+        district,
+        ward,
+        address,
+        mother_dob,
+        child_dob,
         phone_number,
       }
     })

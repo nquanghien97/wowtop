@@ -5,18 +5,18 @@ import { jwtVerify, SignJWT } from "jose";
 import { NextRequest, NextResponse } from 'next/server';
 
 export async function POST(req: NextRequest) {
-  const { username, password } = await req.json();
+  const { phone_number, password } = await req.json();
 
-  if (!username || !password) {
+  if (!phone_number || !password) {
     return NextResponse.json({
       success: false,
-      message: "Missing email or password"
+      message: "Vui lòng nhập đầy đủ số điện thoại hoặc mật khẩu"
     }, { status: 400 });
   }
 
   try {
     const user = await prisma.user.findUnique({
-      where: { username }
+      where: { phone_number }
     });
 
     if (!user) {

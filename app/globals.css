@@ -258,3 +258,7 @@
 .bg-gioi-thieu {
   background: linear-gradient(to right, #ffffff, #fff9e7);
 }
+
+.form-register .css-13cymwt-control {
+  background: #F7F7F7 !important;
+}

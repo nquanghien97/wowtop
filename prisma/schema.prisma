@@ -14,13 +14,17 @@ enum UserRole {
 
 model User {
   id                  Int                 @id @default(autoincrement())
-  username            String              @unique
+  phone_number        String              @unique
+  full_name           String
+  mother_dob          String
+  child_dob           String
+  province            String
+  district            String
+  ward                String
+  address             String
   password            String
   News                News[]
-  full_name           String
-  phone_number        String
-  location            String
-  role                UserRole @default(USER)
+  role                UserRole            @default(USER)
   points_accumulation Int                 @default(0)
   Accumulation_code   Accumulation_code[]
 }
@@ -32,12 +36,12 @@ enum StatusCode {
 }
 
 model Accumulation_code {
-  id      Int        @id @default(autoincrement())
-  code    String     @unique
-  status  StatusCode @default(UNUSED)
-  user_id Int
-  User    User       @relation(fields: [user_id], references: [id])
-  created_at DateTime @default(now())
+  id         Int        @id @default(autoincrement())
+  code       String     @unique
+  status     StatusCode @default(UNUSED)
+  user_id    Int
+  User       User       @relation(fields: [user_id], references: [id])
+  created_at DateTime   @default(now())
 }
 
 model Order {
