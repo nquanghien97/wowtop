@@ -1,8 +1,8 @@
 export interface RegisterUser {
   phone_number: string
   full_name: string
-  mother_dob: string
-  child_dob: string
+  mother_dob: Date
+  child_dob: Date
   province: string
   district: string
   ward: string

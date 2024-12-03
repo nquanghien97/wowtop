@@ -103,9 +103,17 @@ function ModalRegister({ open, onClose }: { open: boolean, onClose: () => void }
 
   return (
     <Modal open={open} onClose={onClose}>
-      <div className="max-w-4xl m-auto bg-white p-8 rounded-xl">
-        <h1 className="text-[#002A9E] text-4xl font-bold text-center mb-8">Đăng ký</h1>
-        <form className="flex flex-col gap-4 form-register overflow-auto max-h-[80vh]" onSubmit={handleSubmit(onSubmit)}>
+      <div className="max-w-4xl m-auto bg-white p-8 rounded-xl mx-4 relative max-md:top-[-40px]">
+        <div className="relative">
+          <h1 className="text-[#002A9E] text-4xl font-bold text-center mb-8">Đăng ký</h1>
+          <button
+            className="absolute top-1/2 -translate-y-1/2 right-0 text-2xl font-bold"
+            onClick={onClose}
+          >
+            x
+          </button>
+        </div>
+        <form className="flex flex-col gap-4 form-register overflow-auto max-h-[70vh]" onSubmit={handleSubmit(onSubmit)}>
           <div>
             <p className="mb-1">Số điện thoại</p>
             <input

@@ -42,6 +42,19 @@ export default function Modal(props: ModalProps) {
     };
   }, [closeModal]);
 
+  useEffect(() => {
+    if (open) {
+      document.body.style.overflow = 'hidden'; // Ngăn cuộn
+    } else {
+      document.body.style.overflow = ''; // Khôi phục
+    }
+  
+    return () => {
+      document.body.style.overflow = ''; // Dọn dẹp
+    };
+  }, [open]);
+  
+
   return open ? createPortal(
     <div className="fixed inset-0 z-[1000]" ref={ref}>
       <div className={clsx('fixed inset-0 z-[-1] bg-[#0b0b0b80]', background)} />

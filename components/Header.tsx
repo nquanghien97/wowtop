@@ -124,11 +124,17 @@ function Header() {
                 </li>
               ))}
             </ul>
-            <div className="cursor-pointer flex justify-center">
+            <div className="cursor-pointer flex justify-center mb-2">
               <Link href="/dang-ky-dung-thu" className="dk-dung-thu font-bold hover:opacity-80 duration-300">Đăng ký dùng thử</Link>
             </div>
-            <div className="cursor-pointer flex justify-center">
-              <Link href="/dang-ky-dung-thu" className="dk-dung-thu font-bold hover:opacity-80 duration-300">Đăng nhập</Link>
+            <div
+              className="cursor-pointer flex justify-center"
+              onClick={() => {
+                setIsOpenRegister(true)
+                setIsOpenSidebar(false)
+              }}
+            >
+              <button className="dk-dung-thu font-bold hover:opacity-80 duration-300">Đăng nhập</button>
             </div>
           </div>
         </AppSidebar>

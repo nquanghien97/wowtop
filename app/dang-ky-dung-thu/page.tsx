@@ -212,12 +212,12 @@ async function page() {
               <div className="flex-[0_0_auto] w-1/2 md:w-1/3 md:px-6 py-6">
                 <p className="mb-2 flex justify-center items-center w-8 h-8 rounded-full bg-[#202B93] text-white font-bold">3</p>
                 <Image src="/asset_42.png" alt="asset_42" width={90} height={90} className="m-auto mb-4" />
-                <p className="text-center px-4 mb-4 text-[#84571B] font-semibold">Bố mẹ truy cập website <Link className="text-[#202B93]" href="/wowtopmilk.com.vn">wowtopmilk.com.vn/sieu-sao-wow-cao-chat</Link> gửi link tham dự và đăng ký nhận quà dùng thử</p>
+                <p className="text-center px-4 mb-4 text-[#84571B] font-semibold">Bố mẹ truy cập website <Link className="text-[#202B93]" href="/wowtopmilk.com.vn">wowtopmilk</Link> gửi link tham dự và đăng ký nhận quà dùng thử</p>
               </div>
               <div className="flex-[0_0_auto] w-1/2 md:w-1/3 md:px-6 py-6">
                 <p className="mb-2 flex justify-center items-center w-8 h-8 rounded-full bg-[#202B93] text-white font-bold">4</p>
                 <Image src="/asset_43.png" alt="asset_43" width={90} height={90} className="m-auto mb-4" />
-                <p className="text-center px-4 mb-4 text-[#84571B] font-semibold">Bố mẹ theo dõi Fanpage Wowtop hoặc website <Link className="text-[#202B93]" href="/wowtopmilk.com.vn">wowtopmilk.com.vn/sieu-sao-wow-cao-chat</Link> để cập nhật kết quả chương trình</p>
+                <p className="text-center px-4 mb-4 text-[#84571B] font-semibold">Bố mẹ theo dõi Fanpage Wowtop hoặc website <Link className="text-[#202B93]" href="/wowtopmilk.com.vn">wowtopmilk</Link> để cập nhật kết quả chương trình</p>
               </div>
               <div className="flex-[0_0_auto] w-1/2 md:w-1/3 md:px-6 py-6">
                 <p className="mb-2 flex justify-center items-center w-8 h-8 rounded-full bg-[#202B93] text-white font-bold">5</p>

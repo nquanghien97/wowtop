@@ -12,7 +12,7 @@ const nextConfig = {
       },
       {
         protocol: 'https',
-        hostname: 'wowtopmilk.com.vn',
+        hostname: 'wowtop.com.vn',
       }
     ]
   },
