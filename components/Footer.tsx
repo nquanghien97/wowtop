@@ -27,7 +27,7 @@ function Footer() {
                 <Link href="#">
                   <FacebookIcon fill="white" width={32} height={32} />
                 </Link>
-                <Link href="#">
+                <Link href="https://www.youtube.com/@WOWTOPVIETNAM">
                   <YoutubeIcon fill="white" width={32} height={32} />
                 </Link>
                 <Link href="#">
