@@ -55,8 +55,8 @@ export default async function RootLayout({ children }: { children: React.ReactNo
 
   const cookieStore = cookies()
   const token = cookieStore.get('token')
-  console.log(token?.value)
-
+  const user_id = JSON.parse(Buffer.from((token?.value as unknown as string).split('.')[1], 'base64').toString('utf8')).user_id
+  console.log(user_id)
   return (
     <html lang="en">
       <head>
