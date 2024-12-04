@@ -12,7 +12,7 @@ const nextConfig = {
       },
       {
         protocol: 'https',
-        hostname: 'kidscareplus.vn',
+        hostname: 'wowtop.vn',
       }
     ]
   },
