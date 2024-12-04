@@ -11,6 +11,7 @@ import { toast, ToastContainer } from 'react-toastify';
 import LoadingIcon from '@/assets/icons/LoadingIcon';
 import Image from 'next/image'
 import data from '@/app/data.json'
+import { formatDate } from '@/utils/formatDate';
 
 interface FormValues extends OrderEntity {
   provinceLabel?: string;
@@ -26,15 +27,6 @@ const schema = yup.object().shape({
     .string()
     .matches(phoneRegExp, 'Vui lòng nhập số điện thoại hợp lệ')
     .required('Vui lòng nhập số điện thoại'),
-  productName: yup.string().required('Vui lòng nhập tên sản phẩm'),
-  quantity: yup
-    .number()
-    .typeError('Vui lòng chọn số lượng')
-    .required('Vui lòng chọn số lượng')
-    .test('quantity', 'Số lượng sản phẩm phải lớn hơn 0', (value: number) => {
-      if (!value) return false;
-      return value > 0
-    }),
   province: yup.string().required('Vui lòng chọn tỉnh/thành phố'),
   district: yup.string().required('Vui lòng chọn quận/huyện'),
   ward: yup.string().required('Vui lòng chọn phường/xã'),
@@ -50,11 +42,31 @@ interface Option {
   value: string;
 }
 
-function FormOrder(props: { isProductTest?: boolean }) {
-  const { isProductTest = false } = props;
+function FormOrder(props: { ip?: string }) {
+  const { ip } = props;
   const { register, handleSubmit, control, setValue, formState: { errors } } = useForm({
     resolver: yupResolver(schema),
   });
+
+  const gtagReportConversion = (url?: string) => {
+    if (typeof window !== 'undefined' && typeof (window as any).gtag === 'function') {
+      const callback = () => {
+        if (url) {
+          window.location.href = url;
+        }
+      };
+
+      (window as any).gtag('event', 'conversion', {
+        send_to: 'AW-16773984613/DwVPCLeeoegZEOXiur4-',
+        value: 1.0,
+        currency: 'VND',
+        transaction_id: '',
+        event_callback: callback,
+      });
+
+      return false;
+    }
+  };
 
   const id = useId()
   const [optionProvinces, setOptionProvinces] = useState<{ label: string, value: string }[]>([]);
@@ -74,14 +86,30 @@ function FormOrder(props: { isProductTest?: boolean }) {
     const submitForm = {
       fullName: data.fullName,
       phoneNumber: data.phoneNumber,
-      productName: data.productName,
-      quantity: data.quantity,
       province: data.provinceLabel,
       district: data.districtLabel,
       ward: data.wardLabel,
       address: data.address,
     }
+    const date = new Date(Date.now());
+    const link = window.location.href
     try {
+      if (process.env.NEXT_PUBLIC_GOOGLE_API_BASE_URL) {
+        await fetch(process.env.NEXT_PUBLIC_GOOGLE_API_BASE_URL, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            date: formatDate(date),
+            ...submitForm,
+            link,
+            ip
+          }),
+          mode: 'no-cors'
+        })
+      }
+      gtagReportConversion()
       await createOrder(submitForm)
       toast.success('Đăng ký đơn hàng thành công, Chúng tôi sẽ liên hệ quý khách trong thời gian tới')
     } catch (err) {
@@ -118,25 +146,6 @@ function FormOrder(props: { isProductTest?: boolean }) {
                     {...register('phoneNumber')}
                   />
                   {errors.phoneNumber && <span className="text-[red] text-xs p-2">{errors.phoneNumber.message}</span>}
-                </div>
-              </div>
-              <div className="w-full flex gap-4 max-md:flex-col">
-                <div className="md:w-1/2">
-                  <input
-                    className="w-full p-4 rounded-full outline-none placeholder-[#002A9E] placeholder:italic placeholder:font-semibold"
-                    placeholder='Sản phẩm đăng ký mua*'
-                    {...register('productName')}
-                  />
-                  {errors.productName && <span className="text-[red] text-xs p-2">{errors.productName.message}</span>}
-                </div>
-                <div className="md:w-1/2">
-                  <input
-                    type='number'
-                    className="w-full p-4 rounded-full outline-none placeholder-[#002A9E] placeholder:italic placeholder:font-semibold"
-                    placeholder='Số lượng'
-                    {...register('quantity')}
-                  />
-                  {errors.quantity && <span className="text-[red] text-xs p-2">{errors.quantity.message}</span>}
                 </div>
               </div>
               <div className="w-full flex gap-4 flex-col">

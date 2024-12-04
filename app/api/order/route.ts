@@ -2,14 +2,12 @@ import prisma from "../../../lib/db";
 import { NextResponse } from "next/server";
 
 export async function POST(req: Request) {
-  const { fullName, phoneNumber, productName, quantity, province, district, ward, address } = await req.json();
+  const { fullName, phoneNumber, province, district, ward, address } = await req.json();
   try {
     await prisma.order.create({
       data: {
         fullName,
         phoneNumber,
-        productName,
-        quantity,
         province,
         district,
         ward,

@@ -4,6 +4,9 @@ import Link from 'next/link';
 import Experience from '@/components/HomePage/Experience';
 
 export default async function Home() {
+  const res_ip = await fetch('https://api.ipify.org?format=json')
+  const ip = await res_ip.json()
+
   return (
     <main>
       <section className="relative">
@@ -193,7 +196,7 @@ export default async function Home() {
         </div>
       </section>
       <div className="mt-[-120px]">
-        <FormOrder />
+        <FormOrder ip={ip.ip} />
         <Experience />
       </div>
     </main>
