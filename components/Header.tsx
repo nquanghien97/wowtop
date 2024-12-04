@@ -10,13 +10,24 @@ import MenuDropdown from './common/MenuDropdown';
 import { usePathname } from 'next/navigation';
 import ModalRegister from './ModalRegister';
 import ModalLogin from './ModalLogin';
+import { UserEntity } from '@/entities/user';
+import { useAuthStore } from '@/zustand/auth';
+import MenuProfile from './MenuProfile';
+import { useOutsideClick } from '@/hooks/useOutsideClick';
 
-function Header() {
+function Header({ currentUser } : { currentUser: UserEntity }) {
   const pathname = usePathname();
   const [isOpenSidebar, setIsOpenSidebar] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [isOpenRegister, setIsOpenRegister] = useState(false);
   const [isOpenLogin, setIsOpenLogin] = useState(false);
+  const [isOpenMenuProfile, setIsOpenMenuProfile] = useState(false);
+
+  const { user, setUser } = useAuthStore();
+
+  useEffect(() => {
+    setUser(currentUser)
+  }, [currentUser, setUser])
 
   useEffect(() => {
     const handleScroll = () => {
@@ -81,9 +92,18 @@ function Header() {
               <div className="cursor-pointer mr-2">
                 <Link href="/dang-ky-dung-thu" className="dk-dung-thu font-bold hover:opacity-80 duration-300">Đăng ký dùng thử</Link>
               </div>
-              <div className="cursor-pointer" onClick={() => setIsOpenLogin(true)}>
-                <button className="bg-[#002A9E] p-2 rounded-full font-bold hover:opacity-80 duration-300">Đăng nhập</button>
-              </div>
+              {user ? (
+                <div
+                  className="relative"  
+                >
+                  <p className="px-4 py-2 rounded-full bg-[#002A9E] font-bold cursor-pointer" onClick={() => setIsOpenMenuProfile(pre => !pre)}>Hi, {user.full_name}</p>
+                  {isOpenMenuProfile && <MenuProfile setIsOpenMenuProfile={setIsOpenMenuProfile} />}
+                </div>
+              ) : (
+                <div className="cursor-pointer" onClick={() => setIsOpenLogin(true)}>
+                  <button className="bg-[#002A9E] p-2 rounded-full font-bold hover:opacity-80 duration-300">Đăng nhập</button>
+                </div>
+              )}
             </div>
             <div className="flex items-center mr-8 lg:hidden">
               <div className="cursor-pointer p-1 hover:bg-[#e0e0e0] rounded-full duration-300" onClick={() => setIsOpenSidebar(true)}>

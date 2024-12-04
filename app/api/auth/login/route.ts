@@ -17,7 +17,9 @@ export async function POST(req: NextRequest, res: NextResponse) {
 
   try {
     const user = await prisma.user.findUnique({
-      where: { phone_number }
+      where: {
+        phone_number
+      }
     });
 
     if (!user) {

@@ -8,5 +8,6 @@ export interface UserEntity {
   district: string
   ward: string
   address: string
-  password: string
+  points_accumulation: number
+  role: string
 }

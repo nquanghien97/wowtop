@@ -21,7 +21,7 @@ function Banner() {
         }}
       >
         <SwiperSlide>
-          <div className="relative">
+          <div className="relative z-0">
             <Image src="/banner.jpg" alt="banner-dang-ky-dung-thu" width={1920} height={400} className="w-full max-h-[620px]" />
             <div className="absolute top-[10%] left-[20%] text-[50%] md:text-[calc(1vw+1rem)] uppercase">
               <h1 className="bg-text bg-clip-text text-transparent font-bold md:mb-4">Tích điểm đổi quà</h1>
@@ -30,7 +30,7 @@ function Banner() {
           </div>
         </SwiperSlide>
         <SwiperSlide>
-          <div className="relative">
+          <div className="relative z-0">
             <Image src="/banner.jpg" alt="banner-dang-ky-dung-thu" width={1920} height={400} className="w-full max-h-[620px]" />
             <div className="absolute top-[10%] left-[20%] text-[50%] md:text-[calc(1vw+1rem)] uppercase">
               <h1 className="bg-text bg-clip-text text-transparent font-bold md:mb-4">Tích điểm đổi quà</h1>

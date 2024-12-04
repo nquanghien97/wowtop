@@ -11,6 +11,7 @@ import { Montserrat } from 'next/font/google';
 import Script from 'next/script';
 import { ToastContainer } from 'react-toastify';
 import { cookies } from 'next/headers'
+import { getUser } from '@/services/user';
 
 const montserrat = Montserrat({
   weight: '500',
@@ -55,8 +56,8 @@ export default async function RootLayout({ children }: { children: React.ReactNo
 
   const cookieStore = cookies()
   const token = cookieStore.get('token')
-  const user_id = JSON.parse(Buffer.from((token?.value as unknown as string).split('.')[1], 'base64').toString('utf8')).user_id
-  console.log(user_id)
+  const res = await getUser(token?.value || '')
+
   return (
     <html lang="en">
       <head>
@@ -91,7 +92,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         </Script>
       </head>
       <body className={montserrat.className}>
-        <Header />
+        <Header currentUser={res.data} />
         {children}
         <Footer />
         <ToastContainer />

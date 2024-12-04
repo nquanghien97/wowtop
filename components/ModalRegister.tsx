@@ -89,7 +89,6 @@ function ModalRegister({ open, onClose }: { open: boolean, onClose: () => void }
 
   const onSubmit = async (data: FormValues) => {
     setLoading(true);
-    console.log(data)
     try {
       await registerUser(data)
       onClose();
