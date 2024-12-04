@@ -10,7 +10,7 @@ import DatePicker from 'react-datepicker';
 import { format } from 'date-fns';
 import { useRouter } from 'next/navigation';
 import LoadingIcon from '@/assets/icons/LoadingIcon';
-import { toast, ToastContainer } from 'react-toastify';
+import { toast } from 'react-toastify';
 import { useForm, Controller } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
@@ -503,7 +503,6 @@ function Form() {
           </div>
         </form>
       </div>
-      <ToastContainer />
     </div>
   )
 }

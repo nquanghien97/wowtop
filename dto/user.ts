@@ -9,3 +9,8 @@ export interface RegisterUser {
   address: string
   password: string
 }
+
+export interface LoginUser {
+  phone_number: string
+  password: string
+}

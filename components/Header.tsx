@@ -9,12 +9,14 @@ import AppSidebar from './Sidebar';
 import MenuDropdown from './common/MenuDropdown';
 import { usePathname } from 'next/navigation';
 import ModalRegister from './ModalRegister';
+import ModalLogin from './ModalLogin';
 
 function Header() {
   const pathname = usePathname();
   const [isOpenSidebar, setIsOpenSidebar] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [isOpenRegister, setIsOpenRegister] = useState(false);
+  const [isOpenLogin, setIsOpenLogin] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -79,7 +81,7 @@ function Header() {
               <div className="cursor-pointer mr-2">
                 <Link href="/dang-ky-dung-thu" className="dk-dung-thu font-bold hover:opacity-80 duration-300">Đăng ký dùng thử</Link>
               </div>
-              <div className="cursor-pointer" onClick={() => setIsOpenRegister(true)}>
+              <div className="cursor-pointer" onClick={() => setIsOpenLogin(true)}>
                 <button className="bg-[#002A9E] p-2 rounded-full font-bold hover:opacity-80 duration-300">Đăng nhập</button>
               </div>
             </div>
@@ -130,7 +132,7 @@ function Header() {
             <div
               className="cursor-pointer flex justify-center"
               onClick={() => {
-                setIsOpenRegister(true)
+                setIsOpenLogin(true)
                 setIsOpenSidebar(false)
               }}
             >
@@ -139,6 +141,7 @@ function Header() {
           </div>
         </AppSidebar>
       </div>
+      <ModalLogin open={isOpenLogin} setIsOpenLogin={setIsOpenLogin} setIsOpenRegister={setIsOpenRegister} />
       <ModalRegister open={isOpenRegister} onClose={() => setIsOpenRegister(false)} />
     </>
   )

@@ -7,7 +7,7 @@ import Select, { SelectInstance, SingleValue } from 'react-select';
 import { useEffect, useId, useRef, useState } from 'react';
 import { OrderEntity } from '@/entities/order';
 import { createOrder } from '@/services/orderServices';
-import { toast, ToastContainer } from 'react-toastify';
+import { toast } from 'react-toastify';
 import LoadingIcon from '@/assets/icons/LoadingIcon';
 import Image from 'next/image'
 import data from '@/app/data.json'
@@ -255,7 +255,6 @@ function FormOrder(props: { ip: string }) {
           </div>
         </div>
       </div>
-      <ToastContainer />
     </section>
   )
 }

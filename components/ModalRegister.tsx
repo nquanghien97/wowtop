@@ -10,6 +10,7 @@ import LoadingIcon from '@/assets/icons/LoadingIcon';
 import DatePicker from 'react-datepicker';
 import { vi } from 'date-fns/locale';
 import { RegisterUser } from '@/dto/user';
+import { registerUser } from '@/services/auth';
 
 interface FormValues extends RegisterUser {
   provinceLabel?: string;
@@ -70,7 +71,7 @@ interface Option {
 
 function ModalRegister({ open, onClose }: { open: boolean, onClose: () => void }) {
   const id = useId()
-  const { register, handleSubmit, control, setValue, formState: { errors } } = useForm({
+  const { register, handleSubmit, reset, control, setValue, formState: { errors } } = useForm({
     resolver: yupResolver(schema),
   });
 
@@ -90,7 +91,9 @@ function ModalRegister({ open, onClose }: { open: boolean, onClose: () => void }
     setLoading(true);
     console.log(data)
     try {
-
+      await registerUser(data)
+      onClose();
+      reset();
       toast.success('Đăng ký thành công!')
     } catch (err) {
       if (err instanceof Error) {
@@ -102,18 +105,18 @@ function ModalRegister({ open, onClose }: { open: boolean, onClose: () => void }
   }
 
   return (
-    <Modal open={open} onClose={onClose}>
-      <div className="max-w-4xl m-auto bg-white p-8 rounded-xl mx-4 relative max-md:top-[-40px]">
+    <Modal open={open} onClose={() => {}}>
+      <div className="max-w-4xl md:min-w-[800px] m-auto bg-white px-4 py-8 rounded-xl mx-4 relative max-md:top-[-40px]">
         <div className="relative">
           <h1 className="text-[#002A9E] text-4xl font-bold text-center mb-8">Đăng ký</h1>
           <button
-            className="absolute top-1/2 -translate-y-1/2 right-0 text-2xl font-bold"
+            className="absolute top-[-20px] right-0 text-2xl font-bold"
             onClick={onClose}
           >
             x
           </button>
         </div>
-        <form className="flex flex-col gap-4 form-register overflow-auto max-h-[70vh]" onSubmit={handleSubmit(onSubmit)}>
+        <form className="flex flex-col gap-4 form-register overflow-auto max-h-[70vh] px-2" onSubmit={handleSubmit(onSubmit)}>
           <div>
             <p className="mb-1">Số điện thoại</p>
             <input
@@ -191,7 +194,7 @@ function ModalRegister({ open, onClose }: { open: boolean, onClose: () => void }
                       getOptionLabel={(option: Option) => option.label}
                       getOptionValue={(option: Option) => option.value}
                       value={optionProvinces.find((opt) => opt.value === field.value)} // Set the value correctly
-                      onChange={async (selectedOption: SingleValue<Option>) => {
+                      onChange={(selectedOption: SingleValue<Option>) => {
                         field.onChange(selectedOption ? selectedOption.value : "")
                         const provinceId = selectedOption?.value;
                         selectDistrictRef.current?.clearValue();
@@ -223,7 +226,7 @@ function ModalRegister({ open, onClose }: { open: boolean, onClose: () => void }
                       getOptionLabel={(option: Option) => option.label}
                       getOptionValue={(option: Option) => option.value}
                       value={optionsDistricts.find((opt) => opt.value === field.value)} // Set the value correctly
-                      onChange={async (selectedOption: SingleValue<Option>) => {
+                      onChange={(selectedOption: SingleValue<Option>) => {
                         field.onChange(selectedOption ? selectedOption.value : "")
                         setValue('districtLabel', selectedOption ? selectedOption.label : "")
                         const districtId = selectedOption?.value;

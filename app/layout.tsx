@@ -9,6 +9,8 @@ import Header from '@/components/Header'
 import Footer from '@/components/Footer';
 import { Montserrat } from 'next/font/google';
 import Script from 'next/script';
+import { ToastContainer } from 'react-toastify';
+import { cookies } from 'next/headers'
 
 const montserrat = Montserrat({
   weight: '500',
@@ -49,11 +51,12 @@ export const metadata: Metadata = {
   }
 }
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
+export default async function RootLayout({ children }: { children: React.ReactNode }) {
+
+  const cookieStore = cookies()
+  const token = cookieStore.get('token')
+  console.log(token?.value)
+
   return (
     <html lang="en">
       <head>
@@ -91,6 +94,7 @@ export default function RootLayout({
         <Header />
         {children}
         <Footer />
+        <ToastContainer />
       </body>
     </html>
   )

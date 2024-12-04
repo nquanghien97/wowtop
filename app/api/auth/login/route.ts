@@ -1,10 +1,11 @@
 import prisma from "@/lib/db";
 import { createToken } from "@/lib/token";
 import bcrypt from 'bcrypt';
-import { jwtVerify, SignJWT } from "jose";
+import { NextApiResponse } from "next";
 import { NextRequest, NextResponse } from 'next/server';
+import { cookies } from 'next/headers'
 
-export async function POST(req: NextRequest) {
+export async function POST(req: NextRequest, res: NextResponse) {
   const { phone_number, password } = await req.json();
 
   if (!phone_number || !password) {
@@ -35,6 +36,13 @@ export async function POST(req: NextRequest) {
     }
 
     const accessToken = await createToken(user.id, user.role);
+
+    const cookieStore = cookies();
+    cookieStore.set('token', accessToken, {
+      path: '/',
+      expires: new Date(Date.now() + 3600 * 1000 * 7), // 7 days
+      httpOnly: true,
+    });
 
     return NextResponse.json({
       success: true,
