@@ -22,7 +22,7 @@ export async function POST(req: NextRequest) {
     if (user_exist) {
       return NextResponse.json({
         success: false,
-        message: "Tài khoản đã tồn tại!"
+        message: "Số điện thoại này đã được đăng ký!"
       }, { status: 400 });
     }
 

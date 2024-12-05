@@ -11,6 +11,9 @@ import DatePicker from 'react-datepicker';
 import { vi } from 'date-fns/locale';
 import { RegisterUser } from '@/dto/user';
 import { registerUser } from '@/services/auth';
+import { sendOtp, verifyOtp } from '@/services/otp';
+import { getUser } from '@/services/user';
+import { useAuthStore } from '@/zustand/auth';
 
 interface FormValues extends RegisterUser {
   provinceLabel?: string;
@@ -79,9 +82,13 @@ function ModalRegister({ open, onClose }: { open: boolean, onClose: () => void }
   const [optionsDistricts, setOptionsDistricts] = useState<{ label: string, value: string }[]>([]);
   const [optionsWards, setOptionsWards] = useState<{ label: string, value: string }[]>([]);
   const [loading, setLoading] = useState(false);
+  const [isShowOtpForm, setIsShowOtpForm] = useState(false);
+  const [otp, setOtp] = useState('');
 
   const selectDistrictRef = useRef<SelectInstance<Option, false>>(null);
   const selectWardRef = useRef<SelectInstance<Option, false>>(null);
+
+  const { setUser } = useAuthStore()
 
   useEffect(() => {
     setOptionProvinces(data.map(item => ({ label: item.FullName, value: item.Code })))
@@ -90,10 +97,28 @@ function ModalRegister({ open, onClose }: { open: boolean, onClose: () => void }
   const onSubmit = async (data: FormValues) => {
     setLoading(true);
     try {
-      await registerUser(data)
-      onClose();
-      reset();
-      toast.success('Đăng ký thành công!')
+      await sendOtp(data.phone_number)
+      setIsShowOtpForm(true)
+      if (otp) {
+        await verifyOtp({ phone_number: data.phone_number, otp })
+        const submit_data = {
+          full_name: data.full_name,
+          phone_number: data.phone_number,
+          province: data.provinceLabel || '',
+          district: data.districtLabel || '',
+          ward: data.wardLabel || '',
+          address: data.address,
+          mother_dob: data.mother_dob,
+          child_dob: data.child_dob,
+          password: data.password,
+        }
+        const res_register = await registerUser(submit_data)
+        const res_user = await getUser(res_register.accessToken)
+        setUser(res_user.data)
+        onClose();
+        reset();
+        toast.success('Đăng ký thành công!')
+      }
     } catch (err) {
       if (err instanceof Error) {
         toast.error(err.message)
@@ -104,7 +129,7 @@ function ModalRegister({ open, onClose }: { open: boolean, onClose: () => void }
   }
 
   return (
-    <Modal open={open} onClose={() => {}}>
+    <Modal open={open} onClose={() => { }}>
       <div className="max-w-4xl md:min-w-[800px] m-auto bg-white px-4 py-8 rounded-xl mx-4 relative max-md:top-[-40px]">
         <div className="relative">
           <h1 className="text-[#002A9E] text-4xl font-bold text-center mb-8">Đăng ký</h1>
@@ -296,6 +321,17 @@ function ModalRegister({ open, onClose }: { open: boolean, onClose: () => void }
               />
               {errors.confirm_password && <span className="text-[red] text-xs p-2">{errors.confirm_password.message}</span>}
             </div>
+            {isShowOtpForm && (
+              <div>
+                <p className="mb-1">Nhập mã OTP được gửi về số điện thoại của bạn</p>
+                <input
+                  className="w-full px-4 py-3 rounded-full outline-none placeholder-[#002A9E] placeholder:italic placeholder:font-semibold bg-[#F7F7F7]"
+                  placeholder='Nhập mã OTP*'
+                  onChange={(e) => setOtp(e.target.value)}
+                />
+                {/* {errors.otp && <span className="text-[red] text-xs p-2">{errors.otp.message}</span>} */}
+              </div>
+            )}
           </div>
           <div className="flex justify-center">
             <button type='submit' className="text-white italic uppercase hover:opacity-85 duration-300 mr-2 flex justify-center items-center bg-[#002A9E] rounded-full px-16 py-4">

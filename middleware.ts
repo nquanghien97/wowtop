@@ -1,81 +1,115 @@
 import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
-import { jwtVerify, type JWTPayload } from 'jose'; // Import JwtPayload from 'jose'
-interface AuthJwt extends JWTPayload {
-  user_id: string;
-}
+import { jwtVerify } from 'jose';
 
-const publicRoutes = ['/api/auth/login', '/api/auth/register'];
-const excludedRoutes = ['/api/height-calculator'];
+// Danh sách các route không yêu cầu xác thực
+const PUBLIC_ROUTES = [
+  '/api/auth/login', 
+  '/api/auth/register', 
+  '/api/send-otp', 
+  '/api/verify-otp'
+];
+
+// Các route được miễn xác thực
+const EXCLUDED_ROUTES = [
+  '/api/height-calculator',
+  '/api/images',
+  '/api/news'
+];
 
 export async function middleware(req: NextRequest) {
+  // Xử lý CORS
+  const corsHeaders = {
+    'Access-Control-Allow-Origin': '*',
+    'Access-Control-Allow-Methods': 'GET,OPTIONS,PATCH,DELETE,POST,PUT',
+    'Access-Control-Allow-Headers': 'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version, Authorization'
+  };
+
+  // Xử lý OPTIONS request
   if (req.method === 'OPTIONS') {
-    return new Response(null, { status: 204 });
-  }
-  const res = NextResponse.next();
-
-  res.headers.set('Access-Control-Allow-Origin', '*');
-  res.headers.set('Access-Control-Allow-Methods', 'GET,OPTIONS,PATCH,DELETE,POST,PUT');
-  res.headers.set('Access-Control-Allow-Headers', 'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version');
-
-  // jwt
-  const isPublicRoute = publicRoutes.some(route => req.nextUrl.pathname.startsWith(route));
-  const isExcludedRoute = excludedRoutes.some(route => req.nextUrl.pathname.startsWith(route));
-
-  // Check if the request is for '/api/order'
-  if (req.nextUrl.pathname.startsWith('/api/order')) {
-    // Allow POST method without authentication
-    if (req.method === 'POST') {
-      return res;
-    }
+    return new NextResponse(null, {
+      status: 204,
+      headers: corsHeaders
+    });
   }
 
-  if (req.nextUrl.pathname.startsWith('/api/images') && req.method === 'GET') {
-    return res; // Không cần xác thực cho GET đến hình ảnh
+  // Kiểm tra route miễn xác thực
+  const isPublicRoute = PUBLIC_ROUTES.some(route => 
+    req.nextUrl.pathname.startsWith(route)
+  );
+
+  const isExcludedRoute = EXCLUDED_ROUTES.some(route => 
+    req.nextUrl.pathname.startsWith(route)
+  );
+
+  const isAllowedMethod = [
+    '/api/order' === req.nextUrl.pathname && req.method === 'POST',
+    '/api/images' === req.nextUrl.pathname && req.method === 'GET',
+    '/api/news' === req.nextUrl.pathname && req.method === 'GET'
+  ].some(Boolean);
+
+  // Nếu là route công khai hoặc được miễn, cho phép qua
+  if (isPublicRoute || isExcludedRoute || isAllowedMethod) {
+    return NextResponse.next({
+      headers: corsHeaders
+    });
   }
 
-  if (req.nextUrl.pathname.startsWith('/api/news') && req.method === 'GET') {
-    return res;
-  }
+  // Lấy token từ header hoặc cookie
+  const token = 
+    req.headers.get('authorization')?.split(' ')[1] || 
+    req.cookies.get('token')?.value;
 
-  if (isPublicRoute || isExcludedRoute) {
-    return res;
-  }
-
-  // For all other methods (GET, PUT, DELETE, etc.), require authentication
-  const authHeader = req.headers.get('Authorization');
-  if (!authHeader) {
+  // Kiểm tra token
+  if (!token || token === 'undefined') {
     return new NextResponse(
-      JSON.stringify({ success: false, message: 'UnAuthorized' }),
-      { status: 401, headers: { 'Content-Type': 'application/json' } }
+      JSON.stringify({ 
+        success: false, 
+        message: 'Access token not found' 
+      }),
+      { 
+        status: 401, 
+        headers: {
+          'Content-Type': 'application/json',
+          ...corsHeaders
+        } 
+      }
     );
   }
 
-  const token = authHeader.split(' ')[1];
-  if (!token) {
-    return new NextResponse(
-      JSON.stringify({ success: false, message: 'Access token not found' }),
-      { status: 401, headers: { 'Content-Type': 'application/json' } }
-    );
-  }
-  const encodedKey = new TextEncoder().encode(process.env.NEXT_PUBLIC_ACCESS_TOKEN_SECRET);
   try {
-    const { payload } = await jwtVerify(token, encodedKey, {
-      algorithms: ['HS256'],
-    }) as { payload: AuthJwt };
+    // Xác thực token
+    const secret = new TextEncoder().encode(process.env.NEXT_PUBLIC_ACCESS_TOKEN_SECRET);
+    const { payload } = await jwtVerify(token, secret, {
+      algorithms: ['HS256']
+    });
 
-    // In Next.js middleware, we can't modify the request object directly.
-    // Instead, we can add custom headers to pass information to the API route.
-    res.headers.set('X-User-ID', payload.user_id);
+    // Tạo response mới với thông tin user
+    const response = NextResponse.next({
+      headers: {
+        ...corsHeaders,
+        'x-user-id': payload.user_id as string
+      }
+    });
+
+    return response;
+
   } catch (error) {
-    console.error(error);
+    console.error('Token verification error:', error);
     return new NextResponse(
-      JSON.stringify({ success: false, message: 'Invalid token' }),
-      { status: 401, headers: { 'Content-Type': 'application/json' } }
+      JSON.stringify({ 
+        success: false, 
+        message: 'Invalid or expired token' 
+      }),
+      { 
+        status: 401, 
+        headers: {
+          'Content-Type': 'application/json',
+          ...corsHeaders
+        } 
+      }
     );
   }
-
-  return res;
 }
 
 export const config = {

@@ -14,3 +14,8 @@ export interface LoginUser {
   phone_number: string
   password: string
 }
+
+export interface ChangePassword {
+  old_password: string
+  new_password: string
+}

@@ -9,6 +9,14 @@ export async function POST(req: NextRequest) {
     if (!user_id) {
       return NextResponse.json({ success: false, message: 'Unauthorized' }, { status: 401 });
     }
+    const user = await prisma.user.findUnique({
+      where: {
+        id: parseInt(user_id)
+      }
+    })
+
+    if(user?.role !== 'ADMIN') return NextResponse.json({ success: false, message: 'Bạn không có quyền' }, { status: 401 })
+
     const exist_code = await prisma.accumulation_code.findUnique({
       where: {
         code
@@ -34,6 +42,7 @@ export async function GET(req: NextRequest) {
   const pageParam = url.searchParams.get('page');
   const page_sizeParam = url.searchParams.get('page_size');
   const statusParam = url.searchParams.get('status') as unknown as StatusCode;
+  const user_id = req.headers.get('x-user-id');
   
   // Chuyển đổi các tham số thành số nguyên, nếu có
   const page = pageParam ? parseInt(pageParam, 10) : null;
@@ -47,6 +56,17 @@ export async function GET(req: NextRequest) {
       skip = (page - 1) * page_size;
       take = page_size;
     }
+
+    if (!user_id) {
+      return NextResponse.json({ success: false, message: 'Unauthorized' }, { status: 401 });
+    }
+    const user = await prisma.user.findUnique({
+      where: {
+        id: parseInt(user_id)
+      }
+    })
+    
+    if(user?.role !== 'ADMIN') return NextResponse.json({ success: false, message: 'Bạn không có quyền' })
 
     const whereCondition = {
       status: statusParam,

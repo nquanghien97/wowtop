@@ -29,3 +29,12 @@ export const loginUser = async (data: LoginUser) => {
   }
   return res.json(); 
 }
+
+export const logoutUser = async () => {
+  return await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/auth/logout`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  })
+}
