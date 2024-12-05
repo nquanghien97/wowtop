@@ -14,7 +14,7 @@ async function page() {
   const { data } = await getUser(token?.value || '')
   const { data: data_accululation } = await getAccumulationCode(token?.value || '')
 
-  if(!token || !data) {
+  if (!token || !data) {
     redirect('/')
   }
 
@@ -72,19 +72,32 @@ async function page() {
       <div className="max-w-4xl m-auto mb-8">
         <div className="bg-[#870db7] flex justify-around items-center rounded-t-2xl">
           <div className="flex items-center">
-            <Image src="/WALLET.png" alt="WALLET" width={100} height={100} />
+            <Image src="/HISTORY.png" alt="HISTORY" width={100} height={100} />
             <span className="text-4xl text-white font-bold">Lịch sử</span>
           </div>
           <div>
             <span className="text-4xl text-white font-bold">Chọn ngày</span>
           </div>
         </div>
-        <div>
-          {data_accululation.map((data: any) => (
-            <div key={data.id}>
-              {data.code}
-            </div>
-          ))}
+        <div className="py-12 px-[160px] bg-white">
+          <div className="rounded-xl border border-black overflow-hidden">
+            <table className="w-full text-center">
+              <thead>
+                <tr>
+                  <th className="border-b border-r border-black py-2">Thời gian</th>
+                  <th className="border-b border-black py-2">Mã</th>
+                </tr>
+              </thead>
+              <tbody>
+                {data_accululation.map((data: any) => (
+                  <tr key={data.id}>
+                    <td className="border-r border-black py-2">{formatDateWithoutHours(data.created_at)}</td>
+                    <td className="py-2">{data.code}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
     </main>
