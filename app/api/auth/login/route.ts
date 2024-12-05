@@ -39,20 +39,18 @@ export async function POST(req: NextRequest, res: NextResponse) {
 
     const accessToken = await createToken(user.id, user.role);
 
-    const res =  NextResponse.json({
+    const cookieStore = cookies();
+    cookieStore.set('token', accessToken, {
+      path: '/',
+      expires: new Date(Date.now() + 3600 * 1000 * 7), // 7 days
+      httpOnly: true,
+    });
+
+    return NextResponse.json({
       success: true,
       message: "Đăng nhập thành công",
       accessToken
     }, { status: 200 });
-
-    res.cookies.set('token', accessToken, {
-      path: '/',
-      expires: new Date(Date.now() + 3600 * 1000 * 7), // 7 days
-      httpOnly: true,
-      sameSite: 'lax', // Thêm sameSite
-    });
-
-    return res;
 
   } catch (err: any) {
     return NextResponse.json({
