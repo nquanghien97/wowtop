@@ -14,6 +14,8 @@ import { registerUser } from '@/services/auth';
 import { sendOtp, verifyOtp } from '@/services/otp';
 import { getCurrentUser } from '@/services/user';
 import { useAuthStore } from '@/zustand/auth';
+import ShowPassword from '@/assets/icons/ShowPassword';
+import HidePassword from '@/assets/icons/HidePassword';
 
 interface FormValues {
   phone_number: string
@@ -93,6 +95,8 @@ function ModalRegister({ open, onClose }: { open: boolean, onClose: () => void }
   const [loading, setLoading] = useState(false);
   const [isShowOtpForm, setIsShowOtpForm] = useState(false);
   const [otp, setOtp] = useState('');
+  const [showPassword, setShowPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
   const selectDistrictRef = useRef<SelectInstance<Option, false>>(null);
   const selectWardRef = useRef<SelectInstance<Option, false>>(null);
@@ -125,7 +129,7 @@ function ModalRegister({ open, onClose }: { open: boolean, onClose: () => void }
           password: data.password,
         }
         const res_register = await registerUser(submit_data)
-        const res_user = await getCurrentUser()
+        const res_user = await getCurrentUser(res_register.accessToken)
         setUser(res_user.data)
         onClose();
         reset();
@@ -317,20 +321,32 @@ function ModalRegister({ open, onClose }: { open: boolean, onClose: () => void }
             </div>
             <div>
               <p className="mb-1">Mật khẩu</p>
-              <input
-                className="w-full px-4 py-3 rounded-full outline-none placeholder-[#002A9E] placeholder:italic placeholder:font-semibold bg-[#F7F7F7]"
-                placeholder='Nhập mật khẩu*'
-                {...register('password')}
-              />
+              <div className="flex items-center bg-[#F7F7F7] rounded-full px-4">
+                <input
+                  className="w-full px-4 py-3 outline-none placeholder-[#002A9E] placeholder:italic placeholder:font-semibold bg-[#F7F7F7] rounded-full"
+                  placeholder='Nhập mật khẩu*'
+                  type={showPassword ? 'text' : 'password'}
+                  {...register('password')}
+                />
+                <div className="cursor-pointer" onClick={() => setShowPassword(pre => !pre)}>
+                  {!showPassword ? <ShowPassword width={20} height={20} /> : <HidePassword width={20} height={20} />}
+                </div>
+              </div>
               {errors.password && <span className="text-[red] text-xs p-2">{errors.password.message}</span>}
             </div>
             <div>
               <p className="mb-1">Nhập lại mật khẩu</p>
-              <input
-                className="w-full px-4 py-3 rounded-full outline-none placeholder-[#002A9E] placeholder:italic placeholder:font-semibold bg-[#F7F7F7]"
-                placeholder='Nhập lại mật khẩu*'
-                {...register('confirm_password')}
-              />
+              <div className="flex items-center bg-[#F7F7F7] rounded-full px-4">
+                <input
+                  className="w-full px-4 py-3 rounded-full outline-none placeholder-[#002A9E] placeholder:italic placeholder:font-semibold bg-[#F7F7F7]"
+                  placeholder='Nhập lại mật khẩu*'
+                  type={showConfirmPassword ? 'text' : 'password'}
+                  {...register('confirm_password')}
+                />
+                <div className="cursor-pointer" onClick={() => setShowConfirmPassword(pre => !pre)}>
+                  {!showConfirmPassword ? <ShowPassword width={20} height={20} /> : <HidePassword width={20} height={20} />}
+                </div>
+              </div>
               {errors.confirm_password && <span className="text-[red] text-xs p-2">{errors.confirm_password.message}</span>}
             </div>
             {isShowOtpForm && (

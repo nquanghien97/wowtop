@@ -6,9 +6,9 @@ import { useForm } from 'react-hook-form';
 import { ChangePassword } from '@/dto/user';
 import { toast } from 'react-toastify';
 import LoadingIcon from '@/assets/icons/LoadingIcon';
-import { loginUser } from '@/services/auth';
-import { useAuthStore } from '@/zustand/auth';
 import { changePassword } from '@/services/change-password';
+import ShowPassword from '@/assets/icons/ShowPassword';
+import HidePassword from '@/assets/icons/HidePassword';
 
 
 const schema = yup.object().shape({
@@ -23,14 +23,17 @@ const schema = yup.object().shape({
     .oneOf([yup.ref('new_password')], 'Mật khẩu mới không khớp')
 });
 
-function ModalChangePassword({ open, onClose } : { open: boolean, onClose: () => void }) {
+function ModalChangePassword({ open, onClose }: { open: boolean, onClose: () => void }) {
 
   const { register, handleSubmit, reset, formState: { errors } } = useForm({
     resolver: yupResolver(schema),
   });
 
+  const [showOldPassword, setShowOldPassword] = useState(false);
+  const [showNewPassword, setShowNewPassword] = useState(false);
+  const [showConfirmNewPassword, setShowConfirmNewPassword] = useState(false);
   const [loading, setLoading] = useState(false);
-  
+
   const onSubmit = async (data: ChangePassword) => {
     setLoading(true);
     try {
@@ -48,7 +51,7 @@ function ModalChangePassword({ open, onClose } : { open: boolean, onClose: () =>
   }
 
   return (
-    <Modal open={open} onClose={() => {}}>
+    <Modal open={open} onClose={() => { }}>
       <div className="max-w-4xl md:min-w-[800px] m-auto bg-white p-8 rounded-xl mx-4 relative max-md:top-[-40px]">
         <div className="relative">
           <h1 className="text-[#002A9E] text-4xl font-bold text-center mb-8">Đổi mật khẩu</h1>
@@ -62,29 +65,47 @@ function ModalChangePassword({ open, onClose } : { open: boolean, onClose: () =>
         <form className="flex flex-col gap-4 form-register overflow-auto max-h-[70vh] px-2 mb-4" onSubmit={handleSubmit(onSubmit)}>
           <div>
             <p className="mb-1">Nhập mật khẩu cũ</p>
-            <input
-              className="w-full px-4 py-3 rounded-full outline-none placeholder-[#002A9E] placeholder:italic placeholder:font-semibold bg-[#F7F7F7]"
-              placeholder='Nhập mật khẩu cũ*'
-              {...register('old_password')}
-            />
+            <div className="flex items-center bg-[#F7F7F7] rounded-full px-4">
+              <input
+                className="w-full px-4 py-3 rounded-full outline-none placeholder-[#002A9E] placeholder:italic placeholder:font-semibold bg-[#F7F7F7]"
+                placeholder='Nhập mật khẩu cũ*'
+                type={showOldPassword ? 'text' : 'password'}
+                {...register('old_password')}
+              />
+              <div className="cursor-pointer" onClick={() => setShowOldPassword(pre => !pre)}>
+                {!showOldPassword ? <ShowPassword width={20} height={20} /> : <HidePassword width={20} height={20} />}
+              </div>
+            </div>
             {errors.old_password && <span className="text-[red] text-xs p-2">{errors.old_password.message}</span>}
           </div>
           <div>
             <p className="mb-1">Nhập mật khẩu mới</p>
-            <input
-              className="w-full px-4 py-3 rounded-full outline-none placeholder-[#002A9E] placeholder:italic placeholder:font-semibold bg-[#F7F7F7]"
-              placeholder='Nhập mật khẩu mới*'
-              {...register('new_password')}
-            />
+            <div className="flex items-center bg-[#F7F7F7] rounded-full px-4">
+              <input
+                className="w-full px-4 py-3 rounded-full outline-none placeholder-[#002A9E] placeholder:italic placeholder:font-semibold bg-[#F7F7F7]"
+                placeholder='Nhập mật khẩu mới*'
+                type={showNewPassword ? 'text' : 'password'}
+                {...register('new_password')}
+              />
+              <div className="cursor-pointer" onClick={() => setShowNewPassword(pre => !pre)}>
+                {!showNewPassword ? <ShowPassword width={20} height={20} /> : <HidePassword width={20} height={20} />}
+              </div>
+            </div>
             {errors.new_password && <span className="text-[red] text-xs p-2">{errors.new_password.message}</span>}
           </div>
           <div>
             <p className="mb-1">Nhập lại mật khẩu mới</p>
-            <input
-              className="w-full px-4 py-3 rounded-full outline-none placeholder-[#002A9E] placeholder:italic placeholder:font-semibold bg-[#F7F7F7]"
-              placeholder='Nhập lại mật khẩu mới*'
-              {...register('confirm_new_password')}
-            />
+            <div className="flex items-center bg-[#F7F7F7] rounded-full px-4">
+              <input
+                className="w-full px-4 py-3 rounded-full outline-none placeholder-[#002A9E] placeholder:italic placeholder:font-semibold bg-[#F7F7F7]"
+                placeholder='Nhập lại mật khẩu mới*'
+                type={showConfirmNewPassword ? 'text' : 'password'}
+                {...register('confirm_new_password')}
+              />
+              <div className="cursor-pointer" onClick={() => setShowConfirmNewPassword(pre => !pre)}>
+                {!showConfirmNewPassword ? <ShowPassword width={20} height={20} /> : <HidePassword width={20} height={20} />}
+              </div>
+            </div>
             {errors.new_password && <span className="text-[red] text-xs p-2">{errors.new_password.message}</span>}
           </div>
           <div className="flex justify-center">

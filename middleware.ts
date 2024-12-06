@@ -1,4 +1,5 @@
 import { jwtVerify } from 'jose';
+import { redirect } from 'next/navigation';
 import { NextRequest, NextResponse } from 'next/server';
 
 // Danh sách các route không yêu cầu xác thực
@@ -45,7 +46,9 @@ export async function middleware(req: NextRequest) {
   const isAllowedMethod = [
     '/api/order' === req.nextUrl.pathname && req.method === 'POST',
     '/api/images' === req.nextUrl.pathname && req.method === 'GET',
-    '/api/news' === req.nextUrl.pathname && req.method === 'GET'
+    '/api/news' === req.nextUrl.pathname && req.method === 'GET',
+    '/api/phone_number' === req.nextUrl.pathname && req.method === 'GET',
+    '/forgot-password' === req.nextUrl.pathname && req.method === 'GET'
   ].some(Boolean);
   
   // Nếu là route công khai hoặc được miễn, cho phép qua
@@ -59,9 +62,9 @@ export async function middleware(req: NextRequest) {
   const token = 
     req.cookies.get('token')?.value ||
     req.headers.get('authorization')?.split(' ')[1]
-  console.log(req.cookies.get('token')?.value)
   // Kiểm tra token
   if (!token || token === 'undefined') {
+    // redirect('/')
     return new NextResponse(
       JSON.stringify({ 
         success: false, 

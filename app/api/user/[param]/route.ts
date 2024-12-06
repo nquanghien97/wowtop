@@ -1,13 +1,28 @@
 import prisma from "@/lib/db";
 import { NextResponse } from "next/server";
 
-export async function GET(req: Request, { params }: { params: { id: number } }) {
-  const { id } = params
+export async function GET(req: Request, { params }: { params: { param: undefined | string } }) {
+  const url = new URL(req.url);
+  const type = url.searchParams.get('type');
+  const { param } = params
+
+  let search: { id?: number; phone_number?: string } | null = null;
+  if (!param) return
+
+  if (type === 'user_id') {
+    search = { id: +param };
+  } else if (type === 'phone_number') {
+    search = { phone_number: param.toString() };
+  } else {
+    return NextResponse.json(
+      { message: 'Invalid type parameter. Must be either "user_id" or "phone_number".' },
+      { status: 400 }
+    );
+  }
+
   try {
     const user = await prisma.user.findUnique({
-      where: {
-        id: +id
-      },
+      where: search as any,
       select: {
         id: true,
         phone_number: true,

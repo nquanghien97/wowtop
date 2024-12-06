@@ -53,8 +53,9 @@ export const metadata: Metadata = {
 }
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
-
-  const res = await getCurrentUser()
+  const cookieStore = cookies()
+  const token = cookieStore.get('token')
+  const res = await getCurrentUser(token?.value || '')
 
   return (
     <html lang="en">
@@ -90,7 +91,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         </Script>
       </head>
       <body className={montserrat.className}>
-        <Header currentUser={res.data} />
+        <Header currentUser={res.data} token={token?.value} />
         {children}
         <Footer />
         <ToastContainer />

@@ -14,6 +14,9 @@ import { vi } from 'date-fns/locale';
 import { updateUser } from '@/services/user';
 import { useAuthStore } from '@/zustand/auth';
 import EditIcon from '@/assets/icons/EditIcon';
+import Image from 'next/image'
+import { formatDateWithoutHours } from '@/utils/formatDate';
+import { UserEntity } from '@/entities/user';
 
 interface FormValues {
   full_name: string;
@@ -67,7 +70,7 @@ interface Option {
   value: string;
 }
 
-function UpdateUser() {
+function UpdateUser({ dataUser } : { dataUser: UserEntity }) {
   const id = useId()
   const { register, handleSubmit, control, setValue, formState: { errors } } = useForm({
     resolver: yupResolver(schema),
@@ -107,7 +110,7 @@ function UpdateUser() {
       }
       await updateUser(submit_data)
       setUser(pre => ({
-        ...pre, 
+        ...pre,
         full_name: submit_data.full_name,
         province: submit_data.province,
         district: submit_data.district,
@@ -115,7 +118,7 @@ function UpdateUser() {
         address: submit_data.address,
         mother_dob: submit_data.mother_dob,
         child_dob: submit_data.child_dob,
-       }))
+      }))
       setIsOpenUpdateUser(false);
       toast.success('Chỉnh sửa thông tin thành công!')
     } catch (err) {
@@ -128,9 +131,43 @@ function UpdateUser() {
   }
   return (
     <>
-      <div className="flex items-center gap-1 cursor-pointer" onClick={() => setIsOpenUpdateUser(true)}>
-        <span className="text-xl text-white underline">Chỉnh sửa</span>
-        <EditIcon color='#ccc' width={20} height={20} />
+      <div className="max-w-4xl m-auto mb-8">
+        <div className="bg-[#12448E] flex justify-around items-center rounded-t-2xl">
+          <div className="flex items-center">
+            <Image src="/USER.png" alt="user" width={100} height={100} />
+            <span className="text-4xl text-white font-bold">Thông tin tài khoản</span>
+          </div>
+          <div className="flex items-center gap-1 cursor-pointer" onClick={() => setIsOpenUpdateUser(true)}>
+            <span className="text-xl text-white underline">Chỉnh sửa</span>
+            <EditIcon color='#ccc' width={20} height={20} />
+          </div>
+        </div>
+        <div className="py-12 px-[160px] bg-white">
+          <div className="flex mb-4">
+            <div className="flex-1">
+              <p className="text-[#00609C] text-xl">Họ và tên</p>
+              <p className="font-bold">{(user || dataUser).full_name}</p>
+            </div>
+            <div className="flex-1">
+              <p className="text-[#00609C] text-xl">Số điện thoại</p>
+              <p className="font-bold">{(user || dataUser).phone_number}</p>
+            </div>
+          </div>
+          <div className="flex mb-4">
+            <div className="flex-1">
+              <p className="text-[#00609C] text-xl">Ngày tháng năm sinh mẹ</p>
+              <p className="font-bold">{formatDateWithoutHours((user || dataUser).mother_dob)}</p>
+            </div>
+            <div className="flex-1">
+              <p className="text-[#00609C] text-xl">Ngày tháng năm sinh bé</p>
+              <p className="font-bold">{formatDateWithoutHours((user || dataUser).child_dob)}</p>
+            </div>
+          </div>
+          <div>
+            <p className="text-[#00609C] text-xl">Địa chỉ</p>
+            <p className="font-bold">{`${(user || dataUser).address}, ${(user || dataUser).ward}, ${(user || dataUser).district}, ${(user || dataUser).province}`}</p>
+          </div>
+        </div>
       </div>
       <Modal open={isOpenUpdateUser} onClose={() => { }}>
         <div className="max-w-4xl md:min-w-[800px] m-auto bg-white px-4 py-8 rounded-xl mx-4 relative max-md:top-[-40px]">

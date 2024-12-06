@@ -15,8 +15,9 @@ import { useAuthStore } from '@/zustand/auth';
 import MenuProfile from './MenuProfile';
 import { useOutsideClick } from '@/hooks/useOutsideClick';
 import ModalChangePassword from './ModalChangePassword';
+import ModalForgotPassword from './ModalForgotPassword';
 
-function Header({ currentUser } : { currentUser: UserEntity }) {
+function Header({ currentUser, token } : { currentUser: UserEntity, token?: string }) {
   const pathname = usePathname();
   const [isOpenSidebar, setIsOpenSidebar] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -24,6 +25,7 @@ function Header({ currentUser } : { currentUser: UserEntity }) {
   const [isOpenLogin, setIsOpenLogin] = useState(false);
   const [isOpenMenuProfile, setIsOpenMenuProfile] = useState(false);
   const [isOpenChangePassword, setIsOpenChangePassword] = useState(false);
+  const [isOpenForgotPassword, setIsOpenForgotPassword] = useState(false);
 
   const { user, setUser } = useAuthStore();
 
@@ -103,7 +105,7 @@ function Header({ currentUser } : { currentUser: UserEntity }) {
                 </div>
               ) : (
                 <div className="cursor-pointer" onClick={() => setIsOpenLogin(true)}>
-                  <button className="bg-[#002A9E] p-2 rounded-full font-bold hover:opacity-80 duration-300">Đăng nhập</button>
+                  <span className="bg-[#002A9E] py-[6px] px-2 rounded-full font-bold hover:opacity-80 duration-300">Đăng nhập</span>
                 </div>
               )}
             </div>
@@ -148,24 +150,25 @@ function Header({ currentUser } : { currentUser: UserEntity }) {
                 </li>
               ))}
             </ul>
-            <div className="cursor-pointer flex justify-center mb-2">
-              <Link href="/dang-ky-dung-thu" className="dk-dung-thu font-bold hover:opacity-80 duration-300">Đăng ký dùng thử</Link>
+            <div className="cursor-pointer flex justify-center mb-2 w-full px-2">
+              <Link href="/dang-ky-dung-thu" className="dk-dung-thu w-full text-center font-bold hover:opacity-80 duration-300">Đăng ký dùng thử</Link>
             </div>
             <div
-              className="cursor-pointer flex justify-center"
+              className="cursor-pointer flex justify-center w-full px-2"
               onClick={() => {
                 setIsOpenLogin(true)
                 setIsOpenSidebar(false)
               }}
             >
-              <button className="dk-dung-thu font-bold hover:opacity-80 duration-300">Đăng nhập</button>
+              <span className="py-[6px] px-2 bg-[#002A9E] rounded-full w-full text-center font-bold hover:opacity-80 duration-300 text-white">Đăng nhập</span>
             </div>
           </div>
         </AppSidebar>
       </div>
-      <ModalLogin open={isOpenLogin} setIsOpenLogin={setIsOpenLogin} setIsOpenRegister={setIsOpenRegister} />
+      <ModalLogin open={isOpenLogin} setIsOpenLogin={setIsOpenLogin} setIsOpenRegister={setIsOpenRegister} setIsOpenForgotPassword={setIsOpenForgotPassword} />
       <ModalRegister open={isOpenRegister} onClose={() => setIsOpenRegister(false)} />
       <ModalChangePassword open={isOpenChangePassword} onClose={() => setIsOpenChangePassword(false)}  />
+      <ModalForgotPassword open={isOpenForgotPassword} onClose={() => setIsOpenForgotPassword(false)} token={token} />
     </>
   )
 }
