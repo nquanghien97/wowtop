@@ -1,5 +1,6 @@
+import UpdateUser from '@/components/UpdateUser'
 import { getAccumulationCode } from '@/services/accumulation'
-import { getUser } from '@/services/user'
+import { getCurrentUser } from '@/services/user'
 import { formatDateWithoutHours } from '@/utils/formatDate'
 import { cookies } from 'next/headers'
 import Image from 'next/image'
@@ -11,8 +12,8 @@ async function page() {
 
   const cookieStore = cookies()
   const token = cookieStore.get('token')
-  const { data } = await getUser(token?.value || '')
-  const { data: data_accululation } = await getAccumulationCode(token?.value || '')
+  const { data } = await getCurrentUser()
+  const { data: data_accululation } = await getAccumulationCode()
 
   if (!token || !data) {
     redirect('/')
@@ -27,9 +28,7 @@ async function page() {
             <Image src="/USER.png" alt="user" width={100} height={100} />
             <span className="text-4xl text-white font-bold">Thông tin tài khoản</span>
           </div>
-          <div>
-            <span className="text-xl text-white underline">Chỉnh sửa</span>
-          </div>
+          <UpdateUser />
         </div>
         <div className="py-12 px-[160px] bg-white">
           <div className="flex mb-4">

@@ -15,11 +15,14 @@ enum UserRole {
 model User {
   id                  Int                 @id @default(autoincrement())
   phone_number        String              @unique
-  full_name           String?              
+  full_name           String?
   mother_dob          String?
   child_dob           String?
+  province_id         String?
   province            String?
+  district_id         String?
   district            String?
+  ward_id             String?
   ward                String?
   address             String?
   password            String

@@ -1,6 +1,5 @@
-import { NextResponse } from 'next/server';
-import type { NextRequest } from 'next/server';
 import { jwtVerify } from 'jose';
+import { NextRequest, NextResponse } from 'next/server';
 
 // Danh sách các route không yêu cầu xác thực
 const PUBLIC_ROUTES = [
@@ -22,7 +21,8 @@ export async function middleware(req: NextRequest) {
   const corsHeaders = {
     'Access-Control-Allow-Origin': '*',
     'Access-Control-Allow-Methods': 'GET,OPTIONS,PATCH,DELETE,POST,PUT',
-    'Access-Control-Allow-Headers': 'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version, Authorization'
+    'Access-Control-Allow-Headers': 'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version, Authorization',
+    'Access-Control-Allow-Credentials': 'true',
   };
 
   // Xử lý OPTIONS request
@@ -37,17 +37,17 @@ export async function middleware(req: NextRequest) {
   const isPublicRoute = PUBLIC_ROUTES.some(route => 
     req.nextUrl.pathname.startsWith(route)
   );
-
+  
   const isExcludedRoute = EXCLUDED_ROUTES.some(route => 
     req.nextUrl.pathname.startsWith(route)
   );
-
+  
   const isAllowedMethod = [
     '/api/order' === req.nextUrl.pathname && req.method === 'POST',
     '/api/images' === req.nextUrl.pathname && req.method === 'GET',
     '/api/news' === req.nextUrl.pathname && req.method === 'GET'
   ].some(Boolean);
-
+  
   // Nếu là route công khai hoặc được miễn, cho phép qua
   if (isPublicRoute || isExcludedRoute || isAllowedMethod) {
     return NextResponse.next({
@@ -57,15 +57,15 @@ export async function middleware(req: NextRequest) {
 
   // Lấy token từ header hoặc cookie
   const token = 
-    req.headers.get('authorization')?.split(' ')[1] || 
-    req.cookies.get('token')?.value;
-
+    req.cookies.get('token')?.value ||
+    req.headers.get('authorization')?.split(' ')[1]
+  console.log(req.cookies.get('token')?.value)
   // Kiểm tra token
   if (!token || token === 'undefined') {
     return new NextResponse(
       JSON.stringify({ 
         success: false, 
-        message: 'Access token not found' 
+        message: 'Access token not found!!' 
       }),
       { 
         status: 401, 

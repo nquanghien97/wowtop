@@ -7,7 +7,7 @@ import { LoginUser } from '@/dto/user';
 import { toast } from 'react-toastify';
 import LoadingIcon from '@/assets/icons/LoadingIcon';
 import { loginUser } from '@/services/auth';
-import { getUser } from '@/services/user';
+import { getCurrentUser } from '@/services/user';
 import { useAuthStore } from '@/zustand/auth';
 
 const phoneRegExp = /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/
@@ -34,8 +34,8 @@ function ModalLogin({ open, setIsOpenLogin, setIsOpenRegister } : { open: boolea
   const onSubmit = async (data: LoginUser) => {
     setLoading(true);
     try {
-      const res_login = await loginUser(data)
-      const res_user = await getUser(res_login.accessToken)
+      await loginUser(data)
+      const res_user = await getCurrentUser()
       setUser(res_user.data)
       toast.success('Đăng nhập thành công!')
       setIsOpenLogin(false)

@@ -12,10 +12,19 @@ import { vi } from 'date-fns/locale';
 import { RegisterUser } from '@/dto/user';
 import { registerUser } from '@/services/auth';
 import { sendOtp, verifyOtp } from '@/services/otp';
-import { getUser } from '@/services/user';
+import { getCurrentUser } from '@/services/user';
 import { useAuthStore } from '@/zustand/auth';
 
-interface FormValues extends RegisterUser {
+interface FormValues {
+  phone_number: string
+  full_name: string
+  mother_dob: Date
+  child_dob: Date
+  province: string
+  district: string
+  ward: string
+  address: string
+  password: string
   provinceLabel?: string;
   districtLabel?: string;
   wardLabel?: string;
@@ -104,8 +113,11 @@ function ModalRegister({ open, onClose }: { open: boolean, onClose: () => void }
         const submit_data = {
           full_name: data.full_name,
           phone_number: data.phone_number,
+          province_id: data.province,
           province: data.provinceLabel || '',
+          district_id: data.district,
           district: data.districtLabel || '',
+          ward_id: data.ward,
           ward: data.wardLabel || '',
           address: data.address,
           mother_dob: data.mother_dob,
@@ -113,7 +125,7 @@ function ModalRegister({ open, onClose }: { open: boolean, onClose: () => void }
           password: data.password,
         }
         const res_register = await registerUser(submit_data)
-        const res_user = await getUser(res_register.accessToken)
+        const res_user = await getCurrentUser()
         setUser(res_user.data)
         onClose();
         reset();

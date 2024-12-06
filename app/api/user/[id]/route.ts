@@ -15,8 +15,11 @@ export async function GET(req: Request, { params }: { params: { id: number } }) 
         mother_dob: true,
         child_dob: true,
         address: true,
+        province_id: true,
         province: true,
+        district_id: true,
         district: true,
+        ward_id: true,
         ward: true,
         points_accumulation: true,
       }

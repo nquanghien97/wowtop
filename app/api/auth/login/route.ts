@@ -1,7 +1,6 @@
 import prisma from "@/lib/db";
 import { createToken } from "@/lib/token";
 import bcrypt from 'bcrypt';
-import { NextApiResponse } from "next";
 import { NextRequest, NextResponse } from 'next/server';
 import { cookies } from 'next/headers'
 

@@ -13,12 +13,11 @@ export const sendAccumulationCode = async (code: string) => {
   return res.json();
 }
 
-export const getAccumulationCode = async (token: string) => {
+export const getAccumulationCode = async () => {
   const res = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/accumulation-user`, {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
-      'Authorization': `Bearer ${token}`
     },
   })
   if (!res.ok) {

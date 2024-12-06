@@ -11,7 +11,7 @@ import { Montserrat } from 'next/font/google';
 import Script from 'next/script';
 import { ToastContainer } from 'react-toastify';
 import { cookies } from 'next/headers'
-import { getUser } from '@/services/user';
+import { getCurrentUser } from '@/services/user';
 
 const montserrat = Montserrat({
   weight: '500',
@@ -54,9 +54,7 @@ export const metadata: Metadata = {
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
 
-  const cookieStore = cookies()
-  const token = cookieStore.get('token')
-  const res = await getUser(token?.value || '')
+  const res = await getCurrentUser()
 
   return (
     <html lang="en">
