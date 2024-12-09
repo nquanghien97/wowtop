@@ -1,6 +1,5 @@
 import prisma from "@/lib/db";
 import { NextResponse } from "next/server";
-import { revalidateTag } from 'next/cache'
 
 export async function GET(req: Request) {
   const user_id = req.headers.get('x-user-id');
@@ -66,7 +65,6 @@ export async function PUT(req: Request) {
         address,
       }
     })
-    revalidateTag('user-data')
     return NextResponse.json(
       {
         success: true,

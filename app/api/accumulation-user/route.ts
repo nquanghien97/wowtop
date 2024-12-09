@@ -45,6 +45,8 @@ export async function POST(req: NextRequest) {
           code
         },
         data: {
+          used_by_user_id: +user_id,
+          used_at: new Date(Date.now()),
           status: "USED"
         }
       })

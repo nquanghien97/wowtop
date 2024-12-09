@@ -1,7 +1,7 @@
 import { UpdateUserDTO } from "@/dto/user"
 
 export const getCurrentUser = async (token: string) => {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/user`, {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/me`, {
     next: {
       tags: ['user-data']
     },
@@ -13,7 +13,7 @@ export const getCurrentUser = async (token: string) => {
 }
 
 export const updateUser = async (data: UpdateUserDTO) => {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/user`, {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/me`, {
     method: 'PUT',
     headers: {
       'Content-Type': 'application/json',
@@ -28,7 +28,7 @@ export const updateUser = async (data: UpdateUserDTO) => {
 }
 
 export const getUser = async ({ type, token, param }: { type: 'phone_number' | 'user_id', token: string, param: string }) => {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/user/${param}?type=${type}`, {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/users/${param}?type=${type}`, {
     headers: {
       'Authorization': `Bearer ${token}`
     }
