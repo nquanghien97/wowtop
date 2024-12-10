@@ -27,7 +27,7 @@ const schema = yup.object().shape({
 function ModalLogin(
   { open, setIsOpenLogin, setIsOpenRegister, setIsOpenForgotPassword } 
   :
-  { open: boolean, setIsOpenLogin: Dispatch<React.SetStateAction<boolean>>, setIsOpenRegister: Dispatch<React.SetStateAction<boolean>>, setIsOpenForgotPassword: Dispatch<React.SetStateAction<boolean>> })
+  { open: boolean, setIsOpenLogin: (isOpen: boolean) => void, setIsOpenRegister: Dispatch<React.SetStateAction<boolean>>, setIsOpenForgotPassword: Dispatch<React.SetStateAction<boolean>> })
   {
 
   const { register, handleSubmit, reset, formState: { errors } } = useForm({
@@ -95,7 +95,7 @@ function ModalLogin(
             {errors.password && <span className="text-[red] text-xs p-2">{errors.password.message}</span>}
           </div>
           <div className="flex justify-end">
-            <button
+            <p
               className="underline text-[#002A9E] ml-2"
               onClick={() => {
                 setIsOpenLogin(false)
@@ -103,7 +103,7 @@ function ModalLogin(
               }}
             >
               Quên mật khẩu
-            </button>
+            </p>
           </div>
           <div className="flex justify-center">
             <button type='submit' className="text-white italic uppercase hover:opacity-85 duration-300 mr-2 flex justify-center items-center bg-[#002A9E] rounded-full px-16 py-4">

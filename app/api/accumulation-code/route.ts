@@ -111,7 +111,6 @@ export async function GET(req: NextRequest) {
       { status: 200 }
     );
   } catch (err: any) {
-    console.error('Error fetching news:', err);
     return NextResponse.json(
       { success: false, message: err.message },
       { status: 500 }

@@ -48,7 +48,8 @@ export async function middleware(req: NextRequest) {
     '/api/images' === req.nextUrl.pathname && req.method === 'GET',
     '/api/news' === req.nextUrl.pathname && req.method === 'GET',
     '/api/phone_number' === req.nextUrl.pathname && req.method === 'GET',
-    '/forgot-password' === req.nextUrl.pathname && req.method === 'GET'
+    '/api/forgot-password' === req.nextUrl.pathname && req.method === 'PUT',
+    '/api/gift' === req.nextUrl.pathname && req.method === 'GET'
   ].some(Boolean);
   
   // Nếu là route công khai hoặc được miễn, cho phép qua

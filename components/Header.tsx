@@ -22,17 +22,15 @@ function Header({ currentUser, token } : { currentUser: UserEntity, token?: stri
   const [isOpenSidebar, setIsOpenSidebar] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [isOpenRegister, setIsOpenRegister] = useState(false);
-  const [isOpenLogin, setIsOpenLogin] = useState(false);
   const [isOpenMenuProfile, setIsOpenMenuProfile] = useState(false);
   const [isOpenChangePassword, setIsOpenChangePassword] = useState(false);
   const [isOpenForgotPassword, setIsOpenForgotPassword] = useState(false);
 
-  const { user, setUser } = useAuthStore();
+  const { user, setUser, isOpenLogin, setIsOpenLogin } = useAuthStore();
 
   useEffect(() => {
     setUser(currentUser)
   }, [currentUser, setUser])
-
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 80) {
@@ -96,11 +94,11 @@ function Header({ currentUser, token } : { currentUser: UserEntity, token?: stri
               <div className="cursor-pointer mr-2">
                 <Link href="/dang-ky-dung-thu" className="dk-dung-thu font-bold hover:opacity-80 duration-300">Đăng ký dùng thử</Link>
               </div>
-              {currentUser || user ? (
+              {user ? (
                 <div
                   className="relative"  
                 >
-                  <p className="px-4 py-2 rounded-full bg-[#002A9E] font-bold cursor-pointer" onClick={() => setIsOpenMenuProfile(true)}>Hi, {(currentUser || user).full_name}</p>
+                  <p className="px-4 py-2 rounded-full bg-[#002A9E] font-bold cursor-pointer" onClick={() => setIsOpenMenuProfile(true)}>Hi, {(user).full_name}</p>
                   {isOpenMenuProfile && <MenuProfile setIsOpenMenuProfile={setIsOpenMenuProfile} setIsOpenChangePassword={setIsOpenChangePassword} />}
                 </div>
               ) : (

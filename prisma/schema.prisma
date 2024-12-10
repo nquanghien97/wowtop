@@ -32,6 +32,8 @@ model User {
   created_codes       Accumulation_code[] @relation("UserCreatedCodes")
   used_codes          Accumulation_code[] @relation("UserUsedCodes")
   created_at          DateTime            @default(now())
+
+  exchange_gift ExchangedGift[]
 }
 
 enum StatusCode {
@@ -99,4 +101,33 @@ model HeightCalculator {
 enum Gender {
   BOY
   GIRL
+}
+
+model Gift {
+  id         Int      @id @default(autoincrement())
+  name       String
+  imageUrl   String
+  point      Float
+  quantity   Float
+  created_at DateTime @default(now())
+
+  ExchangeGift ExchangedGift[]
+}
+
+enum GiftStatus {
+  PENDING    // Chờ xử lý
+  SHIPPING   // Đang giao hàng
+  COMPLETED  // Giao hàng thành công
+  CANCELLED  // Đã hủy
+}
+
+model ExchangedGift {
+  id                Int      @id @default(autoincrement())
+  gift_id           Int
+  gift              Gift     @relation(fields: [gift_id], references: [id])
+  user_id           Int
+  user              User     @relation(fields: [user_id], references: [id])
+  status            GiftStatus @default(PENDING)
+  delivered_at      DateTime?
+  created_at        DateTime @default(now())
 }
