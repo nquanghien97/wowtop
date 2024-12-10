@@ -87,10 +87,7 @@ export async function GET(req: Request) {
     ...(gift_id && { gift_id: +gift_id }),
   };
   try {
-    if(!user_id) return {
-      status: 401,
-      body: JSON.stringify({ success: false, message: 'Unauthorized' })
-    }
+    if(!user_id) return NextResponse.json({ success: false, message: 'Unauthorized' }, { status: 401 });
     const exchanged_data = await prisma.exchangedGift.findMany({
       where: whereCondition,
       include: {
@@ -109,6 +106,7 @@ export async function GET(req: Request) {
         }
       }
     })
+    return NextResponse.json({ message: 'Lấy danh sách đổi hàng thành công', data: exchanged_data } , { status: 200 })
   } catch (err) {
     if (err instanceof Error) {
       return NextResponse.json({ message: err.message }, { status: 500 })
