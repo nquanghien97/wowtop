@@ -185,8 +185,8 @@ function Form(props: { ip?: string }) {
           mode: 'no-cors'
         })
       }
-      // const res = await postInformations(submitForm)
-      // router.push(`/du-doan-chieu-cao/${res.data.code}`)
+      const res = await postInformations(submitForm)
+      router.push(`/du-doan-chieu-cao/${res.data.code}`)
     } catch (err) {
       if (err instanceof Error) {
         toast.error("Có lỗi xảy ra, vui lòng thử lại!")
