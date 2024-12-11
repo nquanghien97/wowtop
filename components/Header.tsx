@@ -46,7 +46,7 @@ function Header() {
               </Link>
             </div>
             <div className="max-lg:hidden flex items-center flex-1 w-full">
-              <ul className="flex items-center justify-center gap-4 text-white mr-4 w-full">
+              <ul className="flex items-center justify-center flex-1 gap-4 text-white mr-4 w-full">
                 {ListHeader.map(item => (
                   <li key={item.id} className={`py-1 font-bold ${pathname === item.path ? 'text-[yellow]' : ''}`}>
                     {item.children ? (
@@ -66,7 +66,7 @@ function Header() {
                         </ul>
                       </MenuDropdown>
                     ) : (
-                      <Link key={item.id} href={item.path} className={`hover:text-[yellow] duration-300 px-8`}>
+                      <Link key={item.id} href={item.path} className={`hover:text-[yellow] duration-300 px-4`}>
                         {item.title}
                       </Link>
                     )}
@@ -74,6 +74,9 @@ function Header() {
                 )
                 )}
               </ul>
+              <div className="cursor-pointer mr-2">
+                <Link href="/dang-ky-dung-thu" className="dk-dung-thu font-bold hover:opacity-80 duration-300">SIÊU SAO WOW CAO CHẤT</Link>
+              </div>
             </div>
             <div className="flex items-center mr-8 lg:hidden">
               <div className="cursor-pointer p-1 hover:bg-[#e0e0e0] rounded-full duration-300" onClick={() => setIsOpenSidebar(true)}>
@@ -116,6 +119,9 @@ function Header() {
                 </li>
               ))}
             </ul>
+            <div className="cursor-pointer mr-2">
+              <Link href="/dang-ky-dung-thu" className="dk-dung-thu font-bold hover:opacity-80 duration-300">SIÊU SAO WOW CAO CHẤT</Link>
+            </div>
           </div>
         </AppSidebar>
         {/* <div className="lg:h-[80px] h-[60px]" /> */}

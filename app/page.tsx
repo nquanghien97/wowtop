@@ -12,7 +12,7 @@ export default async function Home() {
       <section className="relative">
         <div className="px-[10%] m-auto absolute top-1/2 -translate-y-1/2">
           <div className=" flex justify-between items-center">
-            <div className="w-1/2">
+            <div className="w-2/3">
               <p className="bg-text-blue uppercase font-bold text-xs lg:text-5xl lg:mb-4 py-2 lg:!leading-[64px]">
                 NHẬP KHẨU NGUYÊN LON TỪ NEWZEALAND
               </p>
@@ -155,7 +155,7 @@ export default async function Home() {
           </div>
         </div>
       </section>
-      <section className="bg-[url('/bg-co-m.png')] bg-center bg-[length:100%_100%] relative lg:hidden py-8 z-[30]">
+      <section className="bg-[url('/dong-co.png')] bg-[length:100%_100%] relative lg:hidden py-8 z-[30] rounded-xl">
         <div className="mb-8">
           <h2 className="text-[5vw] text-[#002A9E] uppercase text-center !leading-tight">Nguồn sữa từ những chú bò <br /><span><strong>hạnh phúc nhất thế giới</strong></span></h2>
         </div>
@@ -167,26 +167,13 @@ export default async function Home() {
               <Image src="/conbo_img_3.png" alt="conbo_img_3" width={120} height={90} className="w-1/4" />
             </div>
           </div>
-          <div className="flex flex-col items-center relative z-20 w-2/3 m-auto">
-            <div className="flex justify-center items-center gap-2 w-full">
-              <Image src="/chung-nhan-1.png" alt='chung-nhan-1' width={150} height={150} className="w-1/4" />
-              <p className="text-[#002A9E] text-3xl font-bold flex-1">NON-GMO</p>
-            </div>
-            <div className="flex justify-center items-center gap-2 w-full">
-              <Image src="/chung-nhan-2.png" alt='chung-nhan-2' width={150} height={150} className="w-1/4" />
-              <p className="text-[#002A9E] text-3xl font-bold flex-1">GRASS FED</p>
-            </div>
-            <div className="flex justify-center items-center gap-2 w-full">
-              <Image src="/chung-nhan-3.png" alt='chung-nhan-3' width={150} height={150} className="w-1/4" />
-              <p className="text-[#002A9E] text-3xl font-bold flex-1">NATURAL INGREDIENTS</p>
-            </div>
-          </div>
-          <div className="flex justify-center w-2/3 m-auto mb-9">
+          
+          <div className="flex justify-center w-1/2 m-auto mb-9">
             <Image src="/dong-co-d-2.webp" alt="dong-co-d-2" width={500} height={400} className="w-full" />
           </div>
         </div>
       </section>
-      <section className="lg:pb-[40%] pb-[80%] bg-[length:100%_100%] pt-[120px] lg:pt-40 relative z-20 top-[-150px] mb-8">
+      <section className="lg:pb-[40%] pb-[80%] bg-[length:100%_100%] pt-[120px] lg:pt-40 relative z-20 lg:top-[-150px] top-[-80px] mb-8">
         <Image src="/nha-may.webp" width={2400} height={1800} alt='nhà máy' className="absolute inset-0 h-full w-full" />
         <div className="px-4 relative z-10">
           <div className="bg-[url('/asset_10.png')] bg-[length:100%_100%] text-center py-4">
@@ -195,7 +182,7 @@ export default async function Home() {
           </div>
         </div>
       </section>
-      <div className="mt-[-120px]">
+      <div className="lg:mt-[-120px] mt-[-80px]">
         <FormOrder ip={ip.ip} />
         <Experience />
       </div>

@@ -16,6 +16,7 @@ model User {
 
 model Order {
   id          Int      @id @default(autoincrement())
+  tiktok_link String?
   fullName    String
   phoneNumber String
   province    String

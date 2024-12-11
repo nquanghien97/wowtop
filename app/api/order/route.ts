@@ -2,7 +2,7 @@ import prisma from "../../../lib/db";
 import { NextResponse } from "next/server";
 
 export async function POST(req: Request) {
-  const { fullName, phoneNumber, province, district, ward, address } = await req.json();
+  const { fullName, phoneNumber, province, district, ward, address, tiktok_link } = await req.json();
   try {
     await prisma.order.create({
       data: {
@@ -11,7 +11,8 @@ export async function POST(req: Request) {
         province,
         district,
         ward,
-        address
+        address,
+        tiktok_link
       }
     })
     return NextResponse.json({ message: 'Đặt mua thành công' }, { status: 200 })
