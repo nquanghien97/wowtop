@@ -16,14 +16,14 @@ async function page() {
   if (!token) {
     redirect('/')
   }
-  const { data } = await getCurrentUser(token?.value || '') as { data: UserEntity}
+  const { data } = await getCurrentUser(token?.value || '') as { data: UserEntity }
   const { data: data_accululation } = await getAccumulationCode(token?.value || '')
 
 
   return (
     <main className="bg-[url('/BG-1.png')] bg-[length:100%_100%]">
       <Image src="/Heading-3.png" alt="thông tin tài khoản" width={754} height={69} className="m-auto py-16" />
-        <UpdateUser dataUser={data} />
+      <UpdateUser dataUser={data} />
       <div className="max-w-4xl m-auto mb-8">
         <div className="bg-[#BD9522] flex justify-around items-center rounded-t-2xl">
           <div className="flex items-center">
@@ -46,24 +46,26 @@ async function page() {
           </div>
         </div>
         <div className="py-12 px-[160px] bg-white">
-          <div className="rounded-xl border border-black overflow-hidden">
-            <table className="w-full text-center">
-              <thead>
-                <tr>
-                  <th className="border-b border-r border-black py-2">Thời gian</th>
-                  <th className="border-b border-black py-2">Mã</th>
-                </tr>
-              </thead>
-              <tbody>
-                {data_accululation.map((data: any) => (
-                  <tr key={data.id}>
-                    <td className="border-r border-black py-2">{formatDateWithoutHours(data.created_at)}</td>
-                    <td className="py-2">{data.code}</td>
+          {data_accululation.length !== 0 ? (
+            <div className="rounded-xl border border-black overflow-hidden">
+              <table className="w-full text-center">
+                <thead>
+                  <tr>
+                    <th className="border-b border-r border-black py-2">Thời gian</th>
+                    <th className="border-b border-black py-2">Mã</th>
                   </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
+                </thead>
+                <tbody>
+                  {data_accululation.map((data: any) => (
+                    <tr key={data.id} className="[&:not(:last-child)]:border-b border-black">
+                      <td className="border-r border-black py-2">{formatDateWithoutHours(data.created_at)}</td>
+                      <td className="py-2">{data.code}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          ) : <p className="text-center">Chưa có dữ liệu</p>}
         </div>
       </div>
     </main>

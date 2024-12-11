@@ -85,7 +85,7 @@ export async function GET(req: NextRequest) {
     skip,
     take,
     where: {
-      user_id: +user_id
+      used_by_user_id: +user_id
     },
     orderBy: {
       created_at: "asc"
