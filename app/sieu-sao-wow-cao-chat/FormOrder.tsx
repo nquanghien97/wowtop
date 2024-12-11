@@ -77,8 +77,8 @@ function FormOrder(props: { ip: string }) {
     const date = new Date(Date.now());
     const link = window.location.href
     try {
-      if (process.env.NEXT_PUBLIC_GOOGLE_API_BASE_URL) {
-        await fetch(process.env.NEXT_PUBLIC_GOOGLE_API_BASE_URL, {
+      if (process.env.NEXT_PUBLIC_GOOGLE_API_BASE_URL_2) {
+        await fetch(process.env.NEXT_PUBLIC_GOOGLE_API_BASE_URL_2, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',

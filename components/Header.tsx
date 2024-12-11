@@ -75,7 +75,7 @@ function Header() {
                 )}
               </ul>
               <div className="cursor-pointer mr-2">
-                <Link href="/dang-ky-dung-thu" className="dk-dung-thu font-bold hover:opacity-80 duration-300">SIÊU SAO WOW CAO CHẤT</Link>
+                <Link href="/sieu-sao-wow-cao-chat" className="dk-dung-thu font-bold hover:opacity-80 duration-300">SIÊU SAO WOW CAO CHẤT</Link>
               </div>
             </div>
             <div className="flex items-center mr-8 lg:hidden">
@@ -120,7 +120,7 @@ function Header() {
               ))}
             </ul>
             <div className="cursor-pointer mr-2">
-              <Link href="/dang-ky-dung-thu" className="dk-dung-thu font-bold hover:opacity-80 duration-300">SIÊU SAO WOW CAO CHẤT</Link>
+              <Link href="/sieu-sao-wow-cao-chat" className="dk-dung-thu font-bold hover:opacity-80 duration-300">SIÊU SAO WOW CAO CHẤT</Link>
             </div>
           </div>
         </AppSidebar>
