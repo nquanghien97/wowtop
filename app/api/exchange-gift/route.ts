@@ -70,7 +70,8 @@ export async function GET(req: Request) {
   const pageParam = url.searchParams.get('page');
   const page_sizeParam = url.searchParams.get('page_size')
   const exchanged_user_id = url.searchParams.get('exchanged_user_id');
-  const gift_id = url.searchParams.get('gift_id');
+  const gift_name = url.searchParams.get('gift_name');
+  const full_name = url.searchParams.get('full_name');
 
   const page = pageParam ? parseInt(pageParam, 10) : null;
   const page_size = page_sizeParam ? parseInt(page_sizeParam, 10) : null;
@@ -83,11 +84,14 @@ export async function GET(req: Request) {
     take = page_size;
   }
   const whereCondition = {
-    ...(exchanged_user_id && { user_id: +exchanged_user_id }),
-    ...(gift_id && { gift_id: +gift_id }),
+    ...(full_name && { user: { full_name } }),
+    ...(gift_name && { gift: { name: gift_name } }),
   };
   try {
-    if(!user_id) return NextResponse.json({ success: false, message: 'Unauthorized' }, { status: 401 });
+    if (!user_id) return NextResponse.json({ success: false, message: 'Unauthorized' }, { status: 401 });
+    const total = await prisma.exchangedGift.count({
+      where: whereCondition
+    })
     const exchanged_data = await prisma.exchangedGift.findMany({
       where: whereCondition,
       include: {
@@ -95,6 +99,7 @@ export async function GET(req: Request) {
           select: {
             id: true,
             name: true,
+            imageUrl: true
           }
         },
         user: {
@@ -106,7 +111,15 @@ export async function GET(req: Request) {
         }
       }
     })
-    return NextResponse.json({ message: 'Lấy danh sách đổi hàng thành công', data: exchanged_data } , { status: 200 })
+    return NextResponse.json({
+      message: 'Lấy danh sách đổi hàng thành công',
+      data: exchanged_data,
+      paging: {
+        total,
+        page,
+        page_size
+      }
+    }, { status: 200 })
   } catch (err) {
     if (err instanceof Error) {
       return NextResponse.json({ message: err.message }, { status: 500 })
