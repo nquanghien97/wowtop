@@ -7,8 +7,8 @@ const nextConfig = {
         hostname: 'localhost',
       },
       {
-        protocol: 'http',
-        hostname: '103.183.112.179',
+        protocol: 'https',
+        hostname: 'wowtopmilk.com.vn',
       },
       {
         protocol: 'https',
