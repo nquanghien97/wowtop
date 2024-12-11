@@ -125,9 +125,9 @@ function FormSearch(props: { ip?: string }) {
     <section className="my-8">
       <div className="px-8 md:px-16 py-4 md:py-8 md:w-[1000px] w-full m-auto bg-[url('/popup-mobile.png')] md:bg-[url('/popup-des.png')] bg-[length:100%_100%] bg-center rounded-[50px]">
         <div className="flex justify-center md:justify-end">
-          <div className="md:w-2/3 w-full mt-36 max-md:mb-[280px]">
-            <form className="flex flex-col gap-4" onSubmit={handleSubmit(onSubmit)}>
-              <div className="w-full flex gap-4 max-md:flex-col">
+          <div className="md:w-2/3 w-full mt-28 max-md:mb-[240px]">
+            <form className="flex flex-col gap-2" onSubmit={handleSubmit(onSubmit)}>
+              <div className="w-full flex gap-2 max-md:flex-col">
                 <div className="md:w-1/2 w-full">
                   <input
                     className="w-full px-4 py-2 rounded-full outline-none placeholder-[#002A9E] placeholder:italic placeholder:font-semibold"
@@ -145,8 +145,8 @@ function FormSearch(props: { ip?: string }) {
                   {errors.phoneNumber && <span className="text-[red] text-xs p-2">{errors.phoneNumber.message}</span>}
                 </div>
               </div>
-              <div className="w-full flex gap-4 flex-col">
-                <div className="flex gap-4 max-md:flex-col">
+              <div className="w-full flex gap-2 flex-col">
+                <div className="flex gap-2 max-md:flex-col">
                   <div className="md:w-1/2 w-full">
                     <Controller
                       name="province"
@@ -208,7 +208,7 @@ function FormSearch(props: { ip?: string }) {
                     {errors.district && <span className="text-[red] text-xs p-2">{errors.district.message}</span>}
                   </div>
                 </div>
-                <div className="flex gap-4 max-md:flex-col">
+                <div className="flex gap-2 max-md:flex-col">
                   <div className="md:w-1/2 w-full">
                     <Controller
                       name="ward"
@@ -237,7 +237,7 @@ function FormSearch(props: { ip?: string }) {
                   <div className="md:w-1/2 w-full">
                     <input
                       placeholder="Địa chỉ (Số nhà, tên đường)*"
-                      className="w-full rounded-full px-4 py-3 outline-none placeholder-[#002A9E] placeholder:italic placeholder:font-semibold"
+                      className="w-full rounded-full px-4 py-2 outline-none placeholder-[#002A9E] placeholder:italic placeholder:font-semibold"
                       {...register("address", { required: true })}
                     />
                     {errors.address && <span className="text-[red] text-xs p-2">{errors.address.message}</span>}
@@ -245,7 +245,7 @@ function FormSearch(props: { ip?: string }) {
                 </div>
               </div>
               <div className="flex justify-center">
-                <button type='submit' className="text-white italic uppercase hover:opacity-85 duration-300 mr-2 flex justify-center items-center bg-[#002A9E] rounded-full px-16 py-4">
+                <button type='submit' className="text-white italic uppercase hover:opacity-85 duration-300 mr-2 flex justify-center items-center bg-[#002A9E] rounded-full px-16 py-2">
                   Bắt đầu tìm kiếm
                   {loading && <LoadingIcon size="small" />}
                 </button>
