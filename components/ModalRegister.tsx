@@ -110,8 +110,10 @@ function ModalRegister({ open, onClose }: { open: boolean, onClose: () => void }
   const onSubmit = async (data: FormValues) => {
     setLoading(true);
     try {
-      await sendOtp(data.phone_number)
-      setIsShowOtpForm(true)
+      if(!otp) {
+        await sendOtp(data.phone_number)
+        setIsShowOtpForm(true)
+      }
       if (otp) {
         await verifyOtp({ phone_number: data.phone_number, otp })
         const submit_data = {
