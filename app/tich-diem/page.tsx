@@ -65,7 +65,7 @@ async function page() {
               <div key={item.id} className="px-4 lg:w-1/4 mb-4">
                 <div className="bg-[#fffce9] rounded-xl shadow-md flex flex-col">
                   <div className="p-5 h-[270px]">
-                    <Image src={`${process.env.NEXT_PUBLIC_API_BASE_URL}/${item.imageUrl}`} alt={item.name} width={264} height={264} className="hover:scale-110 duration-300" />
+                    <Image src={`${process.env.NEXT_PUBLIC_API_BASE_URL}${item.imageUrl}`} alt={item.name} width={264} height={264} className="hover:scale-110 duration-300" />
                   </div>
                   <div className="h-1/2">
                     <p className="mt-4 text-center text-2xl text-[#07489E]">{item.name}</p>
