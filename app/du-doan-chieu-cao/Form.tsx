@@ -15,6 +15,7 @@ import { useForm, Controller } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 import data from '@/app/data.json'
+import { formatDate } from '@/utils/formatDate';
 
 interface FormValues {
   parentName: string;
@@ -109,7 +110,7 @@ interface Option {
   label: string;
   value: string;
 }
-function Form() {
+function Form({ ip } : { ip: string }) {
   const { register, handleSubmit, watch, control, setValue, formState: { errors } } = useForm({
     resolver: yupResolver(schema),
   });
@@ -165,7 +166,24 @@ function Form() {
       sport: data.sport,
       timeSleep: data.timeSleep,
     }
+    const date = new Date(Date.now());
+    const link = window.location.href
     try {
+      if (process.env.NEXT_PUBLIC_GOOGLE_API_BASE_URL_3) {
+        await fetch(process.env.NEXT_PUBLIC_GOOGLE_API_BASE_URL_3, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            date: formatDate(date),
+            ...submitForm,
+            link,
+            ip
+          }),
+          mode: 'no-cors'
+        })
+      }
       const res = await postInformations(submitForm)
       router.push(`/du-doan-chieu-cao/${res.data.code}`)
     } catch (err) {

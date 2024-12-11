@@ -258,7 +258,7 @@ async function page() {
               </div>
             </div>
             <div className="flex-1 px-2">
-              <LazyYouTubeEmbed videoId='y9vlAFDEr7I' />
+              <LazyYouTubeEmbed videoId='6FVUCtcFDW4' />
             </div>
           </div>
           <div className="flex max-md:flex-col gap-4 mb-4">

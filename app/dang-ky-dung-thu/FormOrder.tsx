@@ -66,6 +66,7 @@ function FormOrder(props: { ip: string }) {
   const onSubmit = async (data: FormValues) => {
     setLoading(true);
     const submitForm = {
+      tiktok_link: data.tiktok_link,
       fullName: data.fullName,
       phoneNumber: data.phoneNumber,
       province: data.provinceLabel,
@@ -76,22 +77,22 @@ function FormOrder(props: { ip: string }) {
     const date = new Date(Date.now());
     const link = window.location.href
     try {
-      // if (process.env.NEXT_PUBLIC_GOOGLE_API_BASE_URL) {
-      //   await fetch(process.env.NEXT_PUBLIC_GOOGLE_API_BASE_URL, {
-      //     method: 'POST',
-      //     headers: {
-      //       'Content-Type': 'application/json',
-      //     },
-      //     body: JSON.stringify({
-      //       date: formatDate(date),
-      //       ...submitForm,
-      //       link,
-      //       ip
-      //     }),
-      //     mode: 'no-cors'
-      //   })
-      // }
-      // await createOrder(submitForm)
+      if (process.env.NEXT_PUBLIC_GOOGLE_API_BASE_URL_2) {
+        await fetch(process.env.NEXT_PUBLIC_GOOGLE_API_BASE_URL_2, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            date: formatDate(date),
+            ...submitForm,
+            link,
+            ip
+          }),
+          mode: 'no-cors'
+        })
+      }
+      await createOrder(submitForm)
       toast.success('Đăng ký đơn hàng thành công, Chúng tôi sẽ liên hệ quý khách trong thời gian tới')
     } catch (err) {
       if (err instanceof Error) {

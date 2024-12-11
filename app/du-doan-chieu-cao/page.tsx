@@ -27,7 +27,9 @@ export const metadata: Metadata = {
     ],
   }
 }
-function DuDoanChieuCao() {
+async function DuDoanChieuCao() {
+  const res_ip = await fetch('https://api.ipify.org?format=json')
+  const ip = await res_ip.json()
   return (
     <main>
       <section className="mb-8">
@@ -40,7 +42,7 @@ function DuDoanChieuCao() {
               vàng phù hợp</strong> cho lộ trình phát triển chiều cao tối đa của trẻ nhé</p>
           </div>
         </div>
-        <Form />
+        <Form ip={ip.ip} />
       </section>
     </main>
   )
