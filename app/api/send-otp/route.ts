@@ -20,8 +20,10 @@ export async function POST(req: NextRequest) {
 
     const verification = await client.verify.v2.services(serviceSid)
       .verifications
-      .create({ to: formattedPhoneNumber, channel: 'sms' });
-
+      .create({
+        to: formattedPhoneNumber,
+        channel: 'sms',
+      });
     return NextResponse.json({ success: true, sid: verification.sid });
   } catch (error: any) {
     return NextResponse.json({ success: false, error: error.message }, { status: 500 });
