@@ -2,22 +2,13 @@
 
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
-import { Controller, useForm } from 'react-hook-form';
-import Select, { SelectInstance, SingleValue } from 'react-select';
-import { useEffect, useId, useRef, useState } from 'react';
-import { OrderEntity } from '@/entities/order';
+import { useForm } from 'react-hook-form';
+import { useState } from 'react';
 import { createOrder } from '@/services/orderServices';
 import { toast } from 'react-toastify';
 import LoadingIcon from '@/assets/icons/LoadingIcon';
-import Image from 'next/image'
-import data from '@/app/data.json'
 import { formatDate } from '@/utils/formatDate';
-
-interface FormValues extends OrderEntity {
-  provinceLabel?: string;
-  districtLabel?: string;
-  wardLabel?: string;
-}
+import { OrderEntity } from '@/entities/order';
 
 const phoneRegExp = /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/
 
@@ -27,19 +18,8 @@ const schema = yup.object().shape({
     .string()
     .matches(phoneRegExp, 'Vui lòng nhập số điện thoại hợp lệ')
     .required('Vui lòng nhập số điện thoại'),
-  province: yup.string().required('Vui lòng chọn tỉnh/thành phố'),
-  district: yup.string().required('Vui lòng chọn quận/huyện'),
-  ward: yup.string().required('Vui lòng chọn phường/xã'),
   address: yup.string().required('Vui lòng nhập địa chỉ'),
-  provinceLabel: yup.string(),
-  districtLabel: yup.string(),
-  wardLabel: yup.string(),
 });
-
-interface Option {
-  label: string;
-  value: string;
-}
 
 function FormSearch(props: { ip?: string }) {
   const { ip } = props;
@@ -68,27 +48,13 @@ function FormSearch(props: { ip?: string }) {
     }
   };
 
-  const id = useId()
-  const [optionProvinces, setOptionProvinces] = useState<{ label: string, value: string }[]>([]);
-  const [optionsDistricts, setOptionsDistricts] = useState<{ label: string, value: string }[]>([]);
-  const [optionsWards, setOptionsWards] = useState<{ label: string, value: string }[]>([]);
   const [loading, setLoading] = useState(false);
 
-  const selectDistrictRef = useRef<SelectInstance<Option, false>>(null);
-  const selectWardRef = useRef<SelectInstance<Option, false>>(null);
-
-  useEffect(() => {
-    setOptionProvinces(data.map(item => ({ label: item.FullName, value: item.Code })))
-  }, [])
-
-  const onSubmit = async (data: FormValues) => {
+  const onSubmit = async (data: OrderEntity) => {
     setLoading(true);
     const submitForm = {
       fullName: data.fullName,
       phoneNumber: data.phoneNumber,
-      province: data.provinceLabel,
-      district: data.districtLabel,
-      ward: data.wardLabel,
       address: data.address,
     }
     const date = new Date(Date.now());
@@ -127,8 +93,8 @@ function FormSearch(props: { ip?: string }) {
         <div className="flex justify-center md:justify-end">
           <div className="md:w-2/3 w-full mt-28 max-md:mb-[240px]">
             <form className="flex flex-col gap-2 md:gap-4" onSubmit={handleSubmit(onSubmit)}>
-              <div className="w-full flex gap-2 md:gap-4 max-md:flex-col">
-                <div className="md:w-1/2 w-full">
+              <div className="w-full flex gap-2 md:gap-4 flex-col">
+                <div className="w-full">
                   <input
                     className="w-full px-4 py-2 rounded-full outline-none placeholder-[#002A9E] placeholder:italic placeholder:font-semibold"
                     placeholder='Họ và tên*'
@@ -136,7 +102,7 @@ function FormSearch(props: { ip?: string }) {
                   />
                   {errors.fullName && <span className="text-[red] text-xs p-2">{errors.fullName.message}</span>}
                 </div>
-                <div className="md:w-1/2 w-full">
+                <div className="w-full">
                   <input
                     className="w-full px-4 py-2 rounded-full outline-none placeholder-[#002A9E] placeholder:italic placeholder:font-semibold"
                     placeholder='Số điện thoại*'
@@ -145,107 +111,18 @@ function FormSearch(props: { ip?: string }) {
                   {errors.phoneNumber && <span className="text-[red] text-xs p-2">{errors.phoneNumber.message}</span>}
                 </div>
               </div>
-              <div className="w-full flex gap-2 md:gap-4 flex-col">
-                <div className="flex gap-2 md:gap-4 max-md:flex-col">
-                  <div className="md:w-1/2 w-full">
-                    <Controller
-                      name="province"
-                      control={control}
-                      render={({ field }) => (
-                        <Select
-                          {...field}
-                          options={optionProvinces}
-                          instanceId={id}
-                          placeholder="Tỉnh/Thành phố*"
-                          className="w-full"
-                          getOptionLabel={(option: Option) => option.label}
-                          getOptionValue={(option: Option) => option.value}
-                          value={optionProvinces.find((opt) => opt.value === field.value)} // Set the value correctly
-                          onChange={async (selectedOption: SingleValue<Option>) => {
-                            field.onChange(selectedOption ? selectedOption.value : "")
-                            const provinceId = selectedOption?.value;
-                            selectDistrictRef.current?.clearValue();
-                            selectWardRef.current?.clearValue();
-                            setValue('provinceLabel', selectedOption ? selectedOption.label : "")
-                            if (provinceId) {
-                              setOptionsDistricts(data.flatMap(item => item.District.filter(item1 => item1.ProvinceCode === provinceId)).map(item3 => ({ label: item3.FullName, value: item3.Code })));
-                            }
-                          }
-                          }
-                        />
-                      )}
-                    />
-                    {errors.province && <span className="text-[red] text-xs p-2">{errors.province.message}</span>}
-                  </div>
-                  <div className="md:w-1/2 w-full">
-                    <Controller
-                      name="district"
-                      control={control}
-                      render={({ field }) => (
-                        <Select
-                          {...field}
-                          ref={selectDistrictRef}
-                          options={optionsDistricts}
-                          instanceId={id}
-                          placeholder="Quận/Huyện*"
-                          className="w-full"
-                          getOptionLabel={(option: Option) => option.label}
-                          getOptionValue={(option: Option) => option.value}
-                          value={optionsDistricts.find((opt) => opt.value === field.value)} // Set the value correctly
-                          onChange={async (selectedOption: SingleValue<Option>) => {
-                            field.onChange(selectedOption ? selectedOption.value : "")
-                            setValue('districtLabel', selectedOption ? selectedOption.label : "")
-                            const districtId = selectedOption?.value;
-                            selectWardRef.current?.clearValue();
-                            if (districtId) {
-                              setOptionsWards(data.flatMap(item => item.District.flatMap(item1 => item1.Ward?.filter(item2 => item2.DistrictCode === districtId))).filter(item4 => item4 !== undefined).flatMap(item3 => ({ label: item3.FullName, value: item3.Code })));
-                            }
-                          }
-                          }
-                        />
-                      )}
-                    />
-                    {errors.district && <span className="text-[red] text-xs p-2">{errors.district.message}</span>}
-                  </div>
-                </div>
-                <div className="flex gap-2 md:gap-4 max-md:flex-col">
-                  <div className="md:w-1/2 w-full">
-                    <Controller
-                      name="ward"
-                      control={control}
-                      render={({ field }) => (
-                        <Select
-                          {...field}
-                          ref={selectWardRef}
-                          options={optionsWards}
-                          instanceId={id}
-                          placeholder="Phường/Xã*"
-                          className="w-full"
-                          getOptionLabel={(option: Option) => option.label}
-                          getOptionValue={(option: Option) => option.value}
-                          value={optionsWards.find((opt) => opt.value === field.value)} // Set the value correctly
-                          onChange={(selectedOption: SingleValue<Option>) => {
-                            setValue('wardLabel', selectedOption ? selectedOption.label : "")
-                            field.onChange(selectedOption ? selectedOption.value : "")
-                          }
-                          }
-                        />
-                      )}
-                    />
-                    {errors.ward && <span className="text-[red] text-xs p-2">{errors.ward.message}</span>}
-                  </div>
-                  <div className="md:w-1/2 w-full">
-                    <input
-                      placeholder="Địa chỉ (Số nhà, tên đường)*"
-                      className="w-full rounded-full px-4 py-2 outline-none placeholder-[#002A9E] placeholder:italic placeholder:font-semibold"
-                      {...register("address", { required: true })}
-                    />
-                    {errors.address && <span className="text-[red] text-xs p-2">{errors.address.message}</span>}
-                  </div>
+              <div className="w-full flex gap-2 md:gap-4 flex-col mb-4">
+                <div className="w-full">
+                  <input
+                    placeholder="Bạn đang ở địa chỉ nào*"
+                    className="w-full rounded-full px-4 py-2 outline-none placeholder-[#002A9E] placeholder:italic placeholder:font-semibold"
+                    {...register("address", { required: true })}
+                  />
+                  {errors.address && <span className="text-[red] text-xs p-2">{errors.address.message}</span>}
                 </div>
               </div>
               <div className="flex justify-center">
-                <button type='submit' className="text-white italic uppercase hover:opacity-85 duration-300 mr-2 flex justify-center items-center bg-[#002A9E] rounded-full px-16 py-2">
+                <button type='submit' className="text-white italic uppercase hover:opacity-85 duration-300 flex justify-center items-center bg-[#002A9E] rounded-full px-16 py-2 transform animate-pulsate">
                   Bắt đầu tìm kiếm
                   {loading && <LoadingIcon size="small" />}
                 </button>

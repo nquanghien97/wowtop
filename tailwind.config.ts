@@ -16,6 +16,15 @@ const config: Config = {
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
+      keyframes: {
+        pulsate: {
+          '0%, 100%': { transform: 'scale(1)' },
+          '50%': { transform: 'scale(1.10)' },
+        },
+      },
+      animation: {
+        pulsate: 'pulsate 1s ease-in-out infinite',
+      },
     },
   },
   plugins: [],

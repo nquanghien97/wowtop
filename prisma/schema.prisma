@@ -59,9 +59,9 @@ model Order {
   tiktok_link String?
   fullName    String
   phoneNumber String
-  province    String
-  district    String
-  ward        String
+  province    String?
+  district    String?
+  ward        String?
   address     String
   createdAt   DateTime @default(now())
 }

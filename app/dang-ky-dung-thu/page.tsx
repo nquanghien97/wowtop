@@ -1,7 +1,6 @@
 import React from 'react'
 import Banner from './Banner'
 import Image from 'next/image'
-import CongThuc from '@/components/CongThuc'
 import Link from 'next/link'
 import LazyYouTubeEmbed from '@/components/YoutubeEmbed'
 import Slide from './Slide'
