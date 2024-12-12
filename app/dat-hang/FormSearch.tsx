@@ -24,7 +24,7 @@ const schema = yup.object().shape({
 function FormSearch(props: { ip?: string }) {
   const { ip } = props;
 
-  const { register, handleSubmit, control, setValue, formState: { errors } } = useForm({
+  const { register, handleSubmit, formState: { errors } } = useForm({
     resolver: yupResolver(schema),
   });
 
@@ -96,7 +96,7 @@ function FormSearch(props: { ip?: string }) {
               <div className="w-full flex gap-2 md:gap-4 flex-col">
                 <div className="w-full">
                   <input
-                    className="w-full px-4 py-2 rounded-full outline-none placeholder-[#002A9E] placeholder:italic placeholder:font-semibold"
+                    className="w-full px-4 py-2 rounded-full outline-none placeholder-[#002A9E] placeholder:italic placeholder:font-semibold border border-[#002A9E]"
                     placeholder='Họ và tên*'
                     {...register('fullName')}
                   />
@@ -104,7 +104,7 @@ function FormSearch(props: { ip?: string }) {
                 </div>
                 <div className="w-full">
                   <input
-                    className="w-full px-4 py-2 rounded-full outline-none placeholder-[#002A9E] placeholder:italic placeholder:font-semibold"
+                    className="w-full px-4 py-2 rounded-full outline-none placeholder-[#002A9E] placeholder:italic placeholder:font-semibold border border-[#002A9E]"
                     placeholder='Số điện thoại*'
                     {...register('phoneNumber')}
                   />
@@ -115,7 +115,7 @@ function FormSearch(props: { ip?: string }) {
                 <div className="w-full">
                   <input
                     placeholder="Bạn đang ở địa chỉ nào*"
-                    className="w-full rounded-full px-4 py-2 outline-none placeholder-[#002A9E] placeholder:italic placeholder:font-semibold"
+                    className="w-full rounded-full px-4 py-2 outline-none placeholder-[#002A9E] placeholder:italic placeholder:font-semibold border border-[#002A9E]"
                     {...register("address", { required: true })}
                   />
                   {errors.address && <span className="text-[red] text-xs p-2">{errors.address.message}</span>}
