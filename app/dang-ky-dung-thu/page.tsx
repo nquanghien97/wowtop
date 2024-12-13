@@ -16,8 +16,8 @@ async function page() {
       <Banner />
       <section className="mb-8">
         <div className="m-auto px-4">
-          <h2 className="bg-text-1 text-center text-[5vw] md:text-4xl uppercase font-bold py-1">Nhận xuất quà tặng</h2>
-          <h3 className="bg-text-1 text-center text-[4vw] md:text-3xl uppercase font-bold py-1">Sữa cao wowtop</h3>
+          <h2 className="bg-text-1 text-center text-[5vw] md:text-4xl uppercase font-bold py-1">Nhận xuất quà tặng hấp dẫn</h2>
+          <h3 className="bg-text-1 text-center text-[4vw] md:text-3xl uppercase font-bold py-1">Từ sữa cao wowtop</h3>
           <p className="bg-text-1 text-center text-[3vw] md:text-2xl uppercase py-1">Nhập khẩu nguyên lon từ Newzealand</p>
           <div className="max-w-5xl m-auto">
             <div className="bg-[url('/asset_15.png')] bg-[length:100%_100%] h-[70px] flex justify-center items-center mb-2">
