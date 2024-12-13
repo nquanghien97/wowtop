@@ -257,8 +257,9 @@ async function page() {
               <p className="bg-text text-[calc(1.5rem+1vw)] md:text-3xl font-semibold max-md:text-center">Bố mẹ theo dõi Fanpage Wowtop hoặc truy cập website <Link href="/#" className="bg-text-blue">wowtopmilk.com.vn/sieu-sao-wow-cao-chat</Link> để cập nhật kết quả chương trình</p>
             </div>
             <div className="flex-1 relative">
-              <Image src="/3.jpg" alt="3" width={469} height={257} className="w-full" />
-              <Link href="/" className="absolute top-[46%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 italic uppercase text-[#84571B]">Tham gia group</Link>
+              <div className="flex-1 relative">
+                <Link href="https://www.facebook.com/wowtoptangchieucao" target='blank'><Image src="/3.jpg" alt="3" width={469} height={257} className="w-full" /></Link>
+              </div>
             </div>
           </div>
           <div className="flex max-md:flex-col gap-4 mb-4">
