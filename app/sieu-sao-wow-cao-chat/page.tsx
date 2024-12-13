@@ -23,11 +23,22 @@ async function page() {
             <div className="bg-[url('/asset_15.png')] bg-[length:100%_100%] h-[70px] flex justify-center items-center mb-2">
               <p className="flex items-center text-white text-2xl">lên đến <span className="text-white text-[5vw] md:text-4xl font-bold uppercase ml-4 py-2">4.600.000 VNĐ/ Suất</span></p>
             </div>
-            <p className="text-[#84571B] text-justify mb-4">
-              WowTop là sữa hàng đầu tại New Zealand về tăng chiều cao, WowTop mới có mặt tại Việt Nam và chuẩn bị ra mắt. Hiện tại chưa có nhiều người tại Việt Nam có cơ hội trải nghiệm sản phẩm, nên chúng tôi mang đến chương trình đặc biệt này để tạo cơ hội cho các mẹ cùng bé được trải nghiệm dòng sản phẩm tuyệt vời, từ đó cùng chúng tôi lan toả về WowTop - sữa tăng chiều cao thật sự hiệu quả để nhiều người cùng biết tới.
-            </p>
+            <div className="flex max-md:flex-col relative">
+              <Image src="/asset_5.png" alt="asset_5" width={140} height={140} className="absolute md:top-[-10%] right-0 w-1/5 md:w-[12%]" />
+              <Image src="/pt2.webp" alt="pt2" width={140} height={140} className="absolute left-0 md:left-1/2 top-[-4%] w-1/5 md:w-[12%]" />
+              <div className="w-2/5 max-md:m-auto md:mr-8">
+                <Image src="/asset_18.png" alt="asset_18" width={320} height={455} className="w-full" />
+              </div>
+              <div className="md:w-3/5 flex items-center flex-col justify-center">
+                <p className="text-[#84571B] text-justify">
+                  WowTop là sữa hàng đầu tại New Zealand về tăng chiều cao, WowTop mới có mặt tại Việt Nam và chuẩn bị ra mắt. Hiện tại chưa có nhiều người tại Việt Nam có cơ hội trải nghiệm sản phẩm, nên chúng tôi mang đến chương trình đặc biệt này để tạo cơ hội cho các mẹ cùng bé được trải nghiệm dòng sản phẩm tuyệt vời, từ đó cùng chúng tôi lan toả về WowTop - sữa tăng chiều cao thật sự hiệu quả để nhiều người cùng biết tới.
+                </p>
+                <Link href="#trial-form">
+                  <Image src="/bt.png" alt="bt" width={400} height={400} className="cursor-pointer" />
+                </Link>
+              </div>
+            </div>
           </div>
-          <Image src="/asset_18.png" alt="asset_18" width={588} height={490} className="m-auto" />
           <div className="flex flex-col w-full gap-8 relative mb-8 max-md:flex-col items-center justify-center">
             <div className="flex jutify-center">
               <div className="flex-1 bg-[url('/asset_23.png')] bg-[length:100%_100%] w-full">
@@ -268,7 +279,7 @@ async function page() {
               <p className="bg-text text-[calc(1.5rem+1vw)] md:text-3xl font-semibold text-center">Chuyên gia tăng chiều cao tư vấn và lên phác đồ tăng chiều cao miễn phí cho con</p>
             </div>
             <div className="flex-1">
-              <Image src="/2.jpg" alt="2" width={469} height={257} className="w-full" />
+              <Image src="/bac-si.png" alt="bac-si" width={469} height={257} className="w-full" />
             </div>
             <div className="flex-1 max-md:hidden">
               <div className="buoc table m-auto md:inline-block md:text-3xl text-[calc(1.25rem+0.5vw)] mb-4 float-right relative">
