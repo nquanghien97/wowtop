@@ -92,9 +92,9 @@ function Header({ currentUser, token } : { currentUser: UserEntity, token?: stri
                 )}
               </ul>
               <div className="cursor-pointer mr-2">
-                <Link href="/dang-ky-dung-thu" className="dk-dung-thu font-bold hover:opacity-80 duration-300">Đăng ký dùng thử</Link>
+                <Link href="/sieu-sao-wow-cao-chat" className="dk-dung-thu font-bold hover:opacity-80 duration-300">SIÊU SAO WOW CAO CHẤT</Link>
               </div>
-              {user ? (
+              {/* {user ? (
                 <div
                   className="relative"  
                 >
@@ -105,7 +105,7 @@ function Header({ currentUser, token } : { currentUser: UserEntity, token?: stri
                 <div className="cursor-pointer" onClick={() => setIsOpenLogin(true)}>
                   <span className="bg-[#002A9E] py-[6px] px-2 rounded-full font-bold hover:opacity-80 duration-300">Đăng nhập</span>
                 </div>
-              )}
+              )} */}
             </div>
             <div className="flex items-center mr-8 lg:hidden">
               <div className="cursor-pointer p-1 hover:bg-[#e0e0e0] rounded-full duration-300" onClick={() => setIsOpenSidebar(true)}>
@@ -149,9 +149,9 @@ function Header({ currentUser, token } : { currentUser: UserEntity, token?: stri
               ))}
             </ul>
             <div className="cursor-pointer flex justify-center mb-2 w-full px-2">
-              <Link href="/dang-ky-dung-thu" className="dk-dung-thu w-full text-center font-bold hover:opacity-80 duration-300">Đăng ký dùng thử</Link>
+              <Link href="/sieu-sao-wow-cao-chat" className="dk-dung-thu w-full text-center font-bold hover:opacity-80 duration-300">SIÊU SAO WOW CAO CHẤT</Link>
             </div>
-            <div
+            {/* <div
               className="cursor-pointer flex justify-center w-full px-2"
               onClick={() => {
                 setIsOpenLogin(true)
@@ -159,7 +159,7 @@ function Header({ currentUser, token } : { currentUser: UserEntity, token?: stri
               }}
             >
               <span className="py-[6px] px-2 bg-[#002A9E] rounded-full w-full text-center font-bold hover:opacity-80 duration-300 text-white">Đăng nhập</span>
-            </div>
+            </div> */}
           </div>
         </AppSidebar>
       </div>
