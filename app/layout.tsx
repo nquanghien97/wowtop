@@ -9,6 +9,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import Header from '@/components/Header'
 import Footer from '@/components/Footer';
 import { Montserrat } from 'next/font/google';
+import { ToastContainer } from 'react-toastify';
 
 const montserrat = Montserrat({
   weight: '500',
@@ -52,6 +53,7 @@ export default function RootLayout({
         <Header />
         {children}
         <Footer />
+        <ToastContainer />
       </body>
     </html>
   )

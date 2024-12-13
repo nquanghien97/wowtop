@@ -15,60 +15,116 @@ async function page() {
     <main>
       <Banner />
       <section className="mb-8">
-        <div className="max-w-5xl m-auto px-4">
-          <h2 className="bg-text-1 text-center text-[5vw] md:text-4xl uppercase font-bold py-1">Nhận xuất quà tặng</h2>
-          <h3 className="bg-text-1 text-center text-[4vw] md:text-3xl uppercase font-bold py-1">Sữa cao wowtop</h3>
+        <div className="m-auto px-4">
+          <h2 className="bg-text-1 text-center text-[5vw] md:text-4xl uppercase font-bold py-1">Nhận xuất quà tặng hấp dẫn</h2>
+          <h3 className="bg-text-1 text-center text-[4vw] md:text-3xl uppercase font-bold py-1">Từ sữa cao wowtop</h3>
           <p className="bg-text-1 text-center text-[3vw] md:text-2xl uppercase py-1">Nhập khẩu nguyên lon từ Newzealand</p>
-          <div className="bg-[url('/asset_15.png')] bg-[length:100%_100%] h-[70px] flex justify-center items-center mb-2">
-            <p className="flex items-center text-white text-2xl">lên đến <span className="text-white text-[5vw] md:text-4xl font-bold uppercase ml-4 py-2">1.200.000 VNĐ/ Suất</span></p>
+          <div className="max-w-5xl m-auto">
+            <div className="bg-[url('/asset_15.png')] bg-[length:100%_100%] h-[70px] flex justify-center items-center mb-2">
+              <p className="flex items-center text-white text-2xl">lên đến <span className="text-white text-[5vw] md:text-4xl font-bold uppercase ml-4 py-2">4.600.000 VNĐ/ Suất</span></p>
+            </div>
+            <p className="text-[#84571B] text-justify mb-4">
+              WowTop là sữa hàng đầu tại New Zealand về tăng chiều cao, WowTop mới có mặt tại Việt Nam và chuẩn bị ra mắt. Hiện tại chưa có nhiều người tại Việt Nam có cơ hội trải nghiệm sản phẩm, nên chúng tôi mang đến chương trình đặc biệt này để tạo cơ hội cho các mẹ cùng bé được trải nghiệm dòng sản phẩm tuyệt vời, từ đó cùng chúng tôi lan toả về WowTop - sữa tăng chiều cao thật sự hiệu quả để nhiều người cùng biết tới.
+            </p>
           </div>
-          <p className="text-[#84571B] text-justify mb-4">
-            WowTop là sữa hàng đầu tại New Zealand về tăng chiều cao, WowTop mới có mặt tại Việt Nam và chuẩn bị ra mắt. Hiện tại chưa có nhiều người tại Việt Nam có cơ hội trải nghiệm sản phẩm, nên chúng tôi mang đến chương trình đặc biệt này để tạo cơ hội cho các mẹ cùng bé được trải nghiệm dòng sản phẩm tuyệt vời, từ đó cùng chúng tôi lan toả về WowTop - sữa tăng chiều cao thật sự hiệu quả để nhiều người cùng biết tới.
-          </p>
           <Image src="/asset_18.png" alt="asset_18" width={588} height={490} className="m-auto" />
           <div className="flex flex-col w-full gap-8 relative mb-8 max-md:flex-col items-center justify-center">
-            <div className="flex max-md:flex-col gap-4">
-              <div className="flex-1 bg-[url('/asset_23.png')] bg-[length:100%_100%] w-full">
-                <div className="text-center mt-8 relative">
-                  <span className="bg-text-blue text-[75px] font-bold">50</span>
-                  <div className="bg-[url('/asset_4.png')] bg-[length:100%_100%] text-xl px-4 font-semibold absolute left-[60%] top-[52%] -translate-x-1/2 -translate-y-1/2 text-[#135689]">Giải</div>
-                </div>
-                <div className="bg-[url('/asset_22.png')] bg-[length:100%_100%] min-h-[100px] flex justify-center items-center">
-                  <span className="text-white font-bold text-3xl">&quot;WOW THẦN TƯỢNG&quot;</span>
-                </div>
-                <div className="p-8 text-[#202B93] font-semibold">
-                  <p>Chọn 20 người chơi có video đạt lượng view và tương tác cao nhất trong thời gian diễn ra cuộc thi</p>
-                </div>
-              </div>
-              <div className="flex-1 bg-[url('/asset_23.png')] bg-[length:100%_100%] w-full">
-                <div className="text-center mt-8 relative">
-                  <span className="bg-text-blue text-[75px] font-bold">30</span>
-                  <div className="bg-[url('/asset_4.png')] bg-[length:100%_100%] text-xl px-4 font-semibold absolute left-[60%] top-[52%] -translate-x-1/2 -translate-y-1/2 text-[#135689]">Giải</div>
-                </div>
-                <div className="bg-[url('/asset_22.png')] bg-[length:100%_100%] min-h-[100px] flex justify-center items-center">
-                  <span className="text-white font-bold text-3xl">&quot;WOW TÀI NĂNG&quot;</span>
-                </div>
-                <div className="p-8 text-[#202B93] font-semibold">
-                  <p>Chọn 50 người chơi có video nhảy đẹp được BTC lựa chọn</p>
-                </div>
-              </div>
-            </div>
             <div className="flex jutify-center">
               <div className="flex-1 bg-[url('/asset_23.png')] bg-[length:100%_100%] w-full">
-                <div className="text-center mt-8 relative">
-                  <span className="bg-text-blue text-[75px] font-bold">20</span>
-                  <div className="bg-[url('/asset_4.png')] bg-[length:100%_100%] text-xl px-4 font-semibold absolute left-[60%] top-[52%] -translate-x-1/2 -translate-y-1/2 text-[#135689]">Giải</div>
+                <div className="text-center flex max-md:flex-col items-center justify-center p-4">
+                  <p className="bg-text-blue text-5xl font-extrabold uppercase py-4">Giải nhất</p>
+                  <div className="flex bg-[url('/dfhb.png')] bg-[length:100%_100%]">
+                    <p className="text-2xl px-4 font-semibold text-[#135689] uppercase">Siêu sao wow cao chất</p>
+                  </div>
                 </div>
-                <div className="bg-[url('/asset_22.png')] bg-[length:100%_100%] min-h-[100px] flex justify-center items-center">
-                  <span className="text-white font-bold text-3xl">&quot;WOW NHẢY GIỎI&quot;</span>
+                <div className="bg-[url('/asset_22.png')] bg-[length:100%_100%] min-h-[100px] flex justify-center items-center relative">
+                  <Image src="/Artboard 3.png" alt="Artboard 3" width={256} height={135} className="absolute left-[16%] w-1/3" />
+                  <Image src="/Artboard 8.png" alt="Artboard 8" width={256} height={142} className="absolute right-[28%] w-1/4" />
+                  <Image src="/Artboard 7.png" alt="Artboard 8" width={256} height={253} className="absolute right-0 w-1/3" />
                 </div>
-                <div className="p-8 text-[#202B93] font-semibold">
-                  <p>Chọn 30 nguời chơi may mắn tham gia quay thưởng random</p>
-                  <p className="text-sm">*Xét giải video cần đạt tối thiểu 200 lượt view, 20 lượt tương tác (tim, share, comment)</p>
+                <div className="p-4 font-semibold md:w-2/3">
+                  <p className="text-center text-[#202B93]">Chọn 1 nguời có video đạt lượng view và tương tác cao nhất</p>
                 </div>
               </div>
             </div>
-            {/* <Image src="/PT.webp" alt="PT" width={151} height={145} className="absolute bottom-[-30px] right-0" /> */}
+            <div className="flex max-md:flex-col gap-4">
+              <div className="flex-1 bg-[url('/asset_23.png')] bg-[length:100%_100%] w-full">
+                <div className="text-center flex flex-col items-center justify-center p-4 mb-4">
+                  <p className="bg-text-blue text-5xl font-extrabold uppercase py-4">Giải nhì</p>
+                  <div className="flex bg-[url('/dfhb.png')] bg-[length:100%_100%]">
+                    <p className="text-2xl px-4 font-semibold text-[#135689] uppercase">Siêu sao wow cao chất</p>
+                  </div>
+                </div>
+                <div className="bg-[url('/asset_22.png')] bg-[length:100%_100%] min-h-[100px] flex justify-center items-center relative">
+                  <Image src="/Artboard 2.png" alt="Artboard 2" width={256} height={135} className="absolute left-[16%] w-1/3" />
+                  <Image src="/Artboard 9.png" alt="Artboard 9" width={256} height={142} className="absolute right-[28%] w-1/4" />
+                  <Image src="/Artboard 6.png" alt="Artboard 6" width={256} height={253} className="absolute right-0 w-1/3" />
+                </div>
+                <div className="p-4 font-semibold md:w-2/3">
+                  <p className="text-center text-[#202B93]">Chọn 1 nguời có video đạt lượng view và tương tác cao thứ 2</p>
+                </div>
+              </div>
+              <div className="flex-1 bg-[url('/asset_23.png')] bg-[length:100%_100%] w-full">
+                <div className="text-center flex flex-col items-center justify-center p-4 mb-4">
+                  <p className="bg-text-blue text-5xl font-extrabold uppercase py-4">Giải ba</p>
+                  <div className="flex bg-[url('/dfhb.png')] bg-[length:100%_100%]">
+                    <p className="text-2xl px-4 font-semibold text-[#135689] uppercase">Siêu sao wow cao chất</p>
+                  </div>
+                </div>
+                <div className="bg-[url('/asset_22.png')] bg-[length:100%_100%] min-h-[100px] flex justify-center items-center relative">
+                  <Image src="/Artboard 4.png" alt="Artboard 4" width={256} height={135} className="absolute left-[16%] w-1/3" />
+                  <Image src="/Artboard 10.png" alt="Artboard 10" width={256} height={142} className="absolute right-[28%] w-1/4" />
+                  <Image src="/Artboard 5.png" alt="Artboard 5" width={256} height={253} className="absolute right-0 w-1/3" />
+                </div>
+                <div className="p-4 font-semibold md:w-2/3">
+                  <p className="text-center text-[#202B93]">Chọn 1 nguời có video đạt lượng view và tương tác cao nhất</p>
+                </div>
+              </div>
+            </div>
+            <div className="flex max-lg:flex-col gap-4 md:px-16">
+              <div className="flex-1 bg-[url('/asset_23.png')] bg-[length:100%_100%] w-full">
+                <div className="text-center flex items-center justify-center px-4">
+                  <p className="bg-text-blue text-[75px] font-extrabold uppercase">80</p>
+                  <div className="flex bg-[url('/dfhb.png')] bg-[length:100%_100%] ml-[-16px]">
+                    <p className="text-xl px-4 font-semibold text-[#135689] uppercase">Giải &quot;Wow thần tượng&quot;</p>
+                  </div>
+                </div>
+                <div className="bg-[url('/asset_22.png')] bg-[length:100%_100%] min-h-[100px] flex justify-center items-center relative">
+                  <Image src="/Artboard 11.png" alt="Artboard 11" width={400} height={189} className="w-1/2" />
+                </div>
+                <div className="p-4 font-semibold">
+                  <p className="text-center text-[#202B93]">Chọn 80 người chơi có video đạt lượng view và tương tác cao từ thứ 3 đến 83 trong thời gian diễn ra cuộc thi nhận giải &quot;WOW thần tượng&quot;</p>
+                </div>
+              </div>
+              <div className="flex-1 bg-[url('/asset_23.png')] bg-[length:100%_100%] w-full">
+                <div className="text-center flex items-center justify-center px-4">
+                  <p className="bg-text-blue text-[75px] font-extrabold uppercase">10</p>
+                  <div className="flex bg-[url('/dfhb.png')] bg-[length:100%_100%] ml-[-16px]">
+                    <p className="text-xl px-4 font-semibold text-[#135689] uppercase">Giải &quot;Wow tài năng&quot;</p>
+                  </div>
+                </div>
+                <div className="bg-[url('/asset_22.png')] bg-[length:100%_100%] min-h-[100px] flex justify-center items-center relative">
+                  <Image src="/Artboard 11.png" alt="Artboard 11" width={400} height={189} className="w-1/2" />
+                </div>
+                <div className="p-4 font-semibold">
+                  <p className="text-center text-[#202B93]">Chọn 10 người chơi có video nhảy đẹp được BTC lựa chọn</p>
+                </div>
+              </div>
+              <div className="flex-1 bg-[url('/asset_23.png')] bg-[length:100%_100%] w-full">
+                <div className="text-center flex items-center justify-center px-4">
+                  <p className="bg-text-blue text-[75px] font-extrabold uppercase">10</p>
+                  <div className="flex bg-[url('/dfhb.png')] bg-[length:100%_100%] ml-[-16px]">
+                    <p className="text-xl px-4 font-semibold text-[#135689] uppercase">Giải &quot;Wow nhảy giỏi&quot;</p>
+                  </div>
+                </div>
+                <div className="bg-[url('/asset_22.png')] bg-[length:100%_100%] min-h-[100px] flex justify-center items-center relative">
+                  <Image src="/Artboard 11.png" alt="Artboard 11" width={400} height={189} className="w-1/2" />
+                </div>
+                <div className="p-4 font-semibold">
+                  <p className="text-center text-[#202B93]">Chọn 10 người chơi may mắn tham gia quay thưởng random</p>
+                </div>
+              </div>
+            </div>
           </div>
           <p className="bg-text-blue text-[calc(1.25rem+1.5vw)] md:text-5xl py-4 font-bold text-center uppercase">Tổng giá trị lên đến 1,3 tỷ VNĐ</p>
           <div className="dkdt md:w-1/2 m-auto">
@@ -104,17 +160,20 @@ async function page() {
               <div className="flex-[0_0_auto] w-1/2 md:w-1/3 md:px-6 py-6">
                 <p className="mb-2 flex justify-center items-center w-8 h-8 rounded-full bg-[#202B93] text-white font-bold">2</p>
                 <Image src="/asset_41.png" alt="asset_41" width={90} height={90} className="m-auto mb-4" />
-                <p className="text-center px-4 mb-4 text-[#84571B] font-semibold">Đăng tải video lên Tiktok kèm hastag: <span className="text-[#202B93]">#sieusaowowcaochat #wowtop #tangchieucaotucap-donguyenbao</span></p>
+                <div className="text-center font-semibold">
+                  <p className="text-[#84571B] inline-block">Đăng tải video lên TikTok (Đăng thêm trên Facebook & Youtube cá nhân) kèm hashtag:</p>
+                  <br /> <span className="text-[#202B93]">#sieusaowowcaochat #wowtop</span>
+                </div>
               </div>
               <div className="flex-[0_0_auto] w-1/2 md:w-1/3 md:px-6 py-6">
                 <p className="mb-2 flex justify-center items-center w-8 h-8 rounded-full bg-[#202B93] text-white font-bold">3</p>
                 <Image src="/asset_42.png" alt="asset_42" width={90} height={90} className="m-auto mb-4" />
-                <p className="text-center px-4 mb-4 text-[#84571B] font-semibold">Bố mẹ truy cập website <Link className="text-[#202B93]" href="https://wowtop.vn">wowtop</Link> gửi link tham dự và đăng ký nhận quà dùng thử</p>
+                <p className="text-center px-4 mb-4 text-[#84571B] font-semibold">Bố mẹ truy cập website <Link className="text-[#202B93]" href="/wowtopmilk.com.vn">wowtopmilk</Link> gửi link tham dự và đăng ký nhận quà dùng thử</p>
               </div>
               <div className="flex-[0_0_auto] w-1/2 md:w-1/3 md:px-6 py-6">
                 <p className="mb-2 flex justify-center items-center w-8 h-8 rounded-full bg-[#202B93] text-white font-bold">4</p>
                 <Image src="/asset_43.png" alt="asset_43" width={90} height={90} className="m-auto mb-4" />
-                <p className="text-center px-4 mb-4 text-[#84571B] font-semibold">Bố mẹ theo dõi Fanpage Wowtop hoặc website <Link className="text-[#202B93]" href="https://wowtop.vn/sieu-sao-wow-cao-chat">wowtop</Link> để cập nhật kết quả chương trình</p>
+                <p className="text-center px-4 mb-4 text-[#84571B] font-semibold">Bố mẹ theo dõi Fanpage Wowtop hoặc website <Link className="text-[#202B93]" href="/wowtopmilk.com.vn">wowtopmilk</Link> để cập nhật kết quả chương trình</p>
               </div>
               <div className="flex-[0_0_auto] w-1/2 md:w-1/3 md:px-6 py-6">
                 <p className="mb-2 flex justify-center items-center w-8 h-8 rounded-full bg-[#202B93] text-white font-bold">5</p>
@@ -155,7 +214,7 @@ async function page() {
               </div>
             </div>
             <div className="flex-1 px-2">
-              <LazyYouTubeEmbed videoId='y9vlAFDEr7I' />
+              <LazyYouTubeEmbed videoId='6FVUCtcFDW4' />
             </div>
           </div>
           <div className="flex max-md:flex-col gap-4 mb-4">
@@ -163,7 +222,10 @@ async function page() {
               <div className="buoc table m-auto md:text-3xl text-[calc(1.25rem+0.5vw)] mb-4">
                 Bước 2
               </div>
-              <p className="bg-text text-[calc(1.5rem+1vw)] md:text-2xl text-center">Đăng tải video lên Tiktok kèm hastag: <span className="!text-[calc(1rem+1vw)] md:!text-2xl">#sieusaowowcaochat #wowtop #tangchieucaotucapdonguyenbao</span></p>
+              <div className="text-center clear-both font-semibold">
+                <p className="bg-text text-[calc(1.5rem+1vw)] inline-block md:text-3xl">Đăng tải video lên TikTok (Đăng thêm trên Facebook & Youtube cá nhân để được tính tổng view, tương tác) kèm hashtag:</p>
+                <br /> <span className="text-[#202B93] text-[calc(1rem+1vw)] md:text-3xl">#sieusaowowcaochat #wowtop #tangchieucaotucapdonguyenbao</span>
+              </div>
             </div>
             <div className="flex-1">
               <Image src="/asset_48.png" alt="asset_48" width={256} height={158} className="w-full" />
@@ -174,7 +236,10 @@ async function page() {
                 <p className="max-md:hidden absolute bg-[#202B93] w-4 h-4 rounded-full after:absolute after:content-[''] top-1/2 -left-full transform -translate-y-1/2"></p>
                 <p className="max-md:hidden absolute bg-[#202B93] w-full h-[1px] rounded-full after:absolute after:content-[''] top-1/2 -left-full transform -translate-y-1/2"></p>
               </div>
-              <p className="bg-text text-[calc(1.5rem+1vw)] md:text-3xl text-end clear-both font-semibold">Đăng tải video lên Tiktok kèm hastag:<br /> #sieusaowowcaochat #wowtop #tangchieucaotucapdonguyenbao</p>
+              <div className="text-end clear-both font-semibold">
+                <p className="bg-text text-[calc(1.5rem+1vw)] inline-block md:text-3xl">Đăng tải video lên TikTok (Đăng thêm trên Facebook & Youtube cá nhân để được tính tổng view, tương tác) kèm hashtag:</p>
+                <br /> <span className="text-[#202B93] text-[calc(1.5rem+1vw)] md:text-3xl">#sieusaowowcaochat #wowtop #tangchieucaotucapdonguyenbao</span>
+              </div>
             </div>
           </div>
           <div>
@@ -189,13 +254,10 @@ async function page() {
                 <p className="max-md:hidden absolute bg-[#202B93] w-4 h-4 rounded-full after:absolute after:content-[''] top-1/2 -right-full transform -translate-y-1/2"></p>
                 <p className="max-md:hidden absolute bg-[#202B93] w-full h-[1px] rounded-full after:absolute after:content-[''] top-1/2 -right-full transform -translate-y-1/2"></p>
               </div>
-              <p className="bg-text text-[calc(1.5rem+1vw)] md:text-3xl font-semibold max-md:text-center">Bố mẹ theo dõi <Link href="https://www.facebook.com/wowtoptangchieucao" className="bg-text-blue">Fanpage Wowtop </Link>hoặc truy cập website <Link href="https://wowtop.vn/sieu-sao-wow-cao-chat" className="bg-text-blue">wowtop.vn/sieu-sao-wow-cao-chat</Link> để cập nhật kết quả chương trình</p>
+              <p className="bg-text text-[calc(1.5rem+1vw)] md:text-3xl font-semibold max-md:text-center">Bố mẹ theo dõi Fanpage Wowtop hoặc truy cập website <Link href="/#" className="bg-text-blue">wowtopmilk.com.vn/sieu-sao-wow-cao-chat</Link> để cập nhật kết quả chương trình</p>
             </div>
             <div className="flex-1 relative">
-              
-              <Link href="https://www.facebook.com/wowtoptangchieucao" className="">
-                <Image src="/3.jpg" alt="3" width={469} height={257} className="w-full" />
-              </Link>
+              <Link href="https://www.facebook.com/wowtoptangchieucao" target='blank'><Image src="/3.jpg" alt="3" width={469} height={257} className="w-full" /></Link>
             </div>
           </div>
           <div className="flex max-md:flex-col gap-4 mb-4">
@@ -222,6 +284,18 @@ async function page() {
           </div>
         </div>
       </section>
+      {/* <section className="mb-8">
+        <div className="max-w-3xl m-auto">
+          <div className="bg-[url('/asset_24.png')] bg-[length:100%_100%] min-h-[120px] flex items-center justify-center mb-4">
+            <span className="uppercase font-bold bg-text-blue text-[4vw] md:text-3xl py-2 mt-2">Điều khoản tham gia chương trình</span>
+          </div>
+          <ul className="text-[#84571B] mx-2">
+            <li className="mb-1">* Bố mẹ khi tham gia chương trình đăng ký dùng thử đồng ý với Thể lệ và Điều khoản chương trình</li>
+            <li className="mb-1">* Đồng ý cho Nhãn hàng sử dụng video, hình ảnh cho mục đích truyền thông sản phẩm</li>
+            <li className="mb-1">* Mọi quyết định cuối cùng thuộc về ban tổ chức</li>
+          </ul>
+        </div>
+      </section> */}
       <section className="mb-8">
         <div className="max-w-4xl m-auto">
           <div className="bg-[url('/asset_24.png')] bg-[length:100%_100%] min-h-[120px] flex items-center justify-center mb-4">
