@@ -146,16 +146,18 @@ async function page() {
       <section className="mb-8">
         <div className="max-w-5xl m-auto">
           <h2 className="text-[28px] text-[#84571B] text-center uppercase mb-16">{'>'}{'>'} Tìm hiểu thêm về sản phẩm</h2>
-          <div className="flex max-md:flex-col gap-4 mb-8">
-            <div className="bg-[url('/asset_46.png')] bg-[length:100%_100%] min-h-[160px] flex-1 flex justify-center items-center relative">
-              <div className="absolute left-[25%] text-[#84571B] text-xl">
+          <div className="flex max-lg:flex-col gap-4 mb-8">
+            <div className="bg-[url('/trhtr.png')] bg-[length:100%_100%] min-h-[200px] flex-1 flex items-center">
+              <Image src="/clock.png" alt="clock" width={160} height={160} className="mr-4" />
+              <div className=" text-[#84571B] text-xl">
                 <p>Thời gian tham gia từ ngày ... đến ngày ...</p>
                 <p>Thời gian công bố kết quả ...</p>
                 <p>Thời gian gửi quà sau 1 tuần kể từ ngày thông báo.</p>
               </div>
             </div>
-            <div className="bg-[url('/asset_47.png')] bg-[length:100%_100%] min-h-[160px] flex-1 flex justify-center items-center relative">
-              <p className="absolute left-[25%] text-[#84571B] text-xl">Đối tượng tham gia chương trình là các bé trong độ tuổi <strong>từ 1-16 tham gia nhảy</strong> cùng bố mẹ hoặc anh chị cô</p>
+            <div className="bg-[url('/trhtr.png')] bg-[length:100%_100%] min-h-[160px] flex-1 flex justify-center items-center">
+              <Image src="/group.png" alt="group" width={160} height={160} className="mr-4" />
+              <p className="text-[#84571B] text-xl">Đối tượng tham gia chương trình là các bé trong độ tuổi <strong>từ 1-16 tham gia nhảy</strong> cùng bố mẹ hoặc anh chị cô</p>
             </div>
           </div>
           <div className="bg-[url('/asset_24.png')] bg-[length:100%_100%] min-h-[120px] flex items-center justify-center">
@@ -165,26 +167,27 @@ async function page() {
             <div className="flex flex-wrap">
               <div className="flex-[0_0_auto] w-1/2 md:w-1/3 md:px-6 py-6">
                 <p className="mb-2 flex justify-center items-center w-8 h-8 rounded-full bg-[#202B93] text-white font-bold">1</p>
-                <Image src="/asset_40.png" alt="asset_40" width={90} height={90} className="m-auto mb-4" />
+                <Image src="/asset_40.png" alt="asset_40" width={90} height={90} className="m-auto mb-4 mt-[-20px]" />
                 <p className="text-center px-4 mb-4 text-[#84571B] font-semibold">Xem video mẫu để học các điệu nhảy &quot;SIÊU SAO WOW CAO CHẤT&quot;</p>
               </div>
               <div className="flex-[0_0_auto] w-1/2 md:w-1/3 md:px-6 py-6">
                 <p className="mb-2 flex justify-center items-center w-8 h-8 rounded-full bg-[#202B93] text-white font-bold">2</p>
-                <Image src="/asset_41.png" alt="asset_41" width={90} height={90} className="m-auto mb-4" />
+                <Image src="/asset_41.png" alt="asset_41" width={90} height={90} className="m-auto mb-4 mt-[-20px]" />
                 <div className="text-center font-semibold">
-                  <p className="text-[#84571B] inline-block">Đăng tải video lên TikTok (Đăng thêm trên Facebook & Youtube cá nhân) kèm hashtag:</p>
-                  <br /> <span className="text-[#202B93]">#sieusaowowcaochat #wowtop</span>
+                  <p className="text-[#84571B] inline-block"> Đăng tải video lên TikTok (Đăng thêm trên Facebook & Youtube cá nhân để được tính tổng view, tương tác) kèm hashtag:</p>
+                  <br />
+                  <span className="text-[#202B93] whitespace-normal break-words">#sieusaowowcaochat #wowtop #tangchieucaotucapdonguyenbao</span>
                 </div>
               </div>
               <div className="flex-[0_0_auto] w-1/2 md:w-1/3 md:px-6 py-6">
                 <p className="mb-2 flex justify-center items-center w-8 h-8 rounded-full bg-[#202B93] text-white font-bold">3</p>
-                <Image src="/asset_42.png" alt="asset_42" width={90} height={90} className="m-auto mb-4" />
+                <Image src="/asset_42.png" alt="asset_42" width={90} height={90} className="m-auto mb-4 mt-[-20px]" />
                 <p className="text-center px-4 mb-4 text-[#84571B] font-semibold">Bố mẹ truy cập website <Link className="text-[#202B93]" href="/wowtopmilk.com.vn">wowtopmilk</Link> gửi link tham dự và đăng ký nhận quà dùng thử</p>
               </div>
               <div className="flex-[0_0_auto] w-1/2 md:w-1/3 md:px-6 py-6">
                 <p className="mb-2 flex justify-center items-center w-8 h-8 rounded-full bg-[#202B93] text-white font-bold">4</p>
                 <Image src="/asset_43.png" alt="asset_43" width={90} height={90} className="m-auto mb-4" />
-                <p className="text-center px-4 mb-4 text-[#84571B] font-semibold">Bố mẹ theo dõi Fanpage Wowtop hoặc website <Link className="text-[#202B93]" href="/wowtopmilk.com.vn">wowtopmilk</Link> để cập nhật kết quả chương trình</p>
+                <p className="text-center px-4 mb-4 text-[#84571B] font-semibold">Bố mẹ theo dõi <Link href="/https://www.facebook.com/wowtoptangchieucao">Fanpage Wowtop</Link> hoặc website <Link className="text-[#202B93] whitespace-normal break-words" href="https://wowtopmilk.com.vn/sieu-sao-wow-cao-chat">wowtopmilk.com.vn/sieu-sao-wow-cao-chat</Link> để cập nhật kết quả chương trình</p>
               </div>
               <div className="flex-[0_0_auto] w-1/2 md:w-1/3 md:px-6 py-6">
                 <p className="mb-2 flex justify-center items-center w-8 h-8 rounded-full bg-[#202B93] text-white font-bold">5</p>
@@ -235,7 +238,7 @@ async function page() {
               </div>
               <div className="text-center clear-both font-semibold">
                 <p className="bg-text text-[calc(1.5rem+1vw)] inline-block md:text-3xl">Đăng tải video lên TikTok (Đăng thêm trên Facebook & Youtube cá nhân để được tính tổng view, tương tác) kèm hashtag:</p>
-                <br /> <span className="text-[#202B93] text-[calc(1rem+1vw)] md:text-3xl">#sieusaowowcaochat #wowtop #tangchieucaotucapdonguyenbao</span>
+                <br /> <span className="text-[#202B93] text-[calc(1rem+1vw)] md:text-3xl whitespace-normal break-words">#sieusaowowcaochat #wowtop #tangchieucaotucapdonguyenbao</span>
               </div>
             </div>
             <div className="flex-1">
@@ -249,7 +252,7 @@ async function page() {
               </div>
               <div className="text-end clear-both font-semibold">
                 <p className="bg-text text-[calc(1.5rem+1vw)] inline-block md:text-3xl">Đăng tải video lên TikTok (Đăng thêm trên Facebook & Youtube cá nhân để được tính tổng view, tương tác) kèm hashtag:</p>
-                <br /> <span className="text-[#202B93] text-[calc(1.5rem+1vw)] md:text-3xl">#sieusaowowcaochat #wowtop #tangchieucaotucapdonguyenbao</span>
+                <br /> <span className="text-[#202B93] text-[calc(1.5rem+1vw)] md:text-3xl whitespace-normal break-words">#sieusaowowcaochat #wowtop #tangchieucaotucapdonguyenbao</span>
               </div>
             </div>
           </div>
@@ -265,7 +268,7 @@ async function page() {
                 <p className="max-md:hidden absolute bg-[#202B93] w-4 h-4 rounded-full after:absolute after:content-[''] top-1/2 -right-full transform -translate-y-1/2"></p>
                 <p className="max-md:hidden absolute bg-[#202B93] w-full h-[1px] rounded-full after:absolute after:content-[''] top-1/2 -right-full transform -translate-y-1/2"></p>
               </div>
-              <p className="bg-text text-[calc(1.5rem+1vw)] md:text-3xl font-semibold max-md:text-center">Bố mẹ theo dõi Fanpage Wowtop hoặc truy cập website <Link href="/#" className="bg-text-blue">wowtopmilk.com.vn/sieu-sao-wow-cao-chat</Link> để cập nhật kết quả chương trình</p>
+              <p className="bg-text text-[calc(1.5rem+1vw)] md:text-3xl font-semibold max-md:text-center">Bố mẹ theo dõi Fanpage Wowtop hoặc truy cập website <Link href="/#" className="bg-text-blue whitespace-normal break-words">wowtopmilk.com.vn/sieu-sao-wow-cao-chat</Link> để cập nhật kết quả chương trình</p>
             </div>
             <div className="flex-1 relative">
               <div className="flex-1 relative">
