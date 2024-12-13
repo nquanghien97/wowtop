@@ -255,7 +255,7 @@ async function page() {
           </div>
           <div>
             <p className="buoc table m-auto md:text-3xl text-[calc(1.25rem+0.5vw)] mb-4">Bước 3</p>
-            <p className="bg-text text-[calc(1.5rem+1vw)] md:text-3xl font-semibold text-center w-full md:w-1/2 m-auto mb-4">BỐ MẸ ĐIỀN FORM ĐĂNG KÝ DÙNG THỬ SỮA WOWTOP CHO CON YÊU</p>
+            <p className="bg-text text-[calc(1.5rem+1vw)] md:text-3xl font-semibold text-center w-full m-auto mb-4">BỐ MẸ GỬI LINK THAM GIA ĐỂ NHẬN CƠ HỘI DÙNG THỬ SỮA WOWTOP CHO CON YÊU NHÉ</p>
             <FormOrder ip={ip.ip} />
           </div>
           <div className="flex max-md:flex-col gap-4 mb-4">

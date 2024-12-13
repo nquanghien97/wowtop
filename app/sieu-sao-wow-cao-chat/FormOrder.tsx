@@ -120,7 +120,7 @@ function FormOrder(props: { ip: string }) {
                 <div className="w-full">
                   <input
                     className="w-full p-4 rounded-full outline-none placeholder-[#002A9E] placeholder:italic placeholder:font-semibold"
-                    placeholder='Link Tiktok*'
+                    placeholder='Link TikTok tham gia Dance Challenge SIÊU SAO WOW CAO CHẤT*'
                     {...register('tiktok_link')}
                   />
                   {errors.tiktok_link && <span className="text-[red] text-xs p-2">{errors.tiktok_link.message}</span>}
@@ -128,14 +128,14 @@ function FormOrder(props: { ip: string }) {
                 <div className="w-full">
                   <input
                     className="w-full p-4 rounded-full outline-none placeholder-[#002A9E] placeholder:italic placeholder:font-semibold"
-                    placeholder='Link Facebook'
+                    placeholder='Link Facebook tham gia Dance Challenge SIÊU SAO WOW CAO CHẤT'
                     {...register('facebook_link')}
                   />
                 </div>
                 <div className="w-full">
                   <input
                     className="w-full p-4 rounded-full outline-none placeholder-[#002A9E] placeholder:italic placeholder:font-semibold"
-                    placeholder='Link Youtube'
+                    placeholder='Link Youtube tham gia Dance Challenge SIÊU SAO WOW CAO CHẤT'
                     {...register('youtube_link')}
                   />
                 </div>
