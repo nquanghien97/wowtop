@@ -132,108 +132,6 @@ async function page() {
           </div>
         </div>
       </section>
-      {/* <CongThuc /> */}
-      {/* <section className="bg-[url('/dong-co.png')] bg-[length:100%_100%] bg-center h-[1062px] relative max-lg:hidden z-[30]">
-        <div className="max-w-6xl m-auto px-4">
-          <div className="py-8">
-            <h2 className="text-xl md:text-4xl text-[#002A9E] uppercase text-center !leading-tight"><strong>Nông trại bò sữa chuẩn quốc tế</strong><br />Cung cấp nguồn sữa<br />Từ những chú bò hạnh phúc nhất thế giới</h2>
-          </div>
-          <div className="flex flex-col">
-            <div className="flex justify-between w-full mb-8">
-              <div className="m-auto w-2/3 flex justify-center">
-                <div className="flex justify-between w-full mb-4">
-                  <div className="flex flex-col items-center justify-center">
-                    <div className="flex items-center flex-1">
-                      <Image src="/conbo_img_1.png" alt="conbo_img_1" width={100} height={45} className='' />
-                    </div>
-                    <div className="flex items-center flex-1">
-                      <p className="text-white font-bold text-2xl text-center">NON-GMO</p>
-                    </div>
-                  </div>
-                  <div className="flex flex-col items-center justify-center">
-                    <div className="flex items-center flex-1">
-                      <Image src="/conbo_img_2.png" alt="conbo_img_2" width={100} height={45} className='' />
-                    </div>
-                    <div className="flex items-center flex-1">
-                      <p className="text-white font-bold text-2xl text-center">NATURAL <br />INGREDIENTS</p>
-                    </div>
-                  </div>
-                  <div className="flex flex-col items-center justify-center">
-                    <div className="flex items-center flex-1">
-                      <Image src="/conbo_img_3.png" alt="conbo_img_3" width={100} height={45} className='' />
-                    </div>
-                    <div className="flex items-center flex-1">
-                      <p className="text-white font-bold text-2xl text-center">GRASS FED</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="flex justify-between items-center relative mb-24">
-              <div className="relative w-1/2 flex justify-center items-center">
-                <Image src="/chung-nhan-bg.png" alt="chung-nhan-bg" width={543} height={357} className="absolute w-full" />
-                <div className="flex flex-col items-center relative z-20 p-8">
-                  <div className="flex justify-center items-center gap-2">
-                    <Image src="/chung-nhan-1.png" alt='chung-nhan-1' width={276} height={276} className="w-1/6" />
-                    <p className="text-[#002A9E] font-bold text-xl">Non-GMO: Chứng nhận nguồn nguyên liệu không biến đổi Gen</p>
-                  </div>
-                  <div className="flex justify-center items-center gap-2">
-                    <Image src="/chung-nhan-2.png" alt='chung-nhan-2' width={276} height={276} className="w-1/6" />
-                    <p className="text-[#002A9E] font-bold text-xl">GRASS FED: Chứng nhận 100% Bò ăn cỏ tự nhiên</p>
-                  </div>
-                  <div className="flex justify-center items-center gap-2">
-                    <Image src="/chung-nhan-3.png" alt='chung-nhan-3' width={276} height={276} className="w-1/6" />
-                    <p className="text-[#002A9E] font-bold text-xl">NATURAL INGREDIENTS: Sử dụng nguồn nguyên liệu từ thiên nhiên</p>
-                  </div>
-                </div>
-              </div>
-              <div className="absolute top-0 right-0">
-                <Image src="/dong-co-d-2.webp" alt="dong-co-d-2" width={467} height={382} />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section className="bg-[url('/bg-co-m.png')] bg-center bg-[length:100%_100%] relative lg:hidden py-8 z-[30]">
-        <div className="mb-8 px-4">
-          <h2 className="text-[5vw] text-[#002A9E] uppercase text-center !leading-tight"><strong>Nông trại bò sữa chuẩn quốc tế</strong><br />Cung cấp nguồn sữa từ những chú bò hạnh phúc nhất thế giới</h2>
-        </div>
-        <div className="flex justify-center w-full flex-col">
-          <div className="mx-auto w-2/3">
-            <div className="flex justify-between mb-4 w-full">
-              <Image src="/conbo_img_1.png" alt="conbo_img_1" width={120} height={90} className="w-1/4" />
-              <Image src="/conbo_img_2.png" alt="conbo_img_2" width={120} height={90} className="w-1/4" />
-              <Image src="/conbo_img_3.png" alt="conbo_img_3" width={120} height={90} className="w-1/4" />
-            </div>
-          </div>
-          <div className="flex flex-col items-center relative z-20 w-2/3 m-auto">
-            <div className="flex justify-center items-center gap-2 w-full">
-              <Image src="/chung-nhan-1.png" alt='chung-nhan-1' width={150} height={150} className="w-1/4" />
-              <p className="text-[#002A9E] text-3xl font-bold flex-1">NON-GMO</p>
-            </div>
-            <div className="flex justify-center items-center gap-2 w-full">
-              <Image src="/chung-nhan-2.png" alt='chung-nhan-2' width={150} height={150} className="w-1/4" />
-              <p className="text-[#002A9E] text-3xl font-bold flex-1">GRASS FED</p>
-            </div>
-            <div className="flex justify-center items-center gap-2 w-full">
-              <Image src="/chung-nhan-3.png" alt='chung-nhan-3' width={150} height={150} className="w-1/4" />
-              <p className="text-[#002A9E] text-3xl font-bold flex-1">NATURAL INGREDIENTS</p>
-            </div>
-          </div>
-          <div className="flex justify-center w-2/3 m-auto mb-9">
-            <Image src="/dong-co-d-2.webp" alt="dong-co-d-2" width={500} height={400} className="w-full" />
-          </div>
-        </div>
-      </section>
-      <section className="lg:pb-[40%] pb-[80%] bg-[length:100%_100%] pt-[120px] lg:pt-40 relative z-20 top-[-150px] mb-8">
-        <Image src="/nha-may.jpeg" width={2400} height={1800} alt='nhà máy' className="absolute inset-0 h-full w-full" />
-        <div className="px-4 relative z-10">
-          <div className="bg-[url('/asset_10.png')] bg-[length:100%_100%] text-center py-4">
-            <h2 className="uppercase md:text-4xl text-[#002A9E] font-bold pb-1">Nhà máy sản xuất WOWTOP tại NewZealand</h2>
-            <p className="md:text-4xl text-[#002A9E] uppercase">Dẫn đầu về công nghệ sản xuất sữa</p>
-          </div>
-        </div>
-      </section> */}
       <section className="mb-8">
         <div className="max-w-5xl m-auto">
           <h2 className="text-[28px] text-[#84571B] text-center uppercase mb-16">{'>'}{'>'} Tìm hiểu thêm về sản phẩm</h2>
@@ -262,7 +160,10 @@ async function page() {
               <div className="flex-[0_0_auto] w-1/2 md:w-1/3 md:px-6 py-6">
                 <p className="mb-2 flex justify-center items-center w-8 h-8 rounded-full bg-[#202B93] text-white font-bold">2</p>
                 <Image src="/asset_41.png" alt="asset_41" width={90} height={90} className="m-auto mb-4" />
-                <p className="text-center px-4 mb-4 text-[#84571B] font-semibold">Đăng tải video lên Tiktok kèm hastag: <span className="text-[#202B93]">#sieusaowowcaochat #wowtop #tangchieucaotucap-donguyenbao</span></p>
+                <div className="text-center font-semibold">
+                  <p className="text-[#84571B] inline-block">Đăng tải video lên TikTok (Đăng thêm trên Facebook & Youtube cá nhân) kèm hashtag:</p>
+                  <br /> <span className="text-[#202B93]">#sieusaowowcaochat #wowtop</span>
+                </div>
               </div>
               <div className="flex-[0_0_auto] w-1/2 md:w-1/3 md:px-6 py-6">
                 <p className="mb-2 flex justify-center items-center w-8 h-8 rounded-full bg-[#202B93] text-white font-bold">3</p>
@@ -321,7 +222,10 @@ async function page() {
               <div className="buoc table m-auto md:text-3xl text-[calc(1.25rem+0.5vw)] mb-4">
                 Bước 2
               </div>
-              <p className="bg-text text-[calc(1.5rem+1vw)] md:text-2xl text-center">Đăng tải video lên Tiktok kèm hastag: <span className="!text-[calc(1rem+1vw)] md:!text-2xl">#sieusaowowcaochat #wowtop #tangchieucaotucapdonguyenbao</span></p>
+              <div className="text-center clear-both font-semibold">
+                <p className="bg-text text-[calc(1.5rem+1vw)] inline-block md:text-3xl">Đăng tải video lên TikTok (Đăng thêm trên Facebook & Youtube cá nhân để được tính tổng view, tương tác) kèm hashtag:</p>
+                <br /> <span className="text-[#202B93] text-[calc(1rem+1vw)] md:text-3xl">#sieusaowowcaochat #wowtop #tangchieucaotucapdonguyenbao</span>
+              </div>
             </div>
             <div className="flex-1">
               <Image src="/asset_48.png" alt="asset_48" width={256} height={158} className="w-full" />
@@ -332,7 +236,10 @@ async function page() {
                 <p className="max-md:hidden absolute bg-[#202B93] w-4 h-4 rounded-full after:absolute after:content-[''] top-1/2 -left-full transform -translate-y-1/2"></p>
                 <p className="max-md:hidden absolute bg-[#202B93] w-full h-[1px] rounded-full after:absolute after:content-[''] top-1/2 -left-full transform -translate-y-1/2"></p>
               </div>
-              <p className="bg-text text-[calc(1.5rem+1vw)] md:text-3xl text-end clear-both font-semibold">Đăng tải video lên Tiktok kèm hastag:<br /> #sieusaowowcaochat #wowtop #tangchieucaotucapdonguyenbao</p>
+              <div className="text-end clear-both font-semibold">
+                <p className="bg-text text-[calc(1.5rem+1vw)] inline-block md:text-3xl">Đăng tải video lên TikTok (Đăng thêm trên Facebook & Youtube cá nhân để được tính tổng view, tương tác) kèm hashtag:</p>
+                <br /> <span className="text-[#202B93] text-[calc(1.5rem+1vw)] md:text-3xl">#sieusaowowcaochat #wowtop #tangchieucaotucapdonguyenbao</span>
+              </div>
             </div>
           </div>
           <div>

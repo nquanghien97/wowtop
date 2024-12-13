@@ -5,15 +5,16 @@ import * as yup from 'yup';
 import { Controller, useForm } from 'react-hook-form';
 import Select, { SelectInstance, SingleValue } from 'react-select';
 import { useEffect, useId, useRef, useState } from 'react';
-import { OrderEntity } from '@/entities/order';
 import { createOrder } from '@/services/orderServices';
 import { toast } from 'react-toastify';
 import LoadingIcon from '@/assets/icons/LoadingIcon';
 import Image from 'next/image'
 import data from '@/app/data.json'
 import { formatDate } from '@/utils/formatDate';
+import { DanceChallengeEntity } from '@/entities/dance-challenge';
+import { createDanceChallenge } from '@/services/dance-challenge';
 
-interface FormValues extends OrderEntity {
+interface FormValues extends DanceChallengeEntity {
   provinceLabel?: string;
   districtLabel?: string;
   wardLabel?: string;
@@ -23,8 +24,10 @@ const phoneRegExp = /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2
 
 const schema = yup.object().shape({
   tiktok_link: yup.string().required('Vui lòng nhập link tiktok'),
-  fullName: yup.string().required('Vui lòng nhập họ tên'),
-  phoneNumber: yup
+  facebook_link: yup.string(),
+  youtube_link: yup.string(),
+  full_name: yup.string().required('Vui lòng nhập họ tên'),
+  phone_number: yup
     .string()
     .matches(phoneRegExp, 'Vui lòng nhập số điện thoại hợp lệ')
     .required('Vui lòng nhập số điện thoại'),
@@ -67,8 +70,10 @@ function FormOrder(props: { ip: string }) {
     setLoading(true);
     const submitForm = {
       tiktok_link: data.tiktok_link,
-      fullName: data.fullName,
-      phoneNumber: data.phoneNumber,
+      facebook_link: data.facebook_link,
+      youtube_link: data.youtube_link,
+      full_name: data.full_name,
+      phone_number: data.phone_number,
       province: data.provinceLabel,
       district: data.districtLabel,
       ward: data.wardLabel,
@@ -92,7 +97,7 @@ function FormOrder(props: { ip: string }) {
           mode: 'no-cors'
         })
       }
-      await createOrder(submitForm)
+      await createDanceChallenge(submitForm)
       toast.success('Đăng ký đơn hàng thành công, Chúng tôi sẽ liên hệ quý khách trong thời gian tới')
     } catch (err) {
       if (err instanceof Error) {
@@ -118,24 +123,38 @@ function FormOrder(props: { ip: string }) {
                     placeholder='Link Tiktok*'
                     {...register('tiktok_link')}
                   />
-                  {errors.fullName && <span className="text-[red] text-xs p-2">{errors.fullName.message}</span>}
+                  {errors.tiktok_link && <span className="text-[red] text-xs p-2">{errors.tiktok_link.message}</span>}
+                </div>
+                <div className="w-full">
+                  <input
+                    className="w-full p-4 rounded-full outline-none placeholder-[#002A9E] placeholder:italic placeholder:font-semibold"
+                    placeholder='Link Facebook'
+                    {...register('facebook_link')}
+                  />
+                </div>
+                <div className="w-full">
+                  <input
+                    className="w-full p-4 rounded-full outline-none placeholder-[#002A9E] placeholder:italic placeholder:font-semibold"
+                    placeholder='Link Youtube'
+                    {...register('youtube_link')}
+                  />
                 </div>
                 <div className="w-full flex gap-4 max-md:flex-col">
                   <div className="md:w-1/2">
                     <input
                       className="w-full p-4 rounded-full outline-none placeholder-[#002A9E] placeholder:italic placeholder:font-semibold"
                       placeholder='Họ và tên*'
-                      {...register('fullName')}
+                      {...register('full_name')}
                     />
-                    {errors.fullName && <span className="text-[red] text-xs p-2">{errors.fullName.message}</span>}
+                    {errors.full_name && <span className="text-[red] text-xs p-2">{errors.full_name.message}</span>}
                   </div>
                   <div className="md:w-1/2">
                     <input
                       className="w-full p-4 rounded-full outline-none placeholder-[#002A9E] placeholder:italic placeholder:font-semibold"
                       placeholder='Số điện thoại*'
-                      {...register('phoneNumber')}
+                      {...register('phone_number')}
                     />
-                    {errors.phoneNumber && <span className="text-[red] text-xs p-2">{errors.phoneNumber.message}</span>}
+                    {errors.phone_number && <span className="text-[red] text-xs p-2">{errors.phone_number.message}</span>}
                   </div>
                 </div>
                 <div className="w-full flex gap-4 flex-col">
@@ -242,7 +261,7 @@ function FormOrder(props: { ip: string }) {
                   <label htmlFor="checkbox" className="text-[#002A9E] ml-2">Bố mẹ đã đọc và đồng ý <strong>Điều khoản đăng ký</strong></label>
                   {errors.term && <span className="text-[red] text-xs p-2">{errors.term.message}</span>}
                 </div>
-                <p className="text-[#002A9E] italic">Hãy liên hệ chuyên gia dinh dưỡng theo số <strong>0978488123</strong> để được tư vấn thêm</p>
+                <p className="text-[#002A9E] italic">Hãy liên hệ chuyên gia dinh dưỡng theo số <strong>18001103</strong> (miễn phí gọi đến) để được tư vấn thêm</p>
                 <div className="flex justify-center">
                   <div className="flex justify-center items-center bg-[#002A9E] rounded-full px-16 py-4">
                     <button type='submit' className="text-white italic uppercase hover:opacity-85 duration-300 mr-2">Xác nhận</button>
