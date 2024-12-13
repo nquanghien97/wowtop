@@ -58,7 +58,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
   const res = await getCurrentUser(token?.value || '')
 
   return (
-    <html lang="en">
+    <html lang="en" className="scroll-smooth">
       <head>
         {/* Google Ads Conversion Tracking */}
         <Script

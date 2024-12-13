@@ -6,6 +6,8 @@ import Feedback from '@/components/HomePage/Feedback';
 import FormOrder from '@/components/HomePage/FormOrder';
 import Experience from '@/components/HomePage/Experience';
 import Form from './Form';
+import PhoneIcon from '@/assets/icons/PhoneIcon';
+import CartIcon from '@/assets/icons/CartIcon';
 
 async function page() {
 
@@ -14,6 +16,14 @@ async function page() {
 
   return (
     <main>
+      <div className="fixed bottom-4 right-4 z-[100]">
+        <Link href="tel:0978488123" className="w-16 h-16 rounded-full bg-[#0054a5] flex justify-center items-center mb-4">
+          <PhoneIcon width={40} height={40} fill='white' />
+        </Link>
+        <Link href="#order" className="w-16 h-16 rounded-full bg-[#0054a5] flex justify-center items-center">
+          <CartIcon width={40} height={40} fill='white' />
+        </Link>
+      </div>
       <section className="relative">
         <div className="px-[10%] m-auto absolute top-1/2 -translate-y-1/2">
           <div className=" flex justify-between items-center">
