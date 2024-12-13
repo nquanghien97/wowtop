@@ -30,9 +30,15 @@ function Header() {
       <div className={`w-full ${isScrolled ? 'header' : ''}`}>
         <div className="header-top flex justify-end max-w-6xl m-auto">
           <ul className="flex flex-row text-[#643D14] gap-4 text-xs">
-            <li className="cursor-pointer">Trang trại New Zealand</li>
-            <li className="cursor-pointer">Mua hàng trực tuyến</li>
-            <li className="cursor-pointer">Nhận tư vấn</li>
+            <li className="cursor-pointer">
+              <Link href="/gioi-thieu">Trang trại New Zealand</Link>
+            </li>
+            <li className="cursor-pointer">
+              <Link href="#">Mua hàng trực tuyến</Link>
+            </li>
+            <li className="cursor-pointer">
+              <Link href="tel:0978488123">Nhận tư vấn</Link>
+            </li>
           </ul>
         </div>
         <header className="lg:h-[80px] header-bg-1 h-[60px] shadow-sm shadow-black/20 header-bottom">

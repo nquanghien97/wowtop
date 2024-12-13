@@ -109,7 +109,7 @@ function FormOrder(props: { ip: string }) {
   }
 
   return (
-    <section className="mb-8 bg-[bg-[#69dbe1]">
+    <section className="mb-8 bg-[bg-[#69dbe1] scroll-mt-24" id="trial-form">
       <div className="px-4 py-8 max-w-6xl m-auto bg-[url('/dki3.webp')] md:bg-[length:100%_100%]  bg-center rounded-[50px]">
         <div className="mb-8">
           <h2 className="text-[#002A9E] text-4xl uppercase text-center font-bold">Đăng ký dùng thử tại đây</h2>
