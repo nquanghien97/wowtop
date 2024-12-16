@@ -3,6 +3,7 @@ import Image from 'next/image'
 import Link from 'next/link';
 import Experience from '@/components/HomePage/Experience';
 import Banner from '@/components/HomePage/Banner';
+import Popup from '@/components/HomePage/Popup';
 
 export default async function Home() {
   const res_ip = await fetch('https://api.ipify.org?format=json')
@@ -10,6 +11,7 @@ export default async function Home() {
 
   return (
     <main>
+      <Popup />
       <section className="relative max-md:hidden">
         <div className="px-[10%] m-auto absolute top-1/2 -translate-y-1/2">
           <div className=" flex justify-between items-center">
