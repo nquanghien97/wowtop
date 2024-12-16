@@ -1,7 +1,6 @@
 import prisma from "@/lib/db";
 import { deleteFile, uploadFile } from "@/utils/fileUpload";
 import { NextResponse } from "next/server";
-import { File } from 'formdata-node';
 
 export async function POST(req: Request) {
   const user_id = req.headers.get('x-user-id');

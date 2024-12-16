@@ -2,7 +2,6 @@ import { createSlug } from "@/utils/createSlug";
 import prisma from "../../../lib/db";
 import { NextResponse } from "next/server";
 import { deleteFile, uploadFile } from "@/utils/fileUpload";
-import { File } from 'formdata-node';
 
 export async function POST(req: Request) {
   let filenames: string[] = [];

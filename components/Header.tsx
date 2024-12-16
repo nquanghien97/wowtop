@@ -17,7 +17,7 @@ import { useOutsideClick } from '@/hooks/useOutsideClick';
 import ModalChangePassword from './ModalChangePassword';
 import ModalForgotPassword from './ModalForgotPassword';
 
-function Header({ currentUser, token } : { currentUser: UserEntity, token?: string }) {
+function Header({ currentUser, token }: { currentUser: UserEntity, token?: string }) {
   const pathname = usePathname();
   const [isOpenSidebar, setIsOpenSidebar] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -46,7 +46,7 @@ function Header({ currentUser, token } : { currentUser: UserEntity, token?: stri
     <>
       <div className={`w-full ${isScrolled ? 'header' : ''}`}>
         <div className="header-top flex justify-end max-w-6xl m-auto">
-          <ul className="flex flex-row text-[#643D14] gap-4 text-xs">
+          <ul className="flex flex-row text-[#643D14] gap-4 text-xs max-lg:hidden">
             <li className="cursor-pointer">
               <Link href="/gioi-thieu">Trang trại New Zealand</Link>
             </li>
@@ -56,6 +56,10 @@ function Header({ currentUser, token } : { currentUser: UserEntity, token?: stri
             <li className="cursor-pointer">
               <Link href="tel:0978488123">Nhận tư vấn</Link>
             </li>
+          </ul>
+          <ul className="flex flex-row text-[#643D14] gap-4 lg:hidden mr-4">
+            <li><Link href="/du-doan-chieu-cao" className="font-bold uppercase">Dự đoán chiều cao của con</Link></li>
+            <li><Link href="/sieu-sao-wow-chat" className="font-bold uppercase">Siêu sao cao wow chất</Link></li>
           </ul>
         </div>
         <header className="lg:h-[80px] header-bg-1 h-[60px] shadow-sm shadow-black/20 header-bottom">
@@ -97,9 +101,6 @@ function Header({ currentUser, token } : { currentUser: UserEntity, token?: stri
                 )
                 )}
               </ul>
-              <div className="cursor-pointer mr-2">
-                <Link href="/sieu-sao-wow-cao-chat" className="dk-dung-thu font-bold hover:opacity-80 duration-300">SIÊU SAO WOW CAO CHẤT</Link>
-              </div>
               {/* {user ? (
                 <div
                   className="relative"  
@@ -138,7 +139,7 @@ function Header({ currentUser, token } : { currentUser: UserEntity, token?: stri
                     >
                       <ul className="bg-[#0f0f10] flex flex-col min-w-[15rem] border border-[#ffffff12] rounded-md lg:py-2">
                         {item.children.map(childItem => (
-                          <li key={childItem.path}>
+                          <li key={childItem.path} className={childItem.path === pathname ? 'text-[#643D14]' : ''}>
                             <Link className={`cursor-pointer hover:text-[#f18017] px-4 py-2 w-full flex items-center`} href={childItem.path}>
                               {childItem.title}
                             </Link>
@@ -154,9 +155,20 @@ function Header({ currentUser, token } : { currentUser: UserEntity, token?: stri
                 </li>
               ))}
             </ul>
-            <div className="cursor-pointer flex justify-center mb-2 w-full px-2">
-              <Link href="/sieu-sao-wow-cao-chat" className="dk-dung-thu w-full text-center font-bold hover:opacity-80 duration-300">SIÊU SAO WOW CAO CHẤT</Link>
+            <div className="cursor-pointer flex justify-center mb-4 w-full px-2">
+              <Link href="/sieu-sao-wow-cao-chat" className='dk-dung-thu w-full text-center font-bold duration-300'>SIÊU SAO WOW CAO CHẤT</Link>
             </div>
+            <ul className="flex flex-col text-[#643D14] gap-4">
+              <li className="cursor-pointer border-b-2 px-2 pb-4">
+                <Link href="/gioi-thieu">Trang trại New Zealand</Link>
+              </li>
+              <li className="cursor-pointer border-b-2 px-2 pb-4">
+                <Link href="/dat-hang">Mua hàng trực tuyến</Link>
+              </li>
+              <li className="cursor-pointer border-b-2 px-2 pb-4">
+                <Link href="tel:0978488123">Nhận tư vấn</Link>
+              </li>
+            </ul>
             {/* <div
               className="cursor-pointer flex justify-center w-full px-2"
               onClick={() => {
@@ -171,7 +183,7 @@ function Header({ currentUser, token } : { currentUser: UserEntity, token?: stri
       </div>
       <ModalLogin open={isOpenLogin} setIsOpenLogin={setIsOpenLogin} setIsOpenRegister={setIsOpenRegister} setIsOpenForgotPassword={setIsOpenForgotPassword} />
       <ModalRegister open={isOpenRegister} onClose={() => setIsOpenRegister(false)} />
-      <ModalChangePassword open={isOpenChangePassword} onClose={() => setIsOpenChangePassword(false)}  />
+      <ModalChangePassword open={isOpenChangePassword} onClose={() => setIsOpenChangePassword(false)} />
       <ModalForgotPassword open={isOpenForgotPassword} onClose={() => setIsOpenForgotPassword(false)} token={token} />
     </>
   )

@@ -1,6 +1,5 @@
 import { writeFile, unlink } from 'fs/promises';
 import path from 'path';
-import { File } from 'formdata-node';
 
 export async function uploadFile(files: File[], folderPath: string) {
 

@@ -2,7 +2,6 @@
 import { createSlug } from "@/utils/createSlug";
 import prisma from "../../../../lib/db"
 import { NextResponse } from "next/server";
-import { File } from 'formdata-node';
 import { deleteFile, uploadFile } from "@/utils/fileUpload";
 
 export async function PUT(req: Request, { params }: { params: { param: number } }) {
@@ -27,7 +26,7 @@ export async function PUT(req: Request, { params }: { params: { param: number } 
     const files = Array.from(formData.values()).filter((value): value is File => value instanceof File);
     const slug = createSlug(title);
     if (files.length === 0) {
-      const updatedNews = await prisma.$transaction(async (tx) => {
+      const updatedNews = await prisma.$transaction(async (tx: any) => {
         const news = await tx.news.update({
           where: { id: +param },
           data: {
@@ -47,7 +46,7 @@ export async function PUT(req: Request, { params }: { params: { param: number } 
     await deleteFile(oldNews?.imageUrl || '');
 
     filenames = await uploadFile(files, "news");
-    const updatednews = await prisma.$transaction(async (tx) => {
+    const updatednews = await prisma.$transaction(async (tx: any) => {
       const news = await tx.news.update({
         where: { id: +param },
         data: {
