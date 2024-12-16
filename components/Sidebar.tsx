@@ -28,7 +28,7 @@ export default function AppSidebar(props: AppSidebarProps) {
     <AnimatePresence>
       {open && (
         <>
-          <div className="opacity-60 bg-[#0b0b0b] fixed inset-0 z-0 lg:hidden" />
+          <div className="opacity-60 bg-[#0b0b0b] fixed inset-0 z-[11] lg:hidden" />
           <motion.div className={backdropClass} ref={backdropRef} onClick={clickHandler}>
             <motion.div
               className={menuClass}

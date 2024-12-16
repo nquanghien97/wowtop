@@ -29,7 +29,7 @@ function Header() {
     <>
       <div className={`w-full ${isScrolled ? 'header' : ''}`}>
         <div className="header-top flex justify-end max-w-6xl m-auto">
-          <ul className="flex flex-row text-[#643D14] gap-4 text-xs">
+        <ul className="flex flex-row text-[#643D14] gap-4 text-xs max-lg:hidden">
             <li className="cursor-pointer">
               <Link href="/gioi-thieu">Trang trại New Zealand</Link>
             </li>
@@ -39,6 +39,10 @@ function Header() {
             <li className="cursor-pointer">
               <Link href="tel:0978488123">Nhận tư vấn</Link>
             </li>
+          </ul>
+          <ul className="flex flex-row text-[#643D14] gap-4 lg:hidden mr-4 text-xs">
+            <li><Link href="/du-doan-chieu-cao" className="font-bold uppercase">Dự đoán chiều cao của con</Link></li>
+            <li><Link href="/sieu-sao-wow-chat" className="font-bold uppercase">Siêu sao cao wow chất</Link></li>
           </ul>
         </div>
         <header className="lg:h-[80px] header-bg-1 h-[60px] shadow-sm shadow-black/20 header-bottom">
@@ -125,9 +129,20 @@ function Header() {
                 </li>
               ))}
             </ul>
-            <div className="cursor-pointer mr-2">
+            <div className="cursor-pointer mx-2 mb-4">
               <Link href="/sieu-sao-wow-cao-chat" className="dk-dung-thu font-bold hover:opacity-80 duration-300">SIÊU SAO WOW CAO CHẤT</Link>
             </div>
+            <ul className="flex flex-col text-[#643D14] gap-4">
+              <li className="cursor-pointer border-b-2 px-2 pb-4">
+                <Link href="/gioi-thieu">Trang trại New Zealand</Link>
+              </li>
+              <li className="cursor-pointer border-b-2 px-2 pb-4">
+                <Link href="/dat-hang">Mua hàng trực tuyến</Link>
+              </li>
+              <li className="cursor-pointer border-b-2 px-2 pb-4">
+                <Link href="tel:0978488123">Nhận tư vấn</Link>
+              </li>
+            </ul>
           </div>
         </AppSidebar>
         {/* <div className="lg:h-[80px] h-[60px]" /> */}
