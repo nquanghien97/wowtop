@@ -314,8 +314,9 @@ async function page() {
       </section> */}
       <section className="mb-8">
         <div className="max-w-4xl m-auto">
-          <div className="bg-[url('/asset_24.png')] bg-[length:100%_100%] min-h-[120px] flex items-center justify-center mb-4">
-            <span className="uppercase font-bold bg-text-blue text-[5vw] md:text-3xl py-8 mt-2 text-center">Danh sách<br />Người tham gia siêu sao wow cao chất</span>
+          <div className="flex items-center justify-center mb-4 relative">
+            <Image src="/asset_24.png" alt="asset_24" width={817} height={135} className="absolute inset-0" />
+            <span className="uppercase font-bold bg-text-blue text-[4vw] md:text-3xl py-8 text-center relative px-4 ml-12">Danh sách người tham gia</span>
           </div>
           <div className="flex justify-center">
             <table className="w-full">
@@ -330,12 +331,22 @@ async function page() {
                 <tr>
                   <td className="text-center py-4 border-b border-black border-x">1</td>
                   <td className="text-center py-4 border-b border-black border-x">Nam Thị Ly</td>
-                  <td className="text-center py-4 border-b border-black border-x">0987654***</td>
+                  <td className="text-center py-4 border-b border-black border-x">0354654***</td>
                 </tr>
                 <tr>
                   <td className="text-center py-4 border-b border-black border-x">2</td>
                   <td className="text-center py-4 border-b border-black border-x">Nguyễn Thị An</td>
-                  <td className="text-center py-4 border-b border-black border-x">0912345***</td>
+                  <td className="text-center py-4 border-b border-black border-x">0912626***</td>
+                </tr>
+                <tr>
+                  <td className="text-center py-4 border-b border-black border-x">2</td>
+                  <td className="text-center py-4 border-b border-black border-x">Trần Thị Trang</td>
+                  <td className="text-center py-4 border-b border-black border-x">0976429***</td>
+                </tr>
+                <tr>
+                  <td className="text-center py-4 border-b border-black border-x">2</td>
+                  <td className="text-center py-4 border-b border-black border-x">Nguyễn Khánh Linh</td>
+                  <td className="text-center py-4 border-b border-black border-x">0334236***</td>
                 </tr>
               </tbody>
             </table>
