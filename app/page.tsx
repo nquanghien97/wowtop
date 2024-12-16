@@ -2,6 +2,7 @@ import FormOrder from '@/components/HomePage/FormOrder';
 import Image from 'next/image'
 import Link from 'next/link';
 import Experience from '@/components/HomePage/Experience';
+import Banner from '@/components/HomePage/Banner';
 
 export default async function Home() {
   const res_ip = await fetch('https://api.ipify.org?format=json')
@@ -27,6 +28,7 @@ export default async function Home() {
       <section className="md:hidden">
         <Image src="/bn-mobile@2x-100.jpg" alt="bn-mobile@2x-100" width={640} height={941} className="w-full" />
       </section>
+      {/* <Banner /> */}
       <section className="lg:mb-16">
         <div className="max-w-6xl m-auto md:px-4">
           <div className="mb-4">
