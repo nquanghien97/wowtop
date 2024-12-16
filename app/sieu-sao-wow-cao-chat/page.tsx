@@ -145,19 +145,19 @@ async function page() {
       </section>
       <section className="mb-8">
         <div className="max-w-5xl m-auto">
-          <h2 className="text-[28px] text-[#84571B] text-center uppercase mb-16">{'>'}{'>'} Tìm hiểu thêm về sản phẩm</h2>
+          <h2 className="text-[28px] text-[#84571B] text-center uppercase">{'>'}{'>'} Tìm hiểu thêm về sản phẩm</h2>
           <div className="flex max-lg:flex-col gap-4 mb-8">
-            <div className="bg-[url('/trhtr.png')] bg-[length:100%_100%] min-h-[200px] flex-1 flex items-center">
+            <div className="lg:bg-[url('/trhtr.png')] lg:bg-[length:100%_100%] lg:min-h-[200px] flex flex-1 max-lg:flex-col items-center">
               <Image src="/clock.png" alt="clock" width={160} height={160} className="mr-4" />
-              <div className=" text-[#84571B] text-xl">
+              <div className=" text-[#84571B] text-xl max-lg:bg-[url('/trhtr.png')] max-lg:bg-[length:100%_100%] p-8 flex justify-center items-center flex-col w-full">
                 <p>Thời gian tham gia từ ngày ... đến ngày ...</p>
                 <p>Thời gian công bố kết quả ...</p>
                 <p>Thời gian gửi quà sau 1 tuần kể từ ngày thông báo.</p>
               </div>
             </div>
-            <div className="bg-[url('/trhtr.png')] bg-[length:100%_100%] min-h-[160px] flex-1 flex justify-center items-center">
+            <div className="lg:bg-[url('/trhtr.png')] lg:bg-[length:100%_100%] lg:min-h-[200px] flex-1 flex max-lg:flex-col justify-center items-center">
               <Image src="/group.png" alt="group" width={160} height={160} className="mr-4" />
-              <p className="text-[#84571B] text-xl">Đối tượng tham gia chương trình là các bé trong độ tuổi <strong>từ 1-16 tham gia nhảy</strong> cùng bố mẹ hoặc anh chị cô</p>
+              <p className="text-[#84571B] text-xl max-lg:bg-[url('/trhtr.png')] max-lg:bg-[length:100%_100%] p-8 text-center">Đối tượng tham gia chương trình là các bé trong độ tuổi <strong>từ 1-16 tham gia nhảy</strong> cùng bố mẹ hoặc anh chị cô</p>
             </div>
           </div>
           <div className="bg-[url('/asset_24.png')] bg-[length:100%_100%] min-h-[120px] flex items-center justify-center">
@@ -165,12 +165,12 @@ async function page() {
           </div>
           <div className="bg-[url('/k-co-duong-ke.png')] md:bg-[url('/co-duong-ke.png')] bg-[length:100%_100%] bg-center p-8">
             <div className="flex flex-wrap">
-              <div className="flex-[0_0_auto] w-1/2 md:w-1/3 md:px-6 py-6">
+              <div className="flex-[0_0_auto] w-full md:w-1/3 md:px-6 py-6">
                 <p className="mb-2 flex justify-center items-center w-8 h-8 rounded-full bg-[#202B93] text-white font-bold">1</p>
                 <Image src="/asset_40.png" alt="asset_40" width={90} height={90} className="m-auto mb-4 mt-[-20px]" />
                 <p className="text-center px-4 mb-4 text-[#84571B] font-semibold">Xem video mẫu để học các điệu nhảy &quot;SIÊU SAO WOW CAO CHẤT&quot;</p>
               </div>
-              <div className="flex-[0_0_auto] w-1/2 md:w-1/3 md:px-6 py-6">
+              <div className="flex-[0_0_auto] w-full md:w-1/3 md:px-6 py-6">
                 <p className="mb-2 flex justify-center items-center w-8 h-8 rounded-full bg-[#202B93] text-white font-bold">2</p>
                 <Image src="/asset_41.png" alt="asset_41" width={90} height={90} className="m-auto mb-4 mt-[-20px]" />
                 <div className="text-center font-semibold">
@@ -179,22 +179,22 @@ async function page() {
                   <span className="text-[#202B93] max-lg:whitespace-normal max-lg:break-words">#sieusaowowcaochat #wowtop #tangchieucaotucapdonguyenbao</span>
                 </div>
               </div>
-              <div className="flex-[0_0_auto] w-1/2 md:w-1/3 md:px-6 py-6">
+              <div className="flex-[0_0_auto] w-full md:w-1/3 md:px-6 py-6">
                 <p className="mb-2 flex justify-center items-center w-8 h-8 rounded-full bg-[#202B93] text-white font-bold">3</p>
                 <Image src="/asset_42.png" alt="asset_42" width={90} height={90} className="m-auto mb-4 mt-[-20px]" />
                 <p className="text-center px-4 mb-4 text-[#84571B] font-semibold">Bố mẹ truy cập website <Link className="text-[#202B93]" href="/wowtopmilk.com.vn">wowtopmilk</Link> gửi link tham dự và đăng ký nhận quà dùng thử</p>
               </div>
-              <div className="flex-[0_0_auto] w-1/2 md:w-1/3 md:px-6 py-6">
+              <div className="flex-[0_0_auto] w-full md:w-1/3 md:px-6 py-6">
                 <p className="mb-2 flex justify-center items-center w-8 h-8 rounded-full bg-[#202B93] text-white font-bold">4</p>
                 <Image src="/asset_43.png" alt="asset_43" width={90} height={90} className="m-auto mb-4" />
                 <p className="text-center px-4 mb-4 text-[#84571B] font-semibold">Bố mẹ theo dõi <Link href="/https://www.facebook.com/wowtoptangchieucao" className="text-[#202B93]">Fanpage Wowtop</Link> hoặc website <Link className="text-[#202B93] whitespace-normal break-words" href="https://wowtopmilk.com.vn/sieu-sao-wow-cao-chat">wowtopmilk.com.vn/sieu-sao-wow-cao-chat</Link> để cập nhật kết quả chương trình</p>
               </div>
-              <div className="flex-[0_0_auto] w-1/2 md:w-1/3 md:px-6 py-6">
+              <div className="flex-[0_0_auto] w-full md:w-1/3 md:px-6 py-6">
                 <p className="mb-2 flex justify-center items-center w-8 h-8 rounded-full bg-[#202B93] text-white font-bold">5</p>
                 <Image src="/asset_44.png" alt="asset_44" width={90} height={90} className="m-auto mb-4" />
                 <p className="text-center px-4 mb-4 text-[#84571B] font-semibold">Chuyên gia tăng chiều cao tư vấn miễn phí để bố mẹ nắm bắt tình trạng chiều cao của con và chuyên gia lên phác đồ tăng chiều cao cả về chất và lượng cho con.</p>
               </div>
-              <div className="flex-[0_0_auto] w-1/2 md:w-1/3 md:px-6 py-6">
+              <div className="flex-[0_0_auto] w-full md:w-1/3 md:px-6 py-6">
                 <p className="mb-2 flex justify-center items-center w-8 h-8 rounded-full bg-[#202B93] text-white font-bold">6</p>
                 <Image src="/asset_45.png" alt="asset_45" width={90} height={90} className="m-auto mb-4" />
                 <p className="text-center p mb-4x-4 text-[#84571B] font-semibold">Bố mẹ nhận sản phẩm, cam kết gửi ảnh chụp của bé cùng sản phẩm.</p>
@@ -216,13 +216,13 @@ async function page() {
           </div>
           <div className="flex max-md:flex-col gap-4 mb-4">
             <div className="flex-1">
-              <div className="buoc table m-auto md:inline-block md:text-3xl text-[calc(1.25rem+0.5vw)] mb-4 relative">
+              <div className="buoc table m-auto md:inline-block md:text-3xl text-[calc(1.5rem+0.5vw)] mb-4 relative">
                 Bước 1
                 <p className="max-md:hidden absolute bg-[#202B93] w-4 h-4 rounded-full after:absolute after:content-[''] top-1/2 -right-full transform -translate-y-1/2"></p>
                 <p className="max-md:hidden absolute bg-[#202B93] w-full h-[1px] rounded-full after:absolute after:content-[''] top-1/2 -right-full transform -translate-y-1/2"></p>
               </div>
               <div className="flex flex-col justify-center items-center">
-                <p className="bg-text text-[calc(1.5rem+1vw)] md:text-3xl max-md:text-center font-semibold">Xem video mẫu để học các điệu nhảy &quot;SIÊU SAO WOW CAO CHẤT&quot; và bấm</p>
+                <p className="bg-text text-[calc(1rem+1vw)] md:text-3xl max-md:text-center font-semibold">Xem video mẫu để học các điệu nhảy &quot;SIÊU SAO WOW CAO CHẤT&quot; và bấm</p>
                 <br />
                 <Link className="dkdt px-8 py-2 " href="#">Tham gia ngay</Link>
               </div>
@@ -233,11 +233,11 @@ async function page() {
           </div>
           <div className="flex max-md:flex-col gap-4 mb-4">
             <div className="flex-1 md:hidden">
-              <div className="buoc table m-auto md:text-3xl text-[calc(1.25rem+0.5vw)] mb-4">
+              <div className="buoc table m-auto md:text-3xl text-[calc(1.5rem+0.5vw)] mb-4">
                 Bước 2
               </div>
               <div className="text-center clear-both font-semibold">
-                <p className="bg-text text-[calc(1.5rem+1vw)] inline-block md:text-3xl">Đăng tải video lên TikTok (Đăng thêm trên Facebook & Youtube cá nhân để được tính tổng view, tương tác) kèm hashtag:</p>
+                <p className="bg-text text-[calc(1rem+1vw)] inline-block md:text-3xl">Đăng tải video lên TikTok (Đăng thêm trên Facebook & Youtube cá nhân để được tính tổng view, tương tác) kèm hashtag:</p>
                 <br /> <span className="text-[#202B93] text-[calc(1rem+1vw)] md:text-3xl whitespace-normal break-words">#sieusaowowcaochat #wowtop #tangchieucaotucapdonguyenbao</span>
               </div>
             </div>
@@ -245,30 +245,30 @@ async function page() {
               <Image src="/asset_48.png" alt="asset_48" width={256} height={158} className="w-full" />
             </div>
             <div className="flex-1 max-md:hidden">
-              <div className="buoc inline-block md:text-3xl text-[calc(1.25rem+0.5vw)] mb-4 float-right relative">
+              <div className="buoc inline-block md:text-3xl text-[calc(1.5rem+0.5vw)] mb-4 float-right relative">
                 Bước 2
                 <p className="max-md:hidden absolute bg-[#202B93] w-4 h-4 rounded-full after:absolute after:content-[''] top-1/2 -left-full transform -translate-y-1/2"></p>
                 <p className="max-md:hidden absolute bg-[#202B93] w-full h-[1px] rounded-full after:absolute after:content-[''] top-1/2 -left-full transform -translate-y-1/2"></p>
               </div>
               <div className="text-end clear-both font-semibold">
-                <p className="bg-text text-[calc(1.5rem+1vw)] inline-block md:text-3xl">Đăng tải video lên TikTok (Đăng thêm trên Facebook & Youtube cá nhân để được tính tổng view, tương tác) kèm hashtag:</p>
+                <p className="bg-text text-[calc(1rem+1vw)] inline-block md:text-3xl">Đăng tải video lên TikTok (Đăng thêm trên Facebook & Youtube cá nhân để được tính tổng view, tương tác) kèm hashtag:</p>
                 <br /> <span className="text-[#202B93] text-[calc(1.5rem+1vw)] md:text-3xl whitespace-normal break-words">#sieusaowowcaochat #wowtop #tangchieucaotucapdonguyenbao</span>
               </div>
             </div>
           </div>
           <div>
-            <p className="buoc table m-auto md:text-3xl text-[calc(1.25rem+0.5vw)] mb-4">Bước 3</p>
-            <p className="bg-text text-[calc(1.5rem+1vw)] md:text-3xl font-semibold text-center w-full m-auto mb-4">BỐ MẸ GỬI LINK THAM GIA ĐỂ NHẬN CƠ HỘI DÙNG THỬ SỮA WOWTOP CHO CON YÊU NHÉ</p>
+            <p className="buoc table m-auto md:text-3xl text-[calc(1.5rem+0.5vw)] mb-4">Bước 3</p>
+            <p className="bg-text text-[calc(1rem+1vw)] md:text-3xl font-semibold text-center w-full m-auto mb-4">BỐ MẸ GỬI LINK THAM GIA ĐỂ NHẬN CƠ HỘI DÙNG THỬ SỮA WOWTOP CHO CON YÊU NHÉ</p>
             <FormOrder ip={ip.ip} />
           </div>
           <div className="flex max-md:flex-col gap-4 mb-4">
             <div className="flex-1">
-              <div className="buoc table m-auto md:inline-block md:text-3xl text-[calc(1.25rem+0.5vw)] mb-4 relative">
+              <div className="buoc table m-auto md:inline-block md:text-3xl text-[calc(1.5rem+0.5vw)] mb-4 relative">
                 Bước 4
                 <p className="max-md:hidden absolute bg-[#202B93] w-4 h-4 rounded-full after:absolute after:content-[''] top-1/2 -right-full transform -translate-y-1/2"></p>
                 <p className="max-md:hidden absolute bg-[#202B93] w-full h-[1px] rounded-full after:absolute after:content-[''] top-1/2 -right-full transform -translate-y-1/2"></p>
               </div>
-              <p className="bg-text text-[calc(1.5rem+1vw)] md:text-3xl font-semibold max-md:text-center">Bố mẹ theo dõi Fanpage Wowtop hoặc truy cập website <Link href="/#" className="bg-text-blue whitespace-normal break-words">wowtopmilk.com.vn/sieu-sao-wow-cao-chat</Link> để cập nhật kết quả chương trình</p>
+              <p className="bg-text text-[calc(1rem+1vw)] md:text-3xl font-semibold max-md:text-center">Bố mẹ theo dõi Fanpage Wowtop hoặc truy cập website <Link href="/#" className="bg-text-blue whitespace-normal break-words">wowtopmilk.com.vn/sieu-sao-wow-cao-chat</Link> để cập nhật kết quả chương trình</p>
             </div>
             <div className="flex-1 relative">
               <div className="flex-1 relative">
@@ -278,24 +278,24 @@ async function page() {
           </div>
           <div className="flex max-md:flex-col gap-4 mb-4">
             <div className="flex-1 md:hidden">
-              <p className="buoc table m-auto md:inline-block md:text-3xl text-[calc(1.25rem+0.5vw)] mb-4">Bước 5</p>
-              <p className="bg-text text-[calc(1.5rem+1vw)] md:text-3xl font-semibold text-center">Chuyên gia tăng chiều cao tư vấn và lên phác đồ tăng chiều cao miễn phí cho con</p>
+              <p className="buoc table m-auto md:inline-block md:text-3xl text-[calc(1.5rem+0.5vw)] mb-4">Bước 5</p>
+              <p className="bg-text text-[calc(1rem+1vw)] md:text-3xl font-semibold text-center">Chuyên gia tăng chiều cao tư vấn và lên phác đồ tăng chiều cao miễn phí cho con</p>
             </div>
             <div className="flex-1">
               <Image src="/bac-si.png" alt="bac-si" width={469} height={257} className="w-full" />
             </div>
             <div className="flex-1 max-md:hidden">
-              <div className="buoc table m-auto md:inline-block md:text-3xl text-[calc(1.25rem+0.5vw)] mb-4 float-right relative">
+              <div className="buoc table m-auto md:inline-block md:text-3xl text-[calc(15rem+0.5vw)] mb-4 float-right relative">
                 Bước 5
                 <p className="absolute bg-[#202B93] w-4 h-4 rounded-full after:absolute after:content-[''] top-1/2 -left-full transform -translate-y-1/2"></p>
                 <p className="absolute bg-[#202B93] w-full h-[1px] rounded-full after:absolute after:content-[''] top-1/2 -left-full transform -translate-y-1/2"></p>
               </div>
-              <p className="bg-text text-[calc(1.5rem+1vw)] md:text-3xl font-semibold text-end clear-both">Chuyên gia tăng chiều cao tư vấn và lên phác đồ tăng chiều cao miễn phí cho con</p>
+              <p className="bg-text text-[calc(1rem+1vw)] md:text-3xl font-semibold text-end clear-both">Chuyên gia tăng chiều cao tư vấn và lên phác đồ tăng chiều cao miễn phí cho con</p>
             </div>
           </div>
           <div>
-            <p className="buoc table m-auto md:text-3xl text-[calc(1.25rem+0.5vw)] mb-4">Bước 6</p>
-            <p className="bg-text text-[calc(1.5rem+1vw)] md:text-3xl font-semibold text-center m-auto mb-4">Bố mẹ gửi ảnh con chụp cùng WowTop</p>
+            <p className="buoc table m-auto md:text-3xl text-[calc(1.5rem+0.5vw)] mb-4">Bước 6</p>
+            <p className="bg-text text-[calc(1rem+1vw)] md:text-3xl font-semibold text-center m-auto">Bố mẹ gửi ảnh con chụp cùng WowTop</p>
             <Slide />
           </div>
         </div>

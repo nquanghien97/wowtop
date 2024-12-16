@@ -17,7 +17,7 @@ export default async function Home() {
   return (
     <main>
       {/* <Banner /> */}
-      <section className="relative">
+      <section className="relative max-md:hidden">
         <div className="px-[10%] m-auto absolute top-1/2 -translate-y-1/2">
           <div className=" flex justify-between items-center">
             <div className="w-1/2">
@@ -31,6 +31,9 @@ export default async function Home() {
           </div>
         </div>
         <Image src="/bg-banner.png" alt="bg-banner" width={1920} height={1080} className="w-full" />
+      </section>
+      <section className="md:hidden">
+        <Image src="/bn-mobile@2x-100.jpg" alt="bn-mobile@2x-100" width={640} height={941} className="w-full" />
       </section>
       <CongThuc />
       <section className="mb-20 bg-[url('/pt-bg-yellow.webp')] bg-[length:100%_100%]">
@@ -50,22 +53,22 @@ export default async function Home() {
           </div>
           <div className="flex flex-col">
             <div className="flex max-md:flex-col gap-10 px-4">
-              <div className="md:w-1/2 bg-[url('/bg2f.png')] bg-cover bg-center rounded-2xl px-8 py-5 shadow-2xl">
+              <div className="md:w-1/2 bg1 bg-cover bg-center rounded-2xl px-8 py-5 shadow-2xl">
                 <Image src="/cbp.webp" alt="bg-sua" width={160} height={175} className="m-auto" />
                 <span className="text-[#135689]">
                   <strong>CBP </strong>
                   trong Wowtop có kích thước phân tử siêu nhỏ, <strong>30 Kilodalton (≈ 1/50 tỷ hạt Nano),</strong> dễ dàng len lỏi và kích thích Nguyên bào xương hoạt động hiệu quả hơn*
                 </span>
               </div>
-              <div className="md:w-1/2 bg-10-lit bg-cover bg-center rounded-2xl px-8 py-5 shadow-2xl">
-                <Image src="/10l.webp" alt="bg-sua" width={320} height={175} />
+              <div className="md:w-1/2 bg-10-lit rounded-2xl px-8 py-5 shadow-2xl">
+                <Image src="/10l.webp" alt="bg-sua" width={320} height={175} className="m-auto" />
                 <span className="text-[#135689]">
                   <strong>CBP</strong> là thành phần quý hiếm bậc nhất ngành sữa. <strong>10 lít sữa non</strong> từ Bò ăn cỏ tự nhiên chỉ chiết xuất được <strong>4 gam CBP</strong>.
                 </span>
               </div>
             </div>
             <div className="px-4 mt-10 md:mt-16">
-              <div className="bg-[url('/bg2f.png')] bg-cover bg-center rounded-2xl px-8 py-5 shadow-2xl relative">
+              <div className="bg1 bg-cover bg-center rounded-2xl px-8 py-5 shadow-2xl relative">
                 <Image src="/xuong.webp" alt="bg-sua" width={215} height={290} className="mx-auto md:hidden" />
                 <span className="w-full md:w-3/5 inline-block text-[#135689]">
                   <strong>CBP</strong> thúc đẩy <strong>nguyên bào xương</strong> sản sinh và hoạt động hiệu quả, hình thành ma trận xương, kích thích xương dài ra nhanh hơn. Ngoài ra, <strong>CBP</strong> còn giúp tăng mật độ xương, hấp thu <strong>Canxi</strong> cùng các dưỡng chất quan trọng như Sắt, Kẽm... tốt hơn, từ đó <strong>tăng chiều cao cả về lượng & chất.</strong>

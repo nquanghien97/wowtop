@@ -7,7 +7,7 @@ import Select, { SelectInstance, SingleValue } from 'react-select';
 import { useEffect, useId, useRef, useState } from 'react';
 import { OrderEntity } from '@/entities/order';
 import { createOrder } from '@/services/orderServices';
-import { toast } from 'react-toastify';
+import { toast, ToastContainer } from 'react-toastify';
 import LoadingIcon from '@/assets/icons/LoadingIcon';
 import Image from 'next/image'
 import data from '@/app/data.json'
@@ -44,11 +44,10 @@ interface Option {
 
 function FormOrder(props: { ip?: string }) {
   const { ip } = props;
-
   const { register, handleSubmit, control, setValue, formState: { errors } } = useForm({
     resolver: yupResolver(schema),
   });
-  
+
   const gtagReportConversion = (url?: string) => {
     if (typeof window !== 'undefined' && typeof (window as any).gtag === 'function') {
       const callback = () => {
@@ -56,7 +55,7 @@ function FormOrder(props: { ip?: string }) {
           window.location.href = url;
         }
       };
-  
+
       (window as any).gtag('event', 'conversion', {
         send_to: 'AW-16773984613/DwVPCLeeoegZEOXiur4-',
         value: 1.0,
@@ -64,7 +63,7 @@ function FormOrder(props: { ip?: string }) {
         transaction_id: '',
         event_callback: callback,
       });
-  
+
       return false;
     }
   };
@@ -123,7 +122,7 @@ function FormOrder(props: { ip?: string }) {
   }
 
   return (
-    <section className="mb-8 bg-[bg-[#69dbe1] scroll-mt-24" id="order">
+    <section className="mb-8 bg-[bg-[#69dbe1]">
       <div className="px-4 py-8 max-w-6xl m-auto bg-[url('/dki3.webp')] md:bg-[length:100%_100%]  bg-center rounded-[50px]">
         <div className="mb-8">
           <h2 className="text-[#002A9E] text-4xl uppercase text-center font-bold">Đăng ký mua hàng</h2>
@@ -253,20 +252,21 @@ function FormOrder(props: { ip?: string }) {
                 <label htmlFor="checkbox" className="text-[#002A9E] ml-2">Bố mẹ đã đọc và đồng ý <strong>Điều khoản đăng ký</strong></label>
                 {errors.term && <span className="text-[red] text-xs p-2">{errors.term.message}</span>}
               </div>
-              <p className="text-[#002A9E] italic">Hãy liên hệ chuyên gia dinh dưỡng theo số <strong>18001103123</strong> để được tư vấn thêm</p>
+              <p className="text-[#002A9E] italic">Hãy liên hệ chuyên gia dinh dưỡng theo số <strong>0978488123</strong> để được tư vấn thêm</p>
               <div className="flex justify-center">
-                <button type='submit' className="text-white italic uppercase hover:opacity-85 duration-300 mr-2 flex justify-center items-center bg-[#002A9E] rounded-full px-16 py-4">
-                  Xác nhận
+                <div className="flex justify-center items-center bg-[#002A9E] rounded-full px-16 py-4">
+                  <button type='submit' className="text-white italic uppercase hover:opacity-85 duration-300 mr-2">Xác nhận</button>
                   {loading && <LoadingIcon size="small" />}
-                </button>
+                </div>
               </div>
             </form>
           </div>
           <div className="mt-[-40px] max-md:hidden">
-            <Image src="/hop.png" alt="giot2" width={400} height={600} />
+            <Image src="/hop.webp" alt="giot2" width={400} height={600} />
           </div>
         </div>
       </div>
+      <ToastContainer />
     </section>
   )
 }

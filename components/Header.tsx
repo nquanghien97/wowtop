@@ -101,6 +101,9 @@ function Header({ currentUser, token }: { currentUser: UserEntity, token?: strin
                 )
                 )}
               </ul>
+              <div className="cursor-pointer mr-2">
+                <Link href="/sieu-sao-wow-cao-chat" className="dk-dung-thu font-bold hover:opacity-80 duration-300">SIÊU SAO WOW CAO CHẤT</Link>
+              </div>
               {/* {user ? (
                 <div
                   className="relative"  

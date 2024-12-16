@@ -15,7 +15,7 @@ export default function AppSidebar(props: AppSidebarProps) {
   const {
     children, open, setOpen, start = '-24rem', end = 0, exit = '-24rem',
   } = props;
-  const backdropClass = 'h-screen w-full fixed top-0 left-0 z-20 lg:hidden';
+  const backdropClass = 'h-screen w-full fixed top-0 left-0 z-[100] lg:hidden';
   const menuClass = 'w-full max-sm:w-2/3 max-lg:w-1/3 h-full flex flex-col border-r-2 border-[#0000001a] opacity-100 bg-[#ffffff]';
   const backdropRef = useRef<HTMLDivElement>(null);
   const clickHandler: MouseEventHandler<HTMLDivElement> = (event) => {
