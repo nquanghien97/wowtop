@@ -137,7 +137,7 @@ async function page() {
               </div>
             </div>
           </div>
-          <p className="bg-text-blue text-[calc(1.25rem+1.5vw)] md:text-5xl py-4 font-bold text-center uppercase">Tổng giá trị lên đến 1,3 tỷ VNĐ</p>
+          <p className="bg-text-blue text-[calc(1.25rem+1.5vw)] md:text-5xl py-4 font-bold text-center uppercase">Tổng giá trị lên đến 145,000,000 VNĐ</p>
           <div className="dkdt md:w-1/2 m-auto">
             <p className="font-bold text-[calc(1.25rem+1.5vw)] text-[#84571B]">Đăng ký dùng thử</p>
           </div>
@@ -206,9 +206,11 @@ async function page() {
       <section className="px-2">
         <div className="max-w-5xl m-auto">
           <div className="flex mb-4 justify-center">
-            <div className="dkdt px-8 py-4">
-              <p className="font-bold text-[calc(1.25rem+0.5vw)] md:text-5xl text-[#84571B]">Tham gia ngay</p>
-            </div>
+            <Link href="#trial-form">
+              <div className="dkdt px-8 py-4">
+                <p className="font-bold text-[calc(1.25rem+0.5vw)] md:text-5xl text-[#84571B]">Tham gia ngay</p>
+              </div>
+            </Link>
           </div>
           <h3 className="bg-text-blue text-[calc(1.25rem+0.5vw)] md:text-5xl text-center font-bold py-2">Tham gia siêu sao wow cao chất</h3>
           <div className="bg-[url('/asset_24.png')] bg-[length:100%_100%] min-h-[120px] flex items-center justify-center mb-4">
@@ -224,7 +226,7 @@ async function page() {
               <div className="flex flex-col justify-center items-center">
                 <p className="bg-text text-[calc(1rem+1vw)] md:text-3xl max-md:text-center font-semibold">Xem video mẫu để học các điệu nhảy &quot;SIÊU SAO WOW CAO CHẤT&quot; và bấm</p>
                 <br />
-                <Link className="dkdt px-8 py-2 " href="#">Tham gia ngay</Link>
+                <Link className="dkdt px-8 py-2 " href="#trial-form">Tham gia ngay</Link>
               </div>
             </div>
             <div className="flex-1 px-2">
@@ -300,6 +302,18 @@ async function page() {
           </div>
         </div>
       </section>
+      <section className="flex max-md:flex-col gap-4 mb-4 max-w-5xl m-auto">
+        <div className="flex-1 flex items-center">
+          <div className="flex flex-col justify-center items-center">
+            <p className="bg-text text-[calc(1rem+1vw)] md:text-3xl max-md:text-center font-semibold">Xem video mẫu để học các điệu nhảy &quot;SIÊU SAO WOW CAO CHẤT&quot; và bấm</p>
+            <br />
+            <Link className="dkdt px-8 py-2 " href="#trial-form">Tham gia ngay</Link>
+          </div>
+        </div>
+        <div className="flex-1 px-2">
+          <LazyYouTubeEmbed videoId='6FVUCtcFDW4' />
+        </div>
+      </section>
       {/* <section className="mb-8">
         <div className="max-w-3xl m-auto">
           <div className="bg-[url('/asset_24.png')] bg-[length:100%_100%] min-h-[120px] flex items-center justify-center mb-4">
@@ -316,7 +330,7 @@ async function page() {
         <div className="max-w-4xl m-auto">
           <div className="flex items-center justify-center mb-4 relative">
             <Image src="/asset_24.png" alt="asset_24" width={817} height={135} className="absolute inset-0" />
-            <span className="uppercase font-bold bg-text-blue text-[4vw] md:text-3xl py-8 text-center relative px-4 ml-12">Danh sách người tham gia</span>
+            <span className="uppercase font-bold bg-text-blue text-[4vw] md:text-3xl py-8 text-center relative px-4 ml-12 md:mt-6">Danh sách người tham gia</span>
           </div>
           <div className="flex justify-center">
             <table className="w-full">
