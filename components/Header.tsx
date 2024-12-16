@@ -57,7 +57,7 @@ function Header({ currentUser, token }: { currentUser: UserEntity, token?: strin
               <Link href="tel:0978488123">Nhận tư vấn</Link>
             </li>
           </ul>
-          <ul className="flex flex-row text-[#643D14] gap-4 lg:hidden mr-4">
+          <ul className="flex flex-row text-[#643D14] gap-4 lg:hidden mr-4 text-xs">
             <li><Link href="/du-doan-chieu-cao" className="font-bold uppercase">Dự đoán chiều cao của con</Link></li>
             <li><Link href="/sieu-sao-wow-chat" className="font-bold uppercase">Siêu sao cao wow chất</Link></li>
           </ul>
