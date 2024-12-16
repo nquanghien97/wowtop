@@ -6,6 +6,7 @@ import Link from 'next/link';
 import dynamic from "next/dynamic";
 import CongThuc from '@/components/CongThuc';
 import LazyYouTubeEmbed from '@/components/YoutubeEmbed';
+import Popup from '@/components/HomePage/Popup';
 const Experience = dynamic(() => import('@/components/HomePage/Experience'), { ssr: false })
 
 // export const dynamic = 'force-dynamic'
@@ -16,7 +17,7 @@ export default async function Home() {
 
   return (
     <main>
-      {/* <Banner /> */}
+      <Popup />
       <section className="relative max-md:hidden">
         <div className="px-[10%] m-auto absolute top-1/2 -translate-y-1/2">
           <div className=" flex justify-between items-center">
