@@ -5,7 +5,7 @@ import React from 'react'
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://wowtop.vn'),
-  title: 'Đại lý',
+  title: 'Đại lý Wowtop trên toàn quốc',
   description: '',
   keywords: 'Wowtop',
   robots: {

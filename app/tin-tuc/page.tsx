@@ -10,7 +10,7 @@ export const dynamic = 'force-dynamic'
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://wowtop.vn'),
-  title: 'Tin tức',
+  title: 'Tin tức Wowtop',
   description: '',
   keywords: 'Wowtop',
   robots: {

@@ -9,7 +9,7 @@ const Experience = dynamic(() => import('@/components/HomePage/Experience'), { s
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://wowtop.com.vn'),
-  title: 'Wowtop 700g',
+  title: 'Wowtop 700g - Nhập Khẩu Nguyên Lon Từ New Zealand',
   description: 'Nếu được chăm sóc tốt, trẻ có thể cao lên đến 8-12cm mỗi năm. WOWTOP chứa hệ dưỡng chất giàu thành phần quý hiếm với hàm lượng cao như CBP ...',
   keywords: 'Wowtop',
   robots: {
