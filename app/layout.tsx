@@ -18,7 +18,7 @@ const montserrat = Montserrat({
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://wowtop.vn'),
-  title: 'Wowtop',
+  title: 'WowTop - Nhập Khẩu Nguyên Lon Từ New Zealand',
   description: 'WOWTOP là thực phẩm dinh dưỡng công thức dành cho trẻ em từ 1 tuổi trở lên',
   keywords: 'Wowtop',
   robots: {
