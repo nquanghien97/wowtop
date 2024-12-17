@@ -139,7 +139,7 @@ async function page() {
           </div>
           <p className="bg-text-blue text-[calc(1.25rem+1.5vw)] md:text-5xl py-4 font-bold text-center uppercase">Tổng giá trị lên đến 145,000,000 VNĐ</p>
           <div className="dkdt md:w-1/2 m-auto">
-            <p className="font-bold text-[calc(1.25rem+1.5vw)] text-[#84571B]">Đăng ký dùng thử</p>
+            <p className="font-bold text-[calc(1.25rem+1.5vw)] text-[#84571B] uppercase">Tham gia ngay</p>
           </div>
         </div>
       </section>
