@@ -54,8 +54,8 @@ function CongThuc() {
             <Image src="/hop@3x-8.png" alt="bg-hop-sua" width={400} height={290} />
             <div className="flex flex-col items-center px-2 mt-[-20px]">
               <div className="flex flex-col items-center">
-                <div className="relative flex justify-center items-center ml-20">
-                  <Image src="/5@3x-8.png" alt="5@3x-8" width={280} height={120} className="transform animate-pulsate" />
+                <div className="relative flex justify-center items-center">
+                  <Image src="/5@3x-8.png" alt="5@3x-8" width={200} height={120} className="transform animate-pulsate" />
                 </div>
                 <div className="flex items-center px-8">
                   <span className="text-[#84571B] font-semibold text-justify">
@@ -64,8 +64,8 @@ function CongThuc() {
                 </div>
               </div>
               <div className="flex flex-col items-center">
-                <div className="relative flex justify-center items-center ml-20">
-                  <Image src="/4@3x-8.png" alt="4@3x-8" width={280} height={120} className="transform animate-pulsate" />
+                <div className="relative flex justify-center items-center">
+                  <Image src="/4@3x-8.png" alt="4@3x-8" width={200} height={120} className="transform animate-pulsate" />
                 </div>
                 <div className="flex items-center px-8">
                   <span className="text-[#84571B] font-semibold text-justify">
@@ -74,8 +74,8 @@ function CongThuc() {
                 </div>
               </div>
               <div className="flex flex-col items-center">
-                <div className="relative flex justify-center items-center ml-20">
-                  <Image src="/1@3x-8.png" alt="1@3x-8" width={280} height={120} className="transform animate-pulsate" />
+                <div className="relative flex justify-center items-center">
+                  <Image src="/1@3x-8.png" alt="1@3x-8" width={200} height={120} className="transform animate-pulsate" />
                 </div>
                 <div className="flex items-center px-8">
                   <span className="text-[#84571B] font-semibold text-justify">
@@ -84,8 +84,8 @@ function CongThuc() {
                 </div>
               </div>
               <div className="flex flex-col items-center">
-                <div className="relative flex justify-center items-center ml-20">
-                  <Image src="/Artboard 19@3x-8.png" alt="Artboard 19@3x-8" width={280} height={120} className="transform animate-pulsate" />
+                <div className="relative flex justify-center items-center">
+                  <Image src="/Artboard 19@3x-8.png" alt="Artboard 19@3x-8" width={200} height={120} className="transform animate-pulsate" />
                 </div>
                 <div className="flex items-center px-8">
                   <span className="text-[#84571B] font-semibold text-justify">
@@ -95,8 +95,8 @@ function CongThuc() {
                 </div>
               </div>
               <div className="flex flex-col items-center">
-                <div className="relative flex justify-center items-center ml-20">
-                  <Image src="/2@3x-8.png" alt="2@3x-8" width={280} height={120} className="transform animate-pulsate" />
+                <div className="relative flex justify-center items-center">
+                  <Image src="/2@3x-8.png" alt="2@3x-8" width={200} height={120} className="transform animate-pulsate" />
                 </div>
                 <div className="flex items-center px-8">
                   <span className="text-[#84571B] font-semibold text-justify">
