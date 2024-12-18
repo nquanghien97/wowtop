@@ -7,6 +7,7 @@ import dynamic from "next/dynamic";
 import CongThuc from '@/components/CongThuc';
 import LazyYouTubeEmbed from '@/components/YoutubeEmbed';
 import Popup from '@/components/HomePage/Popup';
+import Banner from '@/components/HomePage/Banner';
 const Experience = dynamic(() => import('@/components/HomePage/Experience'), { ssr: false })
 
 // export const dynamic = 'force-dynamic'
@@ -34,7 +35,7 @@ export default async function Home() {
         <Image src="/bg-banner.png" alt="bg-banner" width={1920} height={1080} className="w-full" />
       </section>
       <section className="md:hidden">
-        <Image src="/bn-mobile@2x-100.png" alt="bn-mobile@2x-100" width={640} height={941} className="w-full" />
+        <Banner />
       </section>
       <CongThuc />
       <section className="mb-20 bg-[url('/pt-bg-yellow.webp')] bg-[length:100%_100%]">

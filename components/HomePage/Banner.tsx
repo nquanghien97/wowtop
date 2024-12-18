@@ -4,7 +4,6 @@ import Image from 'next/image';
 import React from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Autoplay } from 'swiper/modules';
-import Image1 from '@/assets/images/banner/banner_1.png';
 
 function Banner() {
 
@@ -16,21 +15,15 @@ function Banner() {
         navigation={true}
         modules={[Navigation, Autoplay]}
         autoplay={{
-          delay: 4000,
+          delay: 3000,
           disableOnInteraction: false,
         }}
       >
         <SwiperSlide>
-          <Image src={Image1} alt="banner-nho-02-2048x841" width={1920} height={400} className="w-full h-full" />
+          <Image src="/bn-mobile@2x-100.png" alt="bn-mobile@2x-100" width={1920} height={400} className="w-full h-full" />
         </SwiperSlide>
         <SwiperSlide>
-          <Image src={Image1} alt="banner-nho-02-2048x841" width={1920} height={400} className="w-full h-full" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <Image src={Image1} alt="banner-nho-02-2048x841" width={1920} height={400} className="w-full h-full" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <Image src={Image1} alt="banner-nho-02-2048x841" width={1920} height={400} className="w-full h-full" />
+          <Image src="/DANCE-mobile.png" alt="DANCE-mobile" width={1920} height={400} className="w-full h-full" />
         </SwiperSlide>
       </Swiper>
     </section>
