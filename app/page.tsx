@@ -28,7 +28,7 @@ export default async function Home() {
         <Image src="/bg-banner.png" alt="bg-banner" width={1920} height={1080} className="w-full" />
       </section>
       <section className="md:hidden">
-        <Image src="/bn-mobile@2x-100.jpg" alt="bn-mobile@2x-100" width={640} height={941} className="w-full" />
+        <Image src="/bn-mobile@2x-100.png" alt="bn-mobile@2x-100" width={640} height={941} className="w-full" />
       </section>
       {/* <Banner /> */}
       <section className="lg:mb-16">

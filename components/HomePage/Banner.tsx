@@ -20,10 +20,10 @@ function Banner() {
         }}
       >
         <SwiperSlide>
-          <Image src="/bn-mobile@2x-100.jpg" alt="bn-mobile@2x-100" width={1920} height={400} className="w-full h-full" />
+          <Image src="/bn-mobile@2x-100.png" alt="bn-mobile@2x-100" width={1920} height={400} className="w-full h-full" />
         </SwiperSlide>
         <SwiperSlide>
-          <Image src="/bn-mobile@2x-100.jpg" alt="bn-mobile@2x-100" width={1920} height={400} className="w-full h-full" />
+          <Image src="/bn-mobile@2x-100.png" alt="bn-mobile@2x-100" width={1920} height={400} className="w-full h-full" />
         </SwiperSlide>
       </Swiper>
     </section>

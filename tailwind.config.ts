@@ -20,7 +20,7 @@ const config: Config = {
         },
       },
       animation: {
-        pulsate: 'pulsate 1s ease-in-out infinite',
+        pulsate: 'pulsate 2s ease-in-out infinite',
       },
     },
   },
