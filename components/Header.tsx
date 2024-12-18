@@ -37,7 +37,7 @@ function Header() {
               <Link href="#">Mua hàng trực tuyến</Link>
             </li>
             <li className="cursor-pointer">
-              <Link href="tel:0978488123">Nhận tư vấn</Link>
+              <Link href="tel:18001103">Nhận tư vấn</Link>
             </li>
           </ul>
           <ul className="flex flex-row text-[#643D14] gap-4 lg:hidden mr-4 text-xs">
@@ -140,7 +140,7 @@ function Header() {
                 <Link href="/dat-hang">Mua hàng trực tuyến</Link>
               </li>
               <li className="cursor-pointer border-b-2 px-2 pb-4">
-                <Link href="tel:0978488123">Nhận tư vấn</Link>
+                <Link href="tel:18001103">Nhận tư vấn</Link>
               </li>
             </ul>
           </div>

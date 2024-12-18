@@ -252,7 +252,7 @@ function FormOrder(props: { ip?: string }) {
                 <label htmlFor="checkbox" className="text-[#002A9E] ml-2">Bố mẹ đã đọc và đồng ý <strong>Điều khoản đăng ký</strong></label>
                 {errors.term && <span className="text-[red] text-xs p-2">{errors.term.message}</span>}
               </div>
-              <p className="text-[#002A9E] italic">Hãy liên hệ chuyên gia dinh dưỡng theo số <strong>0978488123</strong> để được tư vấn thêm</p>
+              <p className="text-[#002A9E] italic">Hãy liên hệ chuyên gia dinh dưỡng theo số <strong>18001103</strong> để được tư vấn thêm</p>
               <div className="flex justify-center">
                 <div className="flex justify-center items-center bg-[#002A9E] rounded-full px-16 py-4">
                   <button type='submit' className="text-white italic uppercase hover:opacity-85 duration-300 mr-2">Xác nhận</button>

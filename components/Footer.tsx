@@ -24,7 +24,7 @@ function Footer() {
                 <Link href="https://www.youtube.com/@WOWTOPVIETNAM">
                   <YoutubeIcon fill="white" width={32} height={32} />
                 </Link>
-                <Link href="tel:0978488123">
+                <Link href="tel:18001103">
                   <PhoneIcon fill="white" width={32} height={32} />
                 </Link>
               </div>
