@@ -170,7 +170,7 @@ async function page() {
                 <Image src="/asset_40.png" alt="asset_40" width={90} height={90} className="m-auto mb-4 mt-[-20px]" />
                 <p className="text-center px-4 mb-4 text-[#84571B] font-semibold">Xem video mẫu để học các điệu nhảy &quot;SIÊU SAO WOW CAO CHẤT&quot;</p>
               </div>
-              <div className="flex-[0_0_auto] w-full md:w-1/3 md:px-6 py-6">
+              <div className="flex-[0_0_auto] w-full md:w-1/3 py-6">
                 <p className="mb-2 flex justify-center items-center w-8 h-8 rounded-full bg-[#202B93] text-white font-bold">2</p>
                 <Image src="/asset_41.png" alt="asset_41" width={90} height={90} className="m-auto mb-4 mt-[-20px]" />
                 <div className="text-center font-semibold">
@@ -189,7 +189,7 @@ async function page() {
                 <Image src="/asset_43.png" alt="asset_43" width={90} height={90} className="m-auto mb-4" />
                 <p className="text-center px-4 mb-4 text-[#84571B] font-semibold">Bố mẹ theo dõi <Link href="/https://www.facebook.com/wowtoptangchieucao" className="text-[#202B93]">Fanpage Wowtop</Link> hoặc website <Link className="text-[#202B93] whitespace-normal break-words" href="https://wowtopmilk.com.vn/sieu-sao-wow-cao-chat">wowtopmilk.com.vn/sieu-sao-wow-cao-chat</Link> để cập nhật kết quả chương trình</p>
               </div>
-              <div className="flex-[0_0_auto] w-full md:w-1/3 md:px-6 py-6">
+              <div className="flex-[0_0_auto] w-full md:w-1/3 py-6">
                 <p className="mb-2 flex justify-center items-center w-8 h-8 rounded-full bg-[#202B93] text-white font-bold">5</p>
                 <Image src="/asset_44.png" alt="asset_44" width={90} height={90} className="m-auto mb-4" />
                 <p className="text-center px-4 mb-4 text-[#84571B] font-semibold">Chuyên gia tăng chiều cao tư vấn miễn phí để bố mẹ nắm bắt tình trạng chiều cao của con và chuyên gia lên phác đồ tăng chiều cao cả về chất và lượng cho con.</p>
