@@ -15,7 +15,7 @@ function Banner() {
         navigation={true}
         modules={[Navigation, Autoplay]}
         autoplay={{
-          delay: 4000,
+          delay: 3000,
           disableOnInteraction: false,
         }}
       >
@@ -23,7 +23,7 @@ function Banner() {
           <Image src="/bn-mobile@2x-100.png" alt="bn-mobile@2x-100" width={1920} height={400} className="w-full h-full" />
         </SwiperSlide>
         <SwiperSlide>
-          <Image src="/bn-mobile@2x-100.png" alt="bn-mobile@2x-100" width={1920} height={400} className="w-full h-full" />
+          <Image src="/DANCE-mobile.png" alt="DANCE-mobile" width={1920} height={400} className="w-full h-full" />
         </SwiperSlide>
       </Swiper>
     </section>
