@@ -305,7 +305,7 @@ async function page() {
           <div className="flex flex-col justify-center items-center">
             <p className="bg-text text-[calc(1rem+1vw)] md:text-4xl text-center font-semibold uppercase">Giới thiệu về Wowtop</p>
             <br />
-            <Link className="dkdt px-8 py-2 " href="#trial-form">Bấm để xem thêm</Link>
+            <Link className="dkdt px-8 py-2 " href="/san-pham">Bấm để xem thêm</Link>
           </div>
         </div>
         <div className="flex-1 px-2">
