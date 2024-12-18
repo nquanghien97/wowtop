@@ -21,7 +21,7 @@ async function page() {
           <p className="bg-text-1 text-center text-[3vw] md:text-2xl uppercase py-1">Nhập khẩu nguyên lon từ Newzealand</p>
           <div className="max-w-5xl m-auto">
             <div className="bg-[url('/asset_15.png')] bg-[length:100%_100%] h-[70px] flex justify-center items-center mb-2">
-              <p className="flex items-center text-white text-2xl">lên đến <span className="text-white text-[5vw] md:text-4xl font-bold uppercase ml-4 py-2">4.600.000 VNĐ/ Suất</span></p>
+              <p className="flex items-center text-white text-2xl">lên đến <span className="text-white text-[5vw] md:text-4xl font-bold uppercase ml-4 py-2">13,800,000 VNĐ/ Suất</span></p>
             </div>
             <div className="flex max-md:flex-col relative">
               <Image src="/asset_5.png" alt="asset_5" width={140} height={140} className="absolute md:top-[-10%] right-0 w-1/5 md:w-[12%]" />
@@ -139,25 +139,25 @@ async function page() {
           </div>
           <p className="bg-text-blue text-[calc(1.25rem+1.5vw)] md:text-5xl py-4 font-bold text-center uppercase">Tổng giá trị lên đến 145,000,000 VNĐ</p>
           <div className="dkdt md:w-1/2 m-auto">
-            <p className="font-bold text-[calc(1.25rem+1.5vw)] text-[#84571B]">Đăng ký dùng thử</p>
+            <p className="font-bold text-[calc(1.25rem+1.5vw)] text-[#84571B] uppercase">Tham gia ngay</p>
           </div>
         </div>
       </section>
       <section className="mb-8">
-        <div className="max-w-5xl m-auto">
+        <div className="max-w-6xl m-auto">
           <h2 className="text-[28px] text-[#84571B] text-center uppercase">{'>'}{'>'} Tìm hiểu thêm về sản phẩm</h2>
           <div className="flex max-lg:flex-col gap-4 mb-8">
             <div className="lg:bg-[url('/trhtr.png')] lg:bg-[length:100%_100%] lg:min-h-[200px] flex flex-1 max-lg:flex-col items-center">
-              <Image src="/clock.png" alt="clock" width={160} height={160} className="mr-4" />
-              <div className=" text-[#84571B] text-xl max-lg:bg-[url('/trhtr.png')] max-lg:bg-[length:100%_100%] p-8 flex justify-center items-center flex-col w-full">
-                <p>Thời gian tham gia từ ngày ... đến ngày ...</p>
-                <p>Thời gian công bố kết quả ...</p>
+              <Image src="/clock.png" alt="clock" width={120} height={120} className="" />
+              <div className=" text-[#84571B] text-xl max-lg:bg-[url('/trhtr.png')] max-lg:bg-[length:100%_100%] py-8 px-4 flex justify-center max-md:items-center flex-col w-full text-center lg:text-justify">
+                <p className="mb-2">Thời gian tham gia từ ngày 23/12/2024 đến ngày 15/01/2024</p>
+                <p className="mb-2">Thời gian công bố kết quả 20/01/2024 đến ngày 25/01/2024</p>
                 <p>Thời gian gửi quà sau 1 tuần kể từ ngày thông báo.</p>
               </div>
             </div>
             <div className="lg:bg-[url('/trhtr.png')] lg:bg-[length:100%_100%] lg:min-h-[200px] flex-1 flex max-lg:flex-col justify-center items-center">
-              <Image src="/group.png" alt="group" width={160} height={160} className="mr-4" />
-              <p className="text-[#84571B] text-xl max-lg:bg-[url('/trhtr.png')] max-lg:bg-[length:100%_100%] p-8 text-center">Đối tượng tham gia chương trình là các bé trong độ tuổi <strong>từ 1-16 tham gia nhảy</strong> cùng bố mẹ hoặc anh chị cô</p>
+              <Image src="/group.png" alt="group" width={120} height={120} className="" />
+              <p className="text-[#84571B] text-xl max-lg:bg-[url('/trhtr.png')] max-lg:bg-[length:100%_100%] p-8 max-md:text-center text-justify">Đối tượng tham gia chương trình là các bé trong độ tuổi <strong>từ 1-16 tham gia nhảy</strong> cùng bố mẹ hoặc anh chị cô</p>
             </div>
           </div>
           <div className="bg-[url('/asset_24.png')] bg-[length:100%_100%] min-h-[120px] flex items-center justify-center">
@@ -206,11 +206,9 @@ async function page() {
       <section className="px-2">
         <div className="max-w-5xl m-auto">
           <div className="flex mb-4 justify-center">
-            <Link href="#trial-form">
-              <div className="dkdt px-8 py-4">
-                <p className="font-bold text-[calc(1.25rem+0.5vw)] md:text-5xl text-[#84571B]">Tham gia ngay</p>
-              </div>
-            </Link>
+            <div className="dkdt px-8 py-4">
+              <p className="font-bold text-[calc(1.25rem+0.5vw)] md:text-5xl text-[#84571B]">Tham gia ngay</p>
+            </div>
           </div>
           <h3 className="bg-text-blue text-[calc(1.25rem+0.5vw)] md:text-5xl text-center font-bold py-2">Tham gia siêu sao wow cao chất</h3>
           <div className="bg-[url('/asset_24.png')] bg-[length:100%_100%] min-h-[120px] flex items-center justify-center mb-4">
@@ -226,7 +224,7 @@ async function page() {
               <div className="flex flex-col justify-center items-center">
                 <p className="bg-text text-[calc(1rem+1vw)] md:text-3xl max-md:text-center font-semibold">Xem video mẫu để học các điệu nhảy &quot;SIÊU SAO WOW CAO CHẤT&quot; và bấm</p>
                 <br />
-                <Link className="dkdt px-8 py-2 " href="#trial-form">Tham gia ngay</Link>
+                <Link className="dkdt px-8 py-2 " href="#">Tham gia ngay</Link>
               </div>
             </div>
             <div className="flex-1 px-2">
@@ -303,15 +301,21 @@ async function page() {
         </div>
       </section>
       <section className="flex max-md:flex-col gap-4 mb-4 max-w-5xl m-auto">
-        <div className="flex-1 flex items-center">
+        <div className="flex-1 flex items-center max-lg:hidden">
           <div className="flex flex-col justify-center items-center">
-            <p className="bg-text text-[calc(1rem+1vw)] md:text-3xl max-md:text-center font-semibold">Xem video mẫu để học các điệu nhảy &quot;SIÊU SAO WOW CAO CHẤT&quot; và bấm</p>
+            <p className="bg-text text-[calc(1rem+1vw)] md:text-4xl text-center font-semibold uppercase">Giới thiệu về Wowtop</p>
             <br />
-            <Link className="dkdt px-8 py-2 " href="#trial-form">Tham gia ngay</Link>
+            <Link className="dkdt px-8 py-2 " href="/san-pham">Bấm để xem thêm</Link>
           </div>
         </div>
         <div className="flex-1 px-2">
           <LazyYouTubeEmbed videoId='6FVUCtcFDW4' />
+        </div>
+        <div className="flex justify-center items-center lg:hidden">
+          <div className="flex flex-col justify-center items-center">
+            <p className="bg-text text-[calc(1rem+1vw)] md:text-4xl text-center font-semibold uppercase mb-2">Giới thiệu về Wowtop</p>
+            <Link className="dkdt px-8 py-2 " href="/san-pham">Bấm để xem thêm</Link>
+          </div>
         </div>
       </section>
       {/* <section className="mb-8">
@@ -328,9 +332,8 @@ async function page() {
       </section> */}
       <section className="mb-8">
         <div className="max-w-4xl m-auto">
-          <div className="flex items-center justify-center mb-4 relative">
-            <Image src="/asset_24.png" alt="asset_24" width={817} height={135} className="absolute inset-0" />
-            <span className="uppercase font-bold bg-text-blue text-[4vw] md:text-3xl py-8 text-center relative px-4 ml-12 md:mt-6">Danh sách người tham gia</span>
+          <div className="bg-[url('/asset_24.png')] bg-[length:100%_100%] flex items-center justify-center mb-4">
+            <span className="uppercase font-bold bg-text-blue text-[4vw] md:text-3xl py-8 mt-2 text-center">Danh sách người tham gia</span>
           </div>
           <div className="flex justify-center">
             <table className="w-full">

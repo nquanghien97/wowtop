@@ -31,10 +31,7 @@ function Header() {
         <div className="header-top flex justify-end max-w-6xl m-auto">
         <ul className="flex flex-row text-[#643D14] gap-4 text-xs max-lg:hidden">
             <li className="cursor-pointer">
-              <Link href="/gioi-thieu">Trang trại New Zealand</Link>
-            </li>
-            <li className="cursor-pointer">
-              <Link href="#">Mua hàng trực tuyến</Link>
+              <Link href="#order-form">Mua hàng trực tuyến</Link>
             </li>
             <li className="cursor-pointer">
               <Link href="tel:18001103">Nhận tư vấn</Link>
