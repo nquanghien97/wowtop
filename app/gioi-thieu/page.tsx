@@ -5,18 +5,7 @@ function page() {
   return (
     <main className="bg-gioi-thieu">
       <section className="md:mb-20">
-        <div className="px-[10%] m-auto bg-[url('/gioi-thieu/asset_1.png')] bg-[length:100%_100%]">
-          <div className=" flex justify-between items-center">
-            <div className="w-1/2">
-              <p className="bg-text-blue uppercase font-bold text-xs md:text-5xl lg:mb-4 py-2 lg:!leading-[64px]">
-                Giúp tăng chiều cao từ cấp độ nguyên bào
-              </p>
-            </div>
-            <div className="w-1/2">
-              <Image src="/gioi-thieu/asset_2.png" alt='' width={1267} height={1162} className="w-full" />
-            </div>
-          </div>
-        </div>
+        <Image src="/gioi-thieu/banner-gioi-thieu.jpg" alt="banner-gioi-thieu" width={1920} height={1080} className="w-full" />
       </section>
       <section className="mb-8">
         <div className="max-w-7xl m-auto md:bg-[url('/gioi-thieu/asset_3.png')] bg-[length:100%_100%]">
