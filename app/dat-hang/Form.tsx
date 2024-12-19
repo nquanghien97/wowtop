@@ -10,14 +10,14 @@ function Form(props: { ip: string }) {
   const [showForm, setShowForm] = useState(false);
   const [scrollTriggered, setScrollTriggered] = useState(false);
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setShowForm(true);
-    }, 10000);
+  // useEffect(() => {
+  //   const timer = setTimeout(() => {
+  //     setShowForm(true);
+  //   }, 10000);
 
-    // Cleanup timer
-    return () => clearTimeout(timer);
-  }, []);
+  //   // Cleanup timer
+  //   return () => clearTimeout(timer);
+  // }, []);
 
   useEffect(() => {
     const handleScroll = () => {
