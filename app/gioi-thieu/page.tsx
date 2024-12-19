@@ -22,7 +22,7 @@ function page() {
         <div className="max-w-7xl m-auto md:bg-[url('/gioi-thieu/asset_3.png')] bg-[length:100%_100%]">
           <div className="flex p-8 max-md:flex-col">
             <div className="w-2/5 md:relative mx-auto">
-              <Image src="/gioi-thieu/asset_4.png" alt="asset_4" width={256} height={452} className="w-[90%] md:absolute md:top-[-120px]" />
+              <Image src="/lon-wow.png" alt="asset_4" width={256} height={452} className="w-[90%] md:absolute md:top-[-120px]" />
             </div>
             <div className="w-full md:w-3/5">
               <div>
