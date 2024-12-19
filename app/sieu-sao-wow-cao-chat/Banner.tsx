@@ -23,13 +23,13 @@ function Banner() {
         <SwiperSlide>
           <div className="relative">
             <Image src="/DANCE-mobile.png" alt="bner-dang-ky-dung-thu" width={1920} height={400} className="w-full md:hidden" />
-            <Image src="/bner.png" alt="bner-dang-ky-dung-thu" width={1920} height={400} className="w-full max-h-[620px] max-md:hidden" />
+            <Image src="/bner.png" alt="bner-dang-ky-dung-thu" width={1920} height={400} className="w-full max-h-[800px] max-md:hidden" />
           </div>
         </SwiperSlide>
         <SwiperSlide>
           <div className="relative">
             <Image src="/bn-mobile@2x-100.png" alt="bner-dang-ky-dung-thu" width={1920} height={400} className="w-full md:hidden" />
-            <Image src="/bner.png" alt="bner-dang-ky-dung-thu" width={1920} height={400} className="w-full max-h-[620px] max-md:hidden" />
+            <Image src="/bner.png" alt="bner-dang-ky-dung-thu" width={1920} height={400} className="w-full max-h-[800px] max-md:hidden" />
           </div>
         </SwiperSlide>
       </Swiper>
