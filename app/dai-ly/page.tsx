@@ -17,7 +17,15 @@ export const metadata: Metadata = {
     title: 'Wowtop',
     url: 'https://wowtop.vn/dai-ly',
     siteName: 'Wowtop',
-    type: 'website'
+    type: 'website',
+    images: [
+      {
+        url: 'https://wowtop.vn/Artboard 13.webp',
+        width: 380,
+        height: 210,
+        alt: 'Wowtop thumbnail',
+      },
+    ],
   }
 }
 

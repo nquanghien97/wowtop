@@ -16,7 +16,15 @@ export const metadata: Metadata = {
     title: 'Wowtop',
     url: 'https://wowtop.vn/du-doan-chieu-cao',
     siteName: 'Wowtop',
-    type: 'website'
+    type: 'website',
+    images: [
+      {
+        url: 'https://wowtop.vn/Artboard 13.webp',
+        width: 380,
+        height: 210,
+        alt: 'Wowtop thumbnail',
+      },
+    ],
   }
 }
 async function DuDoanChieuCao() {
