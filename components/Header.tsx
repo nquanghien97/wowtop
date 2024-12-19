@@ -29,7 +29,7 @@ function Header() {
     <>
       <div className={`w-full ${isScrolled ? 'header' : ''}`}>
         <div className="header-top flex justify-end max-w-6xl m-auto">
-        <ul className="flex flex-row text-[#643D14] gap-4 text-xs max-lg:hidden">
+          <ul className="flex flex-row text-[#643D14] gap-4 text-xs max-lg:hidden">
             <li className="cursor-pointer">
               <Link href="#order-form">Mua hàng trực tuyến</Link>
             </li>
@@ -37,23 +37,28 @@ function Header() {
               <Link href="tel:18001103">Nhận tư vấn</Link>
             </li>
           </ul>
-          <ul className="flex flex-row text-[#643D14] gap-4 lg:hidden mr-4 text-xs">
+          <ul className="flex flex-row text-[#643D14] gap-4 lg:hidden mr-4 text-[10px]">
             <li><Link href="/du-doan-chieu-cao" className="font-bold uppercase">Dự đoán chiều cao của con</Link></li>
             <li><Link href="/sieu-sao-wow-chat" className="font-bold uppercase">Siêu sao cao wow chất</Link></li>
           </ul>
         </div>
-        <header className="lg:h-[80px] header-bg-1 h-[60px] shadow-sm shadow-black/20 header-bottom">
-          <div className="h-full flex max-w-6xl m-auto lg:relative z-[99]">
+        <header className="lg:h-[80px] header-bg-1 h-[60px] shadow-sm shadow-black/20 header-bottom relative">
+          <div className="h-full flex max-w-7xl m-auto lg:relative z-[99]">
             <Link href="/" className={`flex justify-start lg:justify-center items-center max-lg:w-full max-lg:hidden ${isScrolled ? 'mt-4' : 'mt-6'}`}>
               <Image src="/logo.webp" alt="logo" width={280} height={280} className={`max-lg:hidden duration-300 ${isScrolled ? 'scale-50' : ''}`} />
             </Link>
-            <div className="flex justify-center w-full lg:hidden">
+            <div className="flex w-full lg:hidden">
               <Link href="/">
                 <Image src="/logo.webp" alt="logo" width={100} height={100} className="mt-[-8px]" />
               </Link>
             </div>
+            <div className="flex items-center justify-center -mt-3 absolute left-1/2 -translate-x-1/2 lg:hidden">
+              <Link href="tel:18001103">
+                <Image src="/hot1@3x.png" alt="hot1@3x" width={160} height={100} />
+              </Link>
+            </div>
             <div className="max-lg:hidden flex items-center flex-1 w-full">
-              <ul className="flex items-center justify-center flex-1 gap-4 text-white mr-4 w-full">
+              <ul className="flex items-center justify-center flex-1 gap-4 text-white w-full">
                 {ListHeader.map(item => (
                   <li key={item.id} className={`py-1 font-bold ${pathname === item.path ? 'text-[yellow]' : ''}`}>
                     {item.children ? (
@@ -73,7 +78,7 @@ function Header() {
                         </ul>
                       </MenuDropdown>
                     ) : (
-                      <Link key={item.id} href={item.path} className={`hover:text-[yellow] duration-300 px-4`}>
+                      <Link key={item.id} href={item.path} className={`hover:text-[yellow] duration-300 px-2`}>
                         {item.title}
                       </Link>
                     )}
@@ -84,6 +89,9 @@ function Header() {
               <div className="cursor-pointer mr-2">
                 <Link href="/sieu-sao-wow-cao-chat" className="dk-dung-thu font-bold hover:opacity-80 duration-300">SIÊU SAO WOW CAO CHẤT</Link>
               </div>
+              <Link href="tel:18001103" className="flex items-center justify-center -mt-5">
+                <Image src="/hot1@3x.png" alt="hot1@3x" width={200} height={100} />
+              </Link>
             </div>
             <div className="flex items-center mr-8 lg:hidden">
               <div className="cursor-pointer p-1 hover:bg-[#e0e0e0] rounded-full duration-300" onClick={() => setIsOpenSidebar(true)}>

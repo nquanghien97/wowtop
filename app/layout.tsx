@@ -68,10 +68,10 @@ export default function RootLayout({
         <Link href="tel:18001103" className="w-16 h-16 rounded-full bg-[white] flex justify-center items-center mb-4 shadow-custom">
           <PhoneIcon width={40} height={40} fill='#0054a5' />
         </Link>
-        <Link href="https://zalo.me/0978488123" className="w-16 h-16 rounded-full bg-[white] flex justify-center items-center mb-4 shadow-custom" target='blank'>
+        <Link href="#" className="w-16 h-16 rounded-full bg-[white] flex justify-center items-center mb-4 shadow-custom" target='blank'>
           <Image src="/Icon_of_Zalo.png" alt="Icon_of_Zalo" width={40} height={40} />
         </Link>
-        <Link href="https://www.facebook.com/wowtop.vn" className="w-16 h-16 rounded-full bg-[white] flex justify-center items-center shadow-custom" target='blank'>
+        <Link href="https://m.me/wowtoptangchieucao" className="w-16 h-16 rounded-full bg-[white] flex justify-center items-center shadow-custom" target='blank'>
           <Image src="/Facebook_Messenger_logo.png" alt="Facebook_Messenger_logo" width={40} height={40} />
         </Link>
       </div>
