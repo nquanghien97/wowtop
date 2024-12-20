@@ -30,6 +30,7 @@ const schema = yup.object().shape({
   phone_number: yup
     .string()
     .matches(phoneRegExp, 'Vui lòng nhập số điện thoại hợp lệ')
+    .length(10, 'Số điện thoại phải đủ 10 chữ số')
     .required('Vui lòng nhập số điện thoại'),
   province: yup.string().required('Vui lòng chọn tỉnh/thành phố'),
   district: yup.string().required('Vui lòng chọn quận/huyện'),

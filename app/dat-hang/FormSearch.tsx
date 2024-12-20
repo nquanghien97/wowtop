@@ -18,6 +18,7 @@ const schema = yup.object().shape({
   phoneNumber: yup
     .string()
     .matches(phoneRegExp, 'Vui lòng nhập số điện thoại hợp lệ')
+    .length(10, 'Số điện thoại phải đủ 10 chữ số')
     .required('Vui lòng nhập số điện thoại'),
   address: yup.string().required('Vui lòng nhập địa chỉ'),
 });

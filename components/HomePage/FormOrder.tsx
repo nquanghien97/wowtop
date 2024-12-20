@@ -27,6 +27,7 @@ const schema = yup.object().shape({
   phoneNumber: yup
     .string()
     .matches(phoneRegExp, 'Vui lòng nhập số điện thoại hợp lệ')
+    .length(10, 'Số điện thoại phải đủ 10 chữ số')
     .required('Vui lòng nhập số điện thoại'),
   province: yup.string().required('Vui lòng chọn tỉnh/thành phố'),
   district: yup.string().required('Vui lòng chọn quận/huyện'),
@@ -75,22 +76,22 @@ function FormOrder(props: { ip?: string }) {
     const date = new Date(Date.now());
     const link = window.location.href
     try {
-      if (process.env.NEXT_PUBLIC_GOOGLE_API_BASE_URL_2) {
-        await fetch(process.env.NEXT_PUBLIC_GOOGLE_API_BASE_URL_2, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({
-            date: formatDate(date),
-            ...submitForm,
-            link,
-            ip
-          }),
-          mode: 'no-cors'
-        })
-      }
-      gtagReportConversion()
+      // if (process.env.NEXT_PUBLIC_GOOGLE_API_BASE_URL_2) {
+      //   await fetch(process.env.NEXT_PUBLIC_GOOGLE_API_BASE_URL_2, {
+      //     method: 'POST',
+      //     headers: {
+      //       'Content-Type': 'application/json',
+      //     },
+      //     body: JSON.stringify({
+      //       date: formatDate(date),
+      //       ...submitForm,
+      //       link,
+      //       ip
+      //     }),
+      //     mode: 'no-cors'
+      //   })
+      // }
+      // gtagReportConversion()
       await createOrder(submitForm)
       toast.success('Đăng ký đơn hàng thành công, Chúng tôi sẽ liên hệ quý khách trong thời gian tới')
     } catch (err) {
