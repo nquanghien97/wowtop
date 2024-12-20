@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: 'https://wowtop.vn/Artboard 13.webp',
+        url: 'https://wowtop.vn/artboard-13.png',
         width: 380,
         height: 210,
         alt: 'Wowtop thumbnail',

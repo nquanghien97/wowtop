@@ -157,7 +157,7 @@ async function page() {
             </div>
             <div className="lg:bg-[url('/trhtr.png')] lg:bg-[length:100%_100%] lg:min-h-[200px] flex-1 flex max-lg:flex-col justify-center items-center">
               <Image src="/group.png" alt="group" width={120} height={120} className="" />
-              <p className="text-[#84571B] text-xl max-lg:bg-[url('/trhtr.png')] max-lg:bg-[length:100%_100%] p-8 max-md:text-center text-justify">Đối tượng tham gia chương trình là các bé trong độ tuổi <strong>từ 1-16 tham gia nhảy</strong> cùng bố mẹ hoặc anh chị cô</p>
+              <p className="text-[#84571B] text-xl max-lg:bg-[url('/trhtr.png')] max-lg:bg-[length:100%_100%] p-8 max-md:text-center text-justify">Đối tượng tham gia chương trình là các bé trong độ tuổi <strong>từ 1-16</strong></p>
             </div>
           </div>
           <div className="bg-[url('/asset_24.png')] bg-[length:100%_100%] min-h-[120px] flex items-center justify-center">
@@ -182,12 +182,12 @@ async function page() {
               <div className="flex-[0_0_auto] w-full md:w-1/3 md:px-6 py-6">
                 <p className="mb-2 flex justify-center items-center w-8 h-8 rounded-full bg-[#202B93] text-white font-bold">3</p>
                 <Image src="/asset_42.png" alt="asset_42" width={90} height={90} className="m-auto mb-4 mt-[-20px]" />
-                <p className="text-center px-4 mb-4 text-[#84571B] font-semibold">Bố mẹ truy cập website <Link className="text-[#202B93]" href="/wowtopmilk.com.vn">wowtopmilk</Link> gửi link tham dự và đăng ký nhận quà dùng thử</p>
+                <p className="text-center px-4 mb-4 text-[#84571B] font-semibold">Bố mẹ truy cập website <Link className="text-[#202B93]" href="https://wowtop.vn/sieu-sao-wow-cao-chat ">wowtop.vn/sieu-sao-wow-cao-chat</Link> gửi link tham dự và đăng ký nhận quà dùng thử</p>
               </div>
               <div className="flex-[0_0_auto] w-full md:w-1/3 md:px-6 py-6">
                 <p className="mb-2 flex justify-center items-center w-8 h-8 rounded-full bg-[#202B93] text-white font-bold">4</p>
                 <Image src="/asset_43.png" alt="asset_43" width={90} height={90} className="m-auto mb-4" />
-                <p className="text-center px-4 mb-4 text-[#84571B] font-semibold">Bố mẹ theo dõi <Link href="/https://www.facebook.com/wowtoptangchieucao" className="text-[#202B93]">Fanpage Wowtop</Link> hoặc website <Link className="text-[#202B93] whitespace-normal break-words" href="https://wowtopmilk.com.vn/sieu-sao-wow-cao-chat">wowtopmilk.com.vn/sieu-sao-wow-cao-chat</Link> để cập nhật kết quả chương trình</p>
+                <p className="text-center px-4 mb-4 text-[#84571B] font-semibold">Bố mẹ theo dõi <Link href="/https://www.facebook.com/wowtoptangchieucao" className="text-[#202B93]">Fanpage Wowtop</Link> hoặc website <Link className="text-[#202B93] whitespace-normal break-words" href="https://wowtop.vn/sieu-sao-wow-cao-chat">wowtopmilk.com.vn/sieu-sao-wow-cao-chat</Link> để cập nhật kết quả chương trình</p>
               </div>
               <div className="flex-[0_0_auto] w-full md:w-1/3 md:px-6 py-6">
                 <p className="mb-2 flex justify-center items-center w-8 h-8 rounded-full bg-[#202B93] text-white font-bold">5</p>
