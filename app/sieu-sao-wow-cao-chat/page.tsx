@@ -104,7 +104,7 @@ async function page() {
                   <Image src="/Artboard 11.png" alt="Artboard 11" width={400} height={189} className="w-1/2" />
                 </div>
                 <div className="p-4 font-semibold">
-                  <p className="text-center text-[#202B93]">Chọn 80 người chơi có video đạt lượng view và tương tác cao từ thứ 3 đến 83 trong thời gian diễn ra cuộc thi nhận giải &quot;WOW thần tượng&quot;</p>
+                  <p className="text-center text-[#202B93]">Chọn 80 người chơi có video đạt lượng view và tương tác cao từ thứ 4 đến 84 trong thời gian diễn ra cuộc thi nhận giải &quot;WOW thần tượng&quot;</p>
                 </div>
               </div>
               <div className="flex-1 bg-[url('/asset_23.png')] bg-[length:100%_100%] w-full">
