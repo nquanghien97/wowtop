@@ -88,7 +88,7 @@ async function page() {
                   <Image src="/Artboard 5.png" alt="Artboard 5" width={256} height={253} className="absolute right-0 w-1/3" />
                 </div>
                 <div className="p-4 font-semibold md:w-2/3">
-                  <p className="text-center text-[#202B93]">Chọn 1 nguời có video đạt lượng view và tương tác cao nhất</p>
+                  <p className="text-center text-[#202B93]">Chọn 1 nguời có video đạt lượng view và tương tác cao thứ 3</p>
                 </div>
               </div>
             </div>
