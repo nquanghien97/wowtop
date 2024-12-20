@@ -98,7 +98,7 @@ function FormOrder(props: { ip: string }) {
         })
       }
       await createDanceChallenge(submitForm)
-      toast.success('Đăng ký đơn hàng thành công, Chúng tôi sẽ liên hệ quý khách trong thời gian tới')
+      toast.success('Đăng ký tham gia thành công, Chúng tôi sẽ liên hệ quý khách trong thời gian tới')
     } catch (err) {
       if (err instanceof Error) {
         toast.error(err.message)
