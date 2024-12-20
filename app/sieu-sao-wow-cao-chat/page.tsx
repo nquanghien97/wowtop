@@ -187,7 +187,7 @@ async function page() {
               <div className="flex-[0_0_auto] w-full md:w-1/3 md:px-6 py-6">
                 <p className="mb-2 flex justify-center items-center w-8 h-8 rounded-full bg-[#202B93] text-white font-bold">4</p>
                 <Image src="/asset_43.png" alt="asset_43" width={90} height={90} className="m-auto mb-4" />
-                <p className="text-center px-4 mb-4 text-[#84571B] font-semibold">Bố mẹ theo dõi <Link href="/https://www.facebook.com/wowtoptangchieucao" className="text-[#202B93]">Fanpage Wowtop</Link> hoặc website <Link className="text-[#202B93] whitespace-normal break-words" href="https://wowtop.vn/sieu-sao-wow-cao-chat">wowtopmilk.com.vn/sieu-sao-wow-cao-chat</Link> để cập nhật kết quả chương trình</p>
+                <p className="text-center px-4 mb-4 text-[#84571B] font-semibold">Bố mẹ theo dõi <Link href="/https://www.facebook.com/wowtoptangchieucao" className="text-[#202B93]">Fanpage Wowtop</Link> hoặc website <Link className="text-[#202B93] whitespace-normal break-words" href="https://wowtop.vn/sieu-sao-wow-cao-chat">wowtop.vn/sieu-sao-wow-cao-chat</Link> để cập nhật kết quả chương trình</p>
               </div>
               <div className="flex-[0_0_auto] w-full md:w-1/3 md:px-6 py-6">
                 <p className="mb-2 flex justify-center items-center w-8 h-8 rounded-full bg-[#202B93] text-white font-bold">5</p>
@@ -197,7 +197,7 @@ async function page() {
               <div className="flex-[0_0_auto] w-full md:w-1/3 md:px-6 py-6">
                 <p className="mb-2 flex justify-center items-center w-8 h-8 rounded-full bg-[#202B93] text-white font-bold">6</p>
                 <Image src="/asset_45.png" alt="asset_45" width={90} height={90} className="m-auto mb-4" />
-                <p className="text-center p mb-4x-4 text-[#84571B] font-semibold">Bố mẹ nhận sản phẩm, cam kết gửi ảnh chụp của bé cùng sản phẩm.</p>
+                <p className="text-center p mb-4x-4 text-[#84571B] font-semibold">Bố mẹ nhận sản phẩm, gửi ảnh chụp của bé cùng sản phẩm tặng chương trình để lưu giữ khoảnh khắc.</p>
               </div>
             </div>
           </div>
@@ -258,7 +258,7 @@ async function page() {
           </div>
           <div>
             <p className="buoc table m-auto md:text-3xl text-[calc(1.5rem+0.5vw)] mb-4">Bước 3</p>
-            <p className="bg-text text-[calc(1rem+1vw)] md:text-3xl font-semibold text-center w-full m-auto mb-4">BỐ MẸ GỬI LINK THAM GIA ĐỂ NHẬN CƠ HỘI DÙNG THỬ SỮA WOWTOP CHO CON YÊU NHÉ</p>
+            <p className="bg-text text-[calc(1rem+1vw)] md:text-3xl font-semibold text-center w-full m-auto mb-4">BỐ MẸ GỬI LINK THAM GIA DANCE CHALLENGE VÀ GỬI THÔNG TIN NHẬN QUÀ</p>
             <FormOrder ip={ip.ip} />
           </div>
           <div className="flex max-md:flex-col gap-4 mb-4">
@@ -268,7 +268,7 @@ async function page() {
                 <p className="max-md:hidden absolute bg-[#202B93] w-4 h-4 rounded-full after:absolute after:content-[''] top-1/2 -right-full transform -translate-y-1/2"></p>
                 <p className="max-md:hidden absolute bg-[#202B93] w-full h-[1px] rounded-full after:absolute after:content-[''] top-1/2 -right-full transform -translate-y-1/2"></p>
               </div>
-              <p className="bg-text text-[calc(1rem+1vw)] md:text-3xl font-semibold max-md:text-center">Bố mẹ theo dõi Fanpage Wowtop hoặc truy cập website <Link href="/#" className="bg-text-blue whitespace-normal break-words">wowtopmilk.com.vn/sieu-sao-wow-cao-chat</Link> để cập nhật kết quả chương trình</p>
+              <p className="bg-text text-[calc(1rem+1vw)] md:text-3xl font-semibold max-md:text-center">Bố mẹ theo dõi Fanpage Wowtop hoặc truy cập website <Link href="https://wowtop.vn/sieu-sao-wow-cao-chat" className="bg-text-blue whitespace-normal break-words">wowtop.vn/sieu-sao-wow-cao-chat</Link> để cập nhật kết quả chương trình</p>
             </div>
             <div className="flex-1 relative">
               <div className="flex-1 relative">
