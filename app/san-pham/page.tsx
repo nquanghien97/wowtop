@@ -81,7 +81,7 @@ async function Product() {
                 </ul>
               </div>
               <div className="w-[220px] h-[60px] mt-4 ml-8">
-                <Link href="/" className="bg-blue rounded-md w-full h-full flex items-center justify-center">
+                <Link href="#order-form" className="bg-blue rounded-md w-full h-full flex items-center justify-center">
                   <span className="text-white text-3xl font-bold uppercase">
                     Mua ngay
                   </span>
