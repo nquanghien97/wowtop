@@ -70,21 +70,21 @@ function FormOrder(props: { ip: string }) {
   const onSubmit = async (data: FormValues) => {
     setLoading(true);
     const submitForm = {
-      tiktok_link: data.tiktok_link,
-      facebook_link: data.facebook_link,
-      youtube_link: data.youtube_link,
       full_name: data.full_name,
       phone_number: data.phone_number,
       province: data.provinceLabel,
       district: data.districtLabel,
       ward: data.wardLabel,
       address: data.address,
+      tiktok_link: data.tiktok_link,
+      facebook_link: data.facebook_link,
+      youtube_link: data.youtube_link,
     }
     const date = new Date(Date.now());
     const link = window.location.href
     try {
-      if (process.env.NEXT_PUBLIC_GOOGLE_API_BASE_URL_2) {
-        await fetch(process.env.NEXT_PUBLIC_GOOGLE_API_BASE_URL_2, {
+      if (process.env.NEXT_PUBLIC_DANCE_CHALLENGE_API) {
+        await fetch(process.env.NEXT_PUBLIC_DANCE_CHALLENGE_API, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',

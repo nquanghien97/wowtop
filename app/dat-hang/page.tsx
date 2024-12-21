@@ -20,7 +20,7 @@ async function page() {
         <Link href="tel:0978488123" className="w-16 h-16 rounded-full bg-[#0054a5] flex justify-center items-center mb-4">
           <PhoneIcon width={40} height={40} fill='white' />
         </Link>
-        <Link href="#order" className="w-16 h-16 rounded-full bg-[#0054a5] flex justify-center items-center">
+        <Link href="#order-form" className="w-16 h-16 rounded-full bg-[#0054a5] flex justify-center items-center">
           <CartIcon width={40} height={40} fill='white' />
         </Link>
       </div>

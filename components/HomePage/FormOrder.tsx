@@ -76,22 +76,22 @@ function FormOrder(props: { ip?: string }) {
     const date = new Date(Date.now());
     const link = window.location.href
     try {
-      // if (process.env.NEXT_PUBLIC_GOOGLE_API_BASE_URL_2) {
-      //   await fetch(process.env.NEXT_PUBLIC_GOOGLE_API_BASE_URL_2, {
-      //     method: 'POST',
-      //     headers: {
-      //       'Content-Type': 'application/json',
-      //     },
-      //     body: JSON.stringify({
-      //       date: formatDate(date),
-      //       ...submitForm,
-      //       link,
-      //       ip
-      //     }),
-      //     mode: 'no-cors'
-      //   })
-      // }
-      // gtagReportConversion()
+      if (process.env.NEXT_PUBLIC_GOOGLE_API_BASE_URL_2) {
+        await fetch(process.env.NEXT_PUBLIC_GOOGLE_API_BASE_URL_2, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            date: formatDate(date),
+            ...submitForm,
+            link,
+            ip
+          }),
+          mode: 'no-cors'
+        })
+      }
+      gtagReportConversion()
       await createOrder(submitForm)
       toast.success('Đăng ký đơn hàng thành công, Chúng tôi sẽ liên hệ quý khách trong thời gian tới')
     } catch (err) {
@@ -104,7 +104,7 @@ function FormOrder(props: { ip?: string }) {
   }
 
   return (
-    <section className="mb-8 bg-[bg-[#69dbe1]">
+    <section className="mb-8 bg-[bg-[#69dbe1] scroll-mt-32" id="order-form">
       <div className="px-4 py-8 max-w-6xl m-auto bg-[url('/dki3.webp')] md:bg-[length:100%_100%]  bg-center rounded-[50px]">
         <div className="mb-8">
           <h2 className="text-[#002A9E] text-4xl uppercase text-center font-bold">Đăng ký mua hàng</h2>
