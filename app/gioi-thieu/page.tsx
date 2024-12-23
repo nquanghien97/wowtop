@@ -5,7 +5,7 @@ function page() {
   return (
     <main className="bg-gioi-thieu">
       <section className="md:mb-20">
-        <Image src="/gioi-thieu/banner-gioi-thieu.jpg" alt="banner-gioi-thieu" width={1920} height={1080} className="w-full" />
+        <Image src="/gioi-thieu/banner-gioi-thieu.jpg" alt="banner-gioi-thieu" width={4147} height={1884} className="w-full" />
       </section>
       <section className="mb-8">
         <div className="max-w-7xl m-auto md:bg-[url('/gioi-thieu/asset_3.png')] bg-[length:100%_100%]">

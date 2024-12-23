@@ -37,7 +37,7 @@ async function page() {
             </div>
           </div>
         </div>
-        <Image src="/bg-banner.png" alt="bg-banner" width={1920} height={1080} className="w-full" />
+        <Image src="/bg-banner.png" alt="bg-banner" width={2318} height={1055} className="w-full" />
       </section>
       <CongThuc />
       <section className="mb-20 bg-[url('/pt-bg-yellow.webp')] bg-[length:100%_100%]">

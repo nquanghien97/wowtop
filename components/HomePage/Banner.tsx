@@ -15,15 +15,15 @@ function Banner() {
         loop={true}
         navigation={true}
         modules={[Navigation, Autoplay]}
-        autoplay={{
-          delay: 3000,
-          disableOnInteraction: false,
-        }}
+        // autoplay={{
+        //   delay: 3000,
+        //   disableOnInteraction: false,
+        // }}
       >
         <SwiperSlide>
-          {/* desktop */}
-          <Image src="/bn-mobile@2x-100.png" alt="bn-mobile@2x-100" width={1920} height={400} className="w-full h-full lg:hidden" />
           {/* mobile */}
+          <Image src="/bn-mobile@2x-100.png" alt="bn-mobile@2x-100" width={1782} height={2619} className="w-full h-full lg:hidden" />
+          {/* desktop */}
           <div className="relative max-lg:hidden">
             <div className="px-[10%] m-auto absolute top-1/2 -translate-y-1/2">
               <div className=" flex justify-between items-center">
@@ -37,12 +37,15 @@ function Banner() {
                 </div>
               </div>
             </div>
-            <Image src="/bg-banner.png" alt="bg-banner" width={1920} height={1080} className="w-full" />
+            <Image src="/bg-banner.png" alt="bg-banner" width={2318} height={1055} className="w-full" />
           </div>
         </SwiperSlide>
         <SwiperSlide>
-          <Image src="/DANCE-mobile.png" alt="DANCE-mobile" width={1920} height={400} className="w-full h-full lg:hidden" />
-          <Image src="/bner.png" alt="bner" width={1920} height={400} className="w-full h-full max-lg:hidden" />
+          <Image src="/DANCE-mobile.png" alt="DANCE-mobile" width={1378} height={1995} className="w-full h-full lg:hidden" />
+          <Image src="/bner.png" alt="bner" width={2879} height={1308} className="w-full h-full max-lg:hidden" />
+        </SwiperSlide>
+        <SwiperSlide className='max-lg:hidden'>
+          <Image src="/gioi-thieu/banner-gioi-thieu.jpg" alt="banner-gioi-thieu.jpg" width={4147} height={1884} className="w-full h-full" />
         </SwiperSlide>
       </Swiper>
     </section>
