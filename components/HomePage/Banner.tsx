@@ -15,10 +15,10 @@ function Banner() {
         loop={true}
         navigation={true}
         modules={[Navigation, Autoplay]}
-        // autoplay={{
-        //   delay: 3000,
-        //   disableOnInteraction: false,
-        // }}
+        autoplay={{
+          delay: 3000,
+          disableOnInteraction: false,
+        }}
       >
         <SwiperSlide>
           {/* mobile */}
