@@ -15,10 +15,10 @@ function Banner() {
         loop={true}
         navigation={true}
         modules={[Navigation, Autoplay]}
-        // autoplay={{
-        //   delay: 3000,
-        //   disableOnInteraction: false,
-        // }}
+        autoplay={{
+          delay: 3000,
+          disableOnInteraction: false,
+        }}
       >
         <SwiperSlide>
           {/* desktop */}
@@ -44,8 +44,9 @@ function Banner() {
           <Image src="/DANCE-mobile.png" alt="DANCE-mobile" width={1378} height={1995} className="w-full h-full lg:hidden" />
           <Image src="/bner.png" alt="bner" width={2879} height={1308} className="w-full h-full max-lg:hidden" />
         </SwiperSlide>
-        <SwiperSlide className='max-lg:!hidden'>
-          <Image src="/banner-gioi-thieu.jpg" alt="banner-gioi-thieu.jpg" width={4147} height={1884} className="w-full h-full" />
+        <SwiperSlide>
+          <Image src="/banner-gioi-thieu.jpg" alt="banner-gioi-thieu.jpg" width={4147} height={1884} className="w-full h-full max-lg:hidden" />
+          <Image src="/DANCE-mobile.png" alt="DANCE-mobile" width={1378} height={1995} className="w-full h-full lg:hidden" />
         </SwiperSlide>
       </Swiper>
     </section>
