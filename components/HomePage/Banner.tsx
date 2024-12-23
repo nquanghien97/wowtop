@@ -45,7 +45,7 @@ function Banner() {
           <Image src="/bner.png" alt="bner" width={2879} height={1308} className="w-full h-full max-lg:hidden" />
         </SwiperSlide>
         <SwiperSlide className='max-lg:hidden'>
-          <Image src="banner-gioi-thieu.jpg" alt="banner-gioi-thieu.jpg" width={4147} height={1884} className="w-full h-full" />
+          <Image src="/banner-gioi-thieu.jpg" alt="banner-gioi-thieu.jpg" width={4147} height={1884} className="w-full h-full" />
         </SwiperSlide>
       </Swiper>
     </section>
