@@ -25,7 +25,8 @@ async function page() {
         </Link>
       </div>
       <section className="">
-        <Image src="/banner-order.jpg" alt="banner-order" width={2318} height={1055} className="w-full" />
+        <Image src="/banner-order.jpg" alt="banner-order" width={2318} height={1055} className="w-full max-lg:hidden" />
+        <Image src="/banner-order-mobile.jpg" alt="banner-order-mobile" width={2318} height={1055} className="w-full lg:hidden" />
       </section>
       <CongThuc />
       <section className="mb-20 bg-[url('/pt-bg-yellow.webp')] bg-[length:100%_100%]">
