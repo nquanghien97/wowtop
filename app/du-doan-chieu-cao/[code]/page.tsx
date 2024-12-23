@@ -24,7 +24,7 @@ async function Successfully({ params }: { params: { code: string } }) {
       <div className="max-w-6xl m-auto px-4 py-8">
         <div className="relative">
           <div className="flex justify-center">
-            <Image src="/logo.webp" alt="logo2" width={400} height={134} />
+            <Image src="/logo.png" alt="logo2" width={400} height={134} />
           </div>
           <div className="text-center">
             <h2 className="text-[#135689] text-6xl py-2 uppercase">Chúc mừng</h2>

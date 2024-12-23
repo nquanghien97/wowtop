@@ -45,11 +45,11 @@ function Header() {
         <header className="lg:h-[80px] header-bg-1 h-[60px] shadow-sm shadow-black/20 header-bottom relative">
           <div className="h-full flex max-w-7xl m-auto lg:relative z-[99]">
             <Link href="/" className={`flex justify-start lg:justify-center items-center max-lg:w-full max-lg:hidden ${isScrolled ? 'mt-4' : 'mt-6'}`}>
-              <Image src="/logo.webp" alt="logo" width={280} height={280} className={`max-lg:hidden duration-300 ${isScrolled ? 'scale-50' : ''}`} />
+              <Image src="/logo.png" alt="logo" width={280} height={280} className={`max-lg:hidden duration-300 ${isScrolled ? 'scale-50' : ''}`} />
             </Link>
             <div className="flex w-full lg:hidden">
               <Link href="/">
-                <Image src="/logo.webp" alt="logo" width={100} height={100} className="mt-[-8px]" />
+                <Image src="/logo.png" alt="logo" width={100} height={100} className="mt-[-8px]" />
               </Link>
             </div>
             <div className="flex items-center justify-center -mt-3 absolute left-1/2 -translate-x-1/2 lg:hidden">
