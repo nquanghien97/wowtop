@@ -5,7 +5,7 @@ import Link from 'next/link';
 import Feedback from '@/components/HomePage/Feedback';
 import FormOrder from '@/components/HomePage/FormOrder';
 import Experience from '@/components/HomePage/Experience';
-import Form from './Form';
+// import Form from './Form';
 import PhoneIcon from '@/assets/icons/PhoneIcon';
 import CartIcon from '@/assets/icons/CartIcon';
 
@@ -266,7 +266,7 @@ async function page() {
         <FormOrder ip={ip.ip} />
         <Experience />
       </div>
-      <Form ip={ip.ip} />
+      {/* <Form ip={ip.ip} /> */}
     </main>
   )
 }
