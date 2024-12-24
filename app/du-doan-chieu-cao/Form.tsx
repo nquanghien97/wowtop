@@ -28,9 +28,9 @@ interface FormValues {
   currentWeight: number;
   date_of_birth: Date;
   gender: string;
-  currentProduct: string[];
-  sport: string;
-  timeSleep: string;
+  // currentProduct: string[];
+  // sport: string;
+  // timeSleep: string;
   province: string;
   district: string;
   ward: string;
@@ -60,6 +60,7 @@ const schema = yup.object().shape({
   phoneNumber: yup
     .string()
     .required('Vui lòng nhập số điện thoại phụ huynh')
+    .length(10, 'Số điện thoại phải đủ 10 chữ số')
     .matches(phoneRegExp, 'Vui lòng nhập số điện thoại hợp lệ'),
   fullName: yup.string().required('Vui lòng nhập họ và tên con'),
   currentHeight: yup
@@ -98,9 +99,9 @@ const schema = yup.object().shape({
   district: yup.string().required('Vui lòng chọn quận/huyện'),
   ward: yup.string().required('Vui lòng chọn phường/xã'),
   address: yup.string().required('Vui lòng nhập địa chỉ'),
-  currentProduct: yup.array().required('Trường sản phẩm con sử dụng không được bỏ trống.'),
-  sport: yup.string().required('Vui lòng chọn tần suất vận động'),
-  timeSleep: yup.string().required('Vui lòng chọn thời gian ngủ'),
+  // currentProduct: yup.array().required('Trường sản phẩm con sử dụng không được bỏ trống.'),
+  // sport: yup.string().required('Vui lòng chọn tần suất vận động'),
+  // timeSleep: yup.string().required('Vui lòng chọn thời gian ngủ'),
   provinceLabel: yup.string(),
   districtLabel: yup.string(),
   wardLabel: yup.string(),
