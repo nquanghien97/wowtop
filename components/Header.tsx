@@ -59,7 +59,7 @@ function Header({ currentUser, token }: { currentUser: UserEntity, token?: strin
           </ul>
           <ul className="flex flex-row text-[#643D14] gap-4 lg:hidden text-[10px] m-auto">
             <li><Link href="/du-doan-chieu-cao" className="font-bold uppercase">Dự đoán chiều cao của con</Link></li>
-            <li><Link href="/sieu-sao-wow-chat" className="font-bold uppercase">Siêu sao cao wow chất</Link></li>
+            <li><Link href="/sieu-sao-wow-cao-chat" className="font-bold uppercase">Siêu sao cao wow chất</Link></li>
           </ul>
         </div>
         <header className="lg:h-[80px] header-bg-1 h-[60px] shadow-sm shadow-black/20 header-bottom">

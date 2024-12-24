@@ -92,9 +92,9 @@ model HeightCalculator {
   date_of_birth  String
   currentHeight  String
   currentWeight  String
-  currentProduct String
-  sport          String
-  timeSleep      String
+  currentProduct String?
+  sport          String?
+  timeSleep      String?
   createdAt      DateTime @default(now())
 }
 

@@ -17,10 +17,10 @@ async function page() {
   return (
     <main>
       <div className="fixed bottom-4 right-4 z-[100]">
-        <Link href="tel:0978488123" className="w-16 h-16 rounded-full bg-[#0054a5] flex justify-center items-center mb-4">
+        <Link href="tel:0978488123" className="w-12 h-12 p-2 rounded-full bg-[#0054a5] flex justify-center items-center mb-4">
           <PhoneIcon width={40} height={40} fill='white' />
         </Link>
-        <Link href="#order-form" className="w-16 h-16 rounded-full bg-[#0054a5] flex justify-center items-center">
+        <Link href="#order-form" className="w-12 h-12 p-2 rounded-full bg-[#0054a5] flex justify-center items-center">
           <CartIcon width={40} height={40} fill='white' />
         </Link>
       </div>

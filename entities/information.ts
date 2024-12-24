@@ -8,7 +8,7 @@ export interface InformationEntity {
   currentWeight: number,
   gender?: string,
   date_of_birth: string,
-  currentProduct: string,
+  currentProduct?: string,
   sport?: string,
   timeSleep?: string,
 }

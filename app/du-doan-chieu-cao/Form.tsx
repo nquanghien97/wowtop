@@ -162,9 +162,9 @@ function Form({ ip } : { ip: string }) {
       date_of_birth: format(data.date_of_birth.toString(), 'dd-MM-yyyy'),
       currentHeight: data.currentHeight,
       currentWeight: data.currentWeight,
-      currentProduct: data.currentProduct.toString(),
-      sport: data.sport,
-      timeSleep: data.timeSleep,
+      // currentProduct: data.currentProduct.toString(),
+      // sport: data.sport,
+      // timeSleep: data.timeSleep,
     }
     const date = new Date(Date.now());
     const link = window.location.href
@@ -199,8 +199,8 @@ function Form({ ip } : { ip: string }) {
 
   const id = useId()
   return (
-    <div className="max-w-6xl m-auto">
-      <div className="backgound-form rounded-2xl p-8">
+    <div className="max-w-6xl m-auto px-4">
+      <div className="backgound-form rounded-2xl py-8 px-4">
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="mb-4">
             <h2 className="text-center text-3xl mb-4 uppercase font-bold">Thông tin phụ huynh</h2>
@@ -416,9 +416,7 @@ function Form({ ip } : { ip: string }) {
                   </div>
                   {errors.currentHeight && <span className="text-[red] text-xs p-2">{errors.currentHeight.message}</span>}
                 </div>
-              </div>
-              <div className="flex gap-4 mb-4 max-md:flex-col">
-                <div className="md:w-1/2">
+                <div className="w-full">
                   <input
                     placeholder="Nhập cân nặng hiện tại của con (1-150kg) *"
                     className="w-full rounded-full px-4 py-3 outline-none placeholder-[#002A9E] placeholder:italic placeholder:font-semibold"
@@ -441,6 +439,8 @@ function Form({ ip } : { ip: string }) {
                   </div>
                   {errors.currentWeight && <span className="text-[red] text-xs p-2">{errors.currentWeight.message}</span>}
                 </div>
+              </div>
+              {/* <div className="flex gap-4 mb-4 max-md:flex-col">
                 <div className="md:w-1/2">
                   <Controller
                     name="currentProduct"
@@ -464,8 +464,8 @@ function Form({ ip } : { ip: string }) {
                   />
                   {errors.currentProduct && <span className="text-[red] text-xs p-2">{errors.currentProduct.message}</span>}
                 </div>
-              </div>
-              <div className="flex gap-4 mb-4 max-md:flex-col">
+              </div> */}
+              {/* <div className="flex gap-4 mb-4 max-md:flex-col">
                 <div className="md:w-1/2">
                   <Controller
                     name="sport"
@@ -510,7 +510,7 @@ function Form({ ip } : { ip: string }) {
                   />
                   {errors.timeSleep && <span className="text-[red] text-xs p-2">{errors.timeSleep.message}</span>}
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
           <div className="flex justify-center">

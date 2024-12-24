@@ -104,13 +104,13 @@ function FormOrder(props: { ip?: string }) {
   }
 
   return (
-    <section className="mb-8 bg-[bg-[#69dbe1] scroll-mt-32" id="order-form">
+    <section className="mb-8 bg-[bg-[#69dbe1] scroll-mt-32 px-4" id="order-form">
       <div className="px-4 py-8 max-w-6xl m-auto bg-[url('/dki3.webp')] md:bg-[length:100%_100%]  bg-center rounded-[50px]">
         <div className="mb-8">
           <h2 className="text-[#002A9E] text-4xl uppercase text-center font-bold">Đăng ký mua hàng</h2>
         </div>
         <div className="flex">
-          <div className="w-full px-4">
+          <div className="w-full">
             <form className="flex flex-col gap-4" onSubmit={handleSubmit(onSubmit)}>
               <div className="w-full flex gap-4 max-md:flex-col">
                 <div className="md:w-1/2">
